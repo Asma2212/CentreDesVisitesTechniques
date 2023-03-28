@@ -1,7 +1,5 @@
 #include "Vehicule.h"
 
-
-
 ostream& operator<<(ostream& out, Vehicule& v)
 {
     cout<<"matricule: ";

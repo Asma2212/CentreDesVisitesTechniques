@@ -7,7 +7,7 @@ Client::Client()
 void Client::menuClient(CentreVT cvt){
     int cl,c;
         cout<<"\n********Espace Client*******\n"<<endl;
-      /*  do{
+        do{
         cout<<"1: S'authentifier "<<endl;
         cout<<"2: Creer un compte"<<endl;
     cout<<"Tapez votre choix "<<endl;
@@ -26,7 +26,7 @@ void Client::menuClient(CentreVT cvt){
         {
             cerr<<"ERREUR: "<<e.what()<<endl;
         }
-    }while(this);*/
+    }while(this);
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
          do{
         cout<<"_________________________"<<endl;
