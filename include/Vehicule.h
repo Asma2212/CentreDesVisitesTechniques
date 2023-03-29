@@ -20,6 +20,8 @@ class Vehicule
         virtual ~Vehicule();
         friend ostream& operator<<(ostream&, Vehicule&);
         friend istream& operator>>(istream&, Vehicule&);
+        void affiche();
+        void saisie();
 
     protected:
 

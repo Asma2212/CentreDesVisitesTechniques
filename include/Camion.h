@@ -9,8 +9,10 @@ class Camion : public Vehicule
     public:
         Camion();
         virtual ~Camion();
-        friend ostream& operator<<(ostream&, Camion&);
-        friend istream& operator>>(istream&, Camion&);
+        virtual void affiche();
+        virtual void saisie();
+       // friend ostream& operator<<(ostream&, Camion&);
+       // friend istream& operator>>(istream&, Camion&);
 
     protected:
 

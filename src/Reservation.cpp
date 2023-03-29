@@ -23,10 +23,13 @@ istream& operator>>(istream& in, Reservation& r)
         case 1 :
             {
         Camion cm;
-        cin>>*v;
+        cm.saisie();
+        cm.affiche();
+        /*cin>>*v;
         cout<<"AFFICHAAAGEEEEE"<<endl;
-        cout<<v;
-            //v = new Camion(static_cast<const Camion&>(cm)); break;
+        cout<<v;*/
+            //v = new Camion(static_cast<const Camion&>(cm));
+             break;
             }
         case 2 :
         {

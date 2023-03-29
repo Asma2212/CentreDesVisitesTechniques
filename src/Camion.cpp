@@ -4,10 +4,20 @@ Camion::Camion()
 {
     //ctor
 }
-ostream& operator<<(ostream& out, Camion& c)
+void Camion::affiche(){
+    Vehicule::affiche();
+        cout<<"charge: ";
+    cout<<charge<<endl;
+}
+void Camion::saisie(){
+   Vehicule::saisie();
+    cout<<"entrer la charge du camion"<<endl;
+    cin>>charge;
+}
+/*ostream& operator<<(ostream& out, Camion& c)
 {
 Vehicule *v;
-v= new Camion(static_cast<const Camion&>(c));
+//v= new Camion(static_cast<const Camion&>(c));
 operator<<(out,*v);
 
 cout<<"charge: ";
@@ -22,7 +32,7 @@ cout<<v;
 //c = (Camion)v ;
 c.charge=11.3;
 cout<<"dddddd"<<c.marque<<endl;
-}
+}*/
 Camion::~Camion()
 {
     //dtor

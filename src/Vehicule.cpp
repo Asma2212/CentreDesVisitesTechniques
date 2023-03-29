@@ -1,5 +1,11 @@
 #include "Vehicule.h"
 
+void Vehicule::saisie(){
+cin>>*this ;
+}
+void Vehicule::affiche(){
+cout<<*this;
+}
 ostream& operator<<(ostream& out, Vehicule& v)
 {
     cout<<"matricule: ";
@@ -10,6 +16,12 @@ ostream& operator<<(ostream& out, Vehicule& v)
     out<<v.age<<endl;
     cout<<"Type de consommation : ";
     out<<v.typeCons<<endl;
+    switch(v.typeCons){
+    case Diesel : out<<"Diesel"<<endl;break;
+    case Electrique : out<<"Electrique"<<endl;break;
+    case Essence : out<<"Essence"<<endl;break;
+    case Hybride : out<<"Hybride"<<endl;break;
+    }
     cout<<"Tarif: ";
     out<<v.tarif<<endl;
     cout<<"nombre de roues: ";
@@ -35,10 +47,10 @@ istream& operator>>(istream& in, Vehicule& v)
         cin>>t;
         switch(t)
         {
-            case 1 : v.typeCons=Diesel;
-            case 2 : v.typeCons=Electrique;
-            case 3 : v.typeCons=Essence;
-            case 4 : v.typeCons=Hybride;
+            case 1 : v.typeCons=Diesel;break;
+            case 2 : v.typeCons=Electrique;break;
+            case 3 : v.typeCons=Essence;break;
+            case 4 : v.typeCons=Hybride;break;
         }
     }while(t <0 || t>4);
 }
