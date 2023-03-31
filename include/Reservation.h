@@ -1,5 +1,6 @@
 #ifndef RESERVATION_H
 #define RESERVATION_H
+#include <time.h>
 #include"Date.h"
 #include"Vehicule.h"
 #include"Moto.h"
@@ -13,12 +14,18 @@ class Reservation
     Date dateR;
     int heure;
     float paiement;
-    Vehicule v ;
+    Vehicule *v ;
     bool payee = false ;
     public:
         Reservation();
+        friend ostream& operator<<(ostream&, Reservation&);
         friend istream& operator>>(istream&, Reservation&);
-        virtual ~Reservation();
+        void saisieRes();
+        void setPayee(){ payee = true ;}
+        void setVehicule(Vehicule&);
+        Date getDate(){return dateR;}
+        int getHeure(){return heure;}
+        virtual ~Reservation(){}
 
     protected:
 

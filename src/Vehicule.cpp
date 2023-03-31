@@ -1,5 +1,14 @@
 #include "Vehicule.h"
 
+Vehicule::Vehicule(string matricule,string marque ,int age ,TypeConsommation typeCons ,int nbRoues,bool etatFeux,bool etatFrein,bool etatCarosserie,bool etatDirection)
+{
+    this->matricule=matricule;
+    this->marque=marque ;
+    this->age=age ;
+    this->typeCons=typeCons ;
+    this->nbRoues=nbRoues ;
+    this->tarif=10.0;
+}
 void Vehicule::saisie(){
 cin>>*this ;
 }
@@ -8,23 +17,22 @@ cout<<*this;
 }
 ostream& operator<<(ostream& out, Vehicule& v)
 {
-    cout<<"matricule: ";
+    out<<"matricule: ";
     out<<v.matricule<<endl;
-    cout<<"marque: ";
+    out<<"marque: ";
     out<<v.marque<<endl;
-    cout<<"age: ";
+    out<<"age: ";
     out<<v.age<<endl;
-    cout<<"Type de consommation : ";
-    out<<v.typeCons<<endl;
+    out<<"Type de consommation : ";
     switch(v.typeCons){
     case Diesel : out<<"Diesel"<<endl;break;
     case Electrique : out<<"Electrique"<<endl;break;
     case Essence : out<<"Essence"<<endl;break;
     case Hybride : out<<"Hybride"<<endl;break;
     }
-    cout<<"Tarif: ";
+    out<<"Tarif: ";
     out<<v.tarif<<endl;
-    cout<<"nombre de roues: ";
+    out<<"nombre de roues: ";
     out<<v.nbRoues<<endl;
 }
 istream& operator>>(istream& in, Vehicule& v)

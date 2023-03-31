@@ -22,6 +22,45 @@ ostream& operator<<(ostream& out,Date& D)
     out<<D.annee<<endl;
     return out;
 }
+bool operator==(Date& d1,Date& d2)
+{
+    if((d1.jour==d2.jour)&&(d1.mois==d2.mois)&&(d1.annee=d2.annee))
+        return true;
+    return false;
+}
+Date Date::dateCourante(){
+Date d;
+time_t now;
+int day, mois, an;
+time(&now);
+struct tm *local = localtime(&now);
+
+d.jour = local->tm_mday;
+d.mois = local->tm_mon + 1;
+d.annee = local->tm_year + 1900;
+return d ;
+}
+
+bool Date::verifDate(Date d){
+    Date d1=dateCourante();
+if(annee > d.annee)
+    return true ;
+else
+    if((annee == d.annee)&&(mois > d.mois))
+    {
+        return true ;
+    }
+
+    else
+        if ((annee == d.annee)&&(mois == d.mois)&&(jour > d.jour))
+        {
+            return true ;
+        }
+
+cout<<"date de reservation doit etre superieur au "<<d1<<endl;
+return false ;
+
+}
 Date::~Date()
 {
     //dtor
