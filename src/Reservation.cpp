@@ -63,6 +63,13 @@ void Reservation::saisieRes(){
         }
 
 }
+
+istream& operator>>(istream& in, Reservation* r)
+{
+    in>>r->dateR;
+    in>>r->heure;
+    in>>r->v;
+}
 istream& operator>>(istream& in, Reservation& r)
 {
    int type,e;

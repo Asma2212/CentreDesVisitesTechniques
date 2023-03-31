@@ -7,8 +7,8 @@ Client::Client()
 void Client::menuClient(CentreVT cvt){
     int cl,c;
     Reservation r;
-      /* cout<<"\n********Espace Client*******\n"<<endl;
-        do{
+        cout<<"\n********Espace Client*******\n"<<endl;
+  /*      do{
         cout<<"1: S'authentifier "<<endl;
         cout<<"2: Creer un compte"<<endl;
     cout<<"Tapez votre choix "<<endl;
@@ -30,6 +30,7 @@ void Client::menuClient(CentreVT cvt){
         }
     }while(this);*/
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
+//recuperer();
 //cout<<*this;
          do{
         cout<<"_________________________"<<endl;
@@ -108,10 +109,9 @@ void Client::recuperer()
  Reservation* r;
  while(!Fichier.eof())
  {
- r = new Reservation();
+   Fichier>>r;
  listRes.push_back(*r);
-  Fichier>>*r;
- Fichier>>ws;
+ //Fichier>>ws;
  }
 Fichier.close() ;
 }

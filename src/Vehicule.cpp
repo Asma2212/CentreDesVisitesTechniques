@@ -62,6 +62,14 @@ istream& operator>>(istream& in, Vehicule& v)
         }
     }while(t <0 || t>4);
 }
+istream& operator>>(istream& in, Vehicule* v)
+{
+    in>>v->matricule;
+    in>>v->marque;
+    in>>v->age;
+    in>>v->nbRoues;
+    //in>>v->typeCons;
+}
 
 Vehicule::~Vehicule()
 {
