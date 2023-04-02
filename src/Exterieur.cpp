@@ -48,13 +48,11 @@ bool Exterieur::testRoues(Vehicule* v)
     Camion*c;
     char t;
     cout<<"Tester les roues"<<endl;
-    if(typeid(v) == typeid(Moto)){
+    if(typeid(v) == typeid(Moto))
+        {
     //v=new Moto(static_cast<const Moto&>(*v));
     cout<<"Tester roue avant "<<endl;
-    do{
-    cout<<"s'il est en bon etat entrez o sinon entrer m"<<endl;
-    cin>>t;
-    }while((t!='o')&&(t!='m'));
+    t=confirm();
     if(t=='m'){
      //v->changeEtatRoueAv();
      return false ;
@@ -64,25 +62,22 @@ bool Exterieur::testRoues(Vehicule* v)
     if(t=='m'){
      //v->changeEtatRoueAr();
      return false ;
-    }}else
+    }
+    }else
     if(typeid(v) == typeid(Voiture))
     {
     cout<<"Tester roue avant Gauche"<<endl;
-    do{
-    cout<<"s'il est en bon etat entrez o sinon entrer m"<<endl;
-    cin>>t;
-    }while((t!='o')&&(t!='m'));
-    if(t=='m'){
-    vt = *v;
-    v.changeEtatRoueAvG();
-     return false ;
-     }
-     cout<<"Tester roue arriere "<<endl;
     t=confirm();
     if(t=='m'){
-     //v->changeEtatRoueAr();
+    //v.changeEtatRoueAvG();
      return false ;
-    }
+     }
+     cout<<"Tester roue avant droite "<<endl;
+    t=confirm();
+    if(t=='m'){
+     //v->changeEtatRoueAvD();
+     return false ;
+    }}
     else
     {
 

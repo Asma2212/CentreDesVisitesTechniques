@@ -17,12 +17,20 @@ cout<<*this;
 }
 ostream& operator<<(ostream& out, Vehicule& v)
 {
+    int ag;
     cout<<"matricule: ";
     out<<v.matricule<<endl;
     cout<<"marque: ";
     out<<v.marque<<endl;
-    cout<<"age: ";
-    out<<v.age<<endl;
+    try
+    {cout<<"age: ";
+    out<<ag<<endl;
+    if(!isdigit(ag)) throw MyExceptions("erreur d'authentification");
+
+    }catch(MyExceptions e)
+    {
+        cerr<<"erreeeeuur"<<e.what()<<endl;;
+    }
     cout<<"Type de consommation : ";
     switch(v.typeCons){
     case Diesel : out<<"Diesel"<<endl;break;
