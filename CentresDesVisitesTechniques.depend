@@ -330,7 +330,7 @@
 
 1680038782 c:\users\admin\desktop\centredesvisitestechniques\include\typeconsommation.h
 
-1680388543 source:c:\users\abirb\documents\centredesvisitestechniques\main.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\main.cpp
 	<iostream>
 	<iostream>
 	<fstream>
@@ -343,9 +343,10 @@
 	"Client.h"
 	"exception"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\date.h
+1680406910 c:\users\abirb\documents\centredesvisitestechniques\include\date.h
 	<iostream>
 	<fstream>
+	<time.h>
 	<string>
 
 1680387827 c:\users\abirb\documents\centredesvisitestechniques\include\equipement.h
@@ -359,7 +360,12 @@
 	<vector>
 	"VisiteTech.h"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\visitetech.h
+1680471775 c:\users\abirb\documents\centredesvisitestechniques\include\visitetech.h
+	<string>
+	<vector>
+	<iostream>
+	<fstream>
+	"Test.h"
 
 1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\personne.h
 	"MyExceptions.h"
@@ -383,7 +389,7 @@
 	"CentreVT.h"
 	"Equipement.h"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\client.h
+1680407323 c:\users\abirb\documents\centredesvisitestechniques\include\client.h
 	<fstream>
 	<iostream>
 	<string>
@@ -391,27 +397,28 @@
 	"CentreVT.h"
 	"Reservation.h"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\reservation.h
+1680470458 c:\users\abirb\documents\centredesvisitestechniques\include\reservation.h
+	<time.h>
 	"Date.h"
 	"Vehicule.h"
 	"Moto.h"
 	"Voiture.h"
 	"Camion.h"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\vehicule.h
+1680470458 c:\users\abirb\documents\centredesvisitestechniques\include\vehicule.h
 	<iostream>
 	"TypeConsommation.h"
 	"string"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\typeconsommation.h
+1680406910 c:\users\abirb\documents\centredesvisitestechniques\include\typeconsommation.h
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\moto.h
+1680470458 c:\users\abirb\documents\centredesvisitestechniques\include\moto.h
 	<Vehicule.h>
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\voiture.h
+1680470458 c:\users\abirb\documents\centredesvisitestechniques\include\voiture.h
 	<Vehicule.h>
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\camion.h
+1680406910 c:\users\abirb\documents\centredesvisitestechniques\include\camion.h
 	<Vehicule.h>
 
 1680179482 source:c:\users\abirb\documents\centredesvisitestechniques\src\agent.cpp
@@ -419,19 +426,18 @@
 	"Equipement.h"
 	"CentreVT.h"
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\camion.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\camion.cpp
 	"Camion.h"
 
-1680388543 source:c:\users\abirb\documents\centredesvisitestechniques\src\centrevt.cpp
+1680408628 source:c:\users\abirb\documents\centredesvisitestechniques\src\centrevt.cpp
 	"CentreVT.h"
 	"Equipement.h"
 	"Personne.h"
+
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\client.cpp
 	"Client.h"
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\client.cpp
-	"Client.h"
-
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\date.cpp
+1680406910 source:c:\users\abirb\documents\centredesvisitestechniques\src\date.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -441,11 +447,16 @@
 	"Equipement.h"
 	"CentreVT.h"
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\exterieur.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\exterieur.cpp
 	"Exterieur.h"
 
-1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\exterieur.h
+1680470458 c:\users\abirb\documents\centredesvisitestechniques\include\exterieur.h
 	<Test.h>
+	<Vehicule.h>
+	<Moto.h>
+	<Camion.h>
+	<Voiture.h>
+	<Exterieur.h>
 
 1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\test.h
 
@@ -455,7 +466,7 @@
 1680033942 c:\users\abirb\documents\centredesvisitestechniques\include\interieur.h
 	<Test.h>
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\moto.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\moto.cpp
 	"Moto.h"
 
 1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\myexceptions.cpp
@@ -465,18 +476,18 @@
 	"Personne.h"
 	"CentreVT.h"
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\reservation.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\reservation.cpp
 	"Reservation.h"
 
 1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\test.cpp
 	"Test.h"
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\vehicule.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\vehicule.cpp
 	"Vehicule.h"
 
 1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\visitetech.cpp
 	"VisiteTech.h"
 
-1680033942 source:c:\users\abirb\documents\centredesvisitestechniques\src\voiture.cpp
+1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\voiture.cpp
 	"Voiture.h"
 
