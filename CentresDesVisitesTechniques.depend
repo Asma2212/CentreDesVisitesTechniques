@@ -185,9 +185,10 @@
 	"Client.h"
 	"exception"
 
-1679743872 c:\users\admin\desktop\centredesvisitestechniques\include\date.h
+1680403836 c:\users\admin\desktop\centredesvisitestechniques\include\date.h
 	<iostream>
 	<fstream>
+	<time.h>
 	<string>
 
 1679909744 c:\users\admin\desktop\centredesvisitestechniques\include\equipement.h
@@ -203,7 +204,7 @@
 
 1679841485 c:\users\admin\desktop\centredesvisitestechniques\include\visitetech.h
 
-1679983855 c:\users\admin\desktop\centredesvisitestechniques\include\personne.h
+1680240467 c:\users\admin\desktop\centredesvisitestechniques\include\personne.h
 	"MyExceptions.h"
 	<iostream>
 	<fstream>
@@ -226,7 +227,7 @@
 	"Equipement.h"
 	"Personne.h"
 
-1679743987 source:c:\users\admin\desktop\centredesvisitestechniques\src\date.cpp
+1680404079 source:c:\users\admin\desktop\centredesvisitestechniques\src\date.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -265,16 +266,16 @@
 	"Equipement.h"
 	"CentreVT.h"
 
-1679986090 source:c:\users\admin\desktop\centredesvisitestechniques\src\camion.cpp
+1680288005 source:c:\users\admin\desktop\centredesvisitestechniques\src\camion.cpp
 	"Camion.h"
 
-1679980138 c:\users\admin\desktop\centredesvisitestechniques\include\camion.h
+1680213230 c:\users\admin\desktop\centredesvisitestechniques\include\camion.h
 	<Vehicule.h>
 
-1679984400 source:c:\users\admin\desktop\centredesvisitestechniques\src\client.cpp
+1680358602 source:c:\users\admin\desktop\centredesvisitestechniques\src\client.cpp
 	"Client.h"
 
-1679982446 c:\users\admin\desktop\centredesvisitestechniques\include\client.h
+1680239872 c:\users\admin\desktop\centredesvisitestechniques\include\client.h
 	<fstream>
 	<iostream>
 	<string>
@@ -282,34 +283,35 @@
 	"CentreVT.h"
 	"Reservation.h"
 
-1679986249 source:c:\users\admin\desktop\centredesvisitestechniques\src\reservation.cpp
+1680404319 source:c:\users\admin\desktop\centredesvisitestechniques\src\reservation.cpp
 	"Reservation.h"
 
-1679983234 c:\users\admin\desktop\centredesvisitestechniques\include\reservation.h
+1680321554 c:\users\admin\desktop\centredesvisitestechniques\include\reservation.h
+	<time.h>
 	"Date.h"
 	"Vehicule.h"
 	"Moto.h"
 	"Voiture.h"
 	"Camion.h"
 
-1679986495 c:\users\admin\desktop\centredesvisitestechniques\include\vehicule.h
+1680330189 c:\users\admin\desktop\centredesvisitestechniques\include\vehicule.h
 	<iostream>
 	"TypeConsommation.h"
 	"string"
 
-1679913130 source:c:\users\admin\desktop\centredesvisitestechniques\src\moto.cpp
+1680219739 source:c:\users\admin\desktop\centredesvisitestechniques\src\moto.cpp
 	"Moto.h"
 
-1679913130 c:\users\admin\desktop\centredesvisitestechniques\include\moto.h
+1680219486 c:\users\admin\desktop\centredesvisitestechniques\include\moto.h
 	<Vehicule.h>
 
-1679986448 source:c:\users\admin\desktop\centredesvisitestechniques\src\vehicule.cpp
+1680402084 source:c:\users\admin\desktop\centredesvisitestechniques\src\vehicule.cpp
 	"Vehicule.h"
 
-1679913037 source:c:\users\admin\desktop\centredesvisitestechniques\src\voiture.cpp
+1680227823 source:c:\users\admin\desktop\centredesvisitestechniques\src\voiture.cpp
 	"Voiture.h"
 
-1679913037 c:\users\admin\desktop\centredesvisitestechniques\include\voiture.h
+1680227773 c:\users\admin\desktop\centredesvisitestechniques\include\voiture.h
 	<Vehicule.h>
 
 1679928293 source:c:\users\admin\desktop\centredesvisitestechniques\src\typeconsommation.cpp
@@ -321,7 +323,7 @@
 	"string"
 	"exception"
 
-1679977574 c:\users\admin\desktop\centredesvisitestechniques\include\typeconsommation.h
+1680038782 c:\users\admin\desktop\centredesvisitestechniques\include\typeconsommation.h
 
 1680388543 source:c:\users\abirb\documents\centredesvisitestechniques\main.cpp
 	<iostream>
