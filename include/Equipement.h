@@ -15,8 +15,10 @@ class Equipement
     public:
         Equipement();
         Equipement(string,string,int);
+        friend istream& operator>>(istream& in,Equipement* E);
         friend istream& operator>>(istream& in,Equipement& E);
-        friend ostream& operator<<(ostream& out,Equipement& E);
+        friend ostream& operator<<(ostream& out,const Equipement& E);
+        friend ostream& operator<<(ostream& out,const Equipement* E);
         void ajouterEq(CentreVT& );
         void suppEq(string,CentreVT&);
         void modifierEq(string,CentreVT&);

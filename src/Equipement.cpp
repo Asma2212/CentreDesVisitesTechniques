@@ -15,27 +15,46 @@ Equipement::Equipement(string a,string b,int c)
 {
    return this->rf;
 }*/
+ostream& operator<<(ostream& out,const Equipement* E)
+{
+    out<<E->quantite<<endl;
+    out<<E->rf<<endl;
+    out<<E->libelle<<endl;
+
+    return out;
+}
+istream& operator>>(istream& in,Equipement* E)
+{
+    in>>E->quantite;
+    in.ignore();
+    getline(in,E->rf,'\n');
+    getline(in,E->libelle,'\n');
+    return in;
+}
 istream& operator>>(istream& in,Equipement& E)
 {
-    cout<<"quantite"<<endl;
+   // cout<<"quantite"<<endl;
     in>>E.quantite;
-    cout<<"reference"<<endl;
+  //  cout<<"reference"<<endl;
     in.ignore();
     getline(in,E.rf,'\n');
-    cout<<"libelle"<<endl;
+ //   cout<<"libelle"<<endl;
     getline(in,E.libelle,'\n');
     return in;
 }
-ostream& operator<<(ostream& out,Equipement& E)
+ostream& operator<<(ostream& out,const Equipement& E)
 {
-    cout<<"reference: ";
-    out<<E.rf<<endl;
-    cout<<"libelle: ";
-    out<<E.libelle<<endl;
-    cout<<"quantite: ";
+  //  out<<"quantite: ";
     out<<E.quantite<<endl;
+   // out<<"reference: ";
+    out<<E.rf<<endl;
+  //  out<<"libelle: ";
+    out<<E.libelle<<endl;
+
     return out;
 }
+
+
 void Equipement::ajouterEq(CentreVT& C)
 {
     char rep;

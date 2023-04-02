@@ -16,15 +16,19 @@ int main()
     int esp,cnClient,cl;
     Client clt;
     Agent ag;
-    CentreVT c;
-   /* string rf;
-    Agent A;
+
+    CentreVT C,C1;
+    fstream f;
     Equipement E;
-    E.ajouterEq(c);
-    cout<<"donner une reference"<<endl;
-    cin>>rf;
-    cout<<A.rechEq(rf,c);*/
-    do{
+    E.ajouterEq(C);
+    CentreVT::creer(f);
+    f<<&C;
+    f.seekg(0);
+    f>>&C1;
+    cout<<C1;
+    f.close();
+
+           /* do{
         cout<<"_________________________"<<endl;
         cout<<"1: Espace Client "<<endl;
         cout<<"2: Espace Agent"<<endl;
@@ -44,7 +48,7 @@ int main()
         if(esp==2){
 
     }
-    else
+    else*/
 
     return 0;
 }

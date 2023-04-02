@@ -20,6 +20,8 @@ class Agent : public Personne
         void EnregistreVisite(VisiteTech);
         void ConsulterEq(CentreVT&);
         Equipement& rechEq(string,CentreVT&);
+        friend istream& operator>>(istream& ,Agent&);
+        friend ostream& operator<<(ostream&, Agent&);
         virtual ~Agent();
 };
 

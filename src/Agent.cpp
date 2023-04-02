@@ -5,9 +5,18 @@ Agent::Agent()
 {
     //ctor
 }
+istream& operator>>(istream& in,Agent& A)
+{
+    Personne *P=&A;
+    in>>*P;
+    cout<<"poste :";
+    getline(in,A.poste);
+}
+//ostream& operator<<(ostream&, Agent&);
 void Agent::ConsulterEq(CentreVT& C)
 {
-    cout<<C;
+    for(unsigned i=0;i<C.equipements.size();i++)
+        cout<<C.equipements[i]<<'\t';
 }
 Equipement& Agent::rechEq(string rf, CentreVT& C)
 {

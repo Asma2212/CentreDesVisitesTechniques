@@ -11,14 +11,18 @@ class Personne;
 class Agent;
 class CentreVT
 {
-    string nom;
+    string nom="Centre Abir et Asma";
     vector <VisiteTech*> visites;
     vector <Personne*> personnes;
     vector <Equipement*> equipements;
     public:
         CentreVT();
         virtual ~CentreVT();
+        static void creer(fstream&);
         friend ostream& operator<<(ostream& out,CentreVT& C);
+        friend ostream& operator<<(ostream& out,CentreVT* C);
+        friend istream& operator>>(istream& in,CentreVT* C);
+
     friend class Equipement;
     friend class Personne;
     friend class Agent;
