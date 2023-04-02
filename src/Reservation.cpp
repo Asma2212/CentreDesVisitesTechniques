@@ -2,15 +2,16 @@
 
 Reservation::Reservation()
 {
-    //this->codeR++ ;
+    this->codeR++ ;
 }
 ostream& operator<<(ostream& out, Reservation& r)
 {
-
+    cout<<"code de Reservation: ";
+    out<<r.codeR;
     cout<<"date de Reservation: ";
     out<<r.dateR;
     cout<<"heure : ";
-    out<<r.heure<<endl;
+    out<<r.heure;
     cout<<"vehicule : ";
     if(typeid(*r.v) == typeid(Camion))
         {
@@ -25,8 +26,8 @@ ostream& operator<<(ostream& out, Reservation& r)
 
         else
             cout<<"VOITURE"<<endl;
-    out<<*r.v;
-    //r.v->affiche();
+    //out<<*r.v;
+    r.v->affiche();
     return out;
 }
 void Reservation::saisieRes(){

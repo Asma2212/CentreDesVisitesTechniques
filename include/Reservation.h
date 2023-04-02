@@ -10,7 +10,7 @@ using namespace std;
 
 class Reservation
 {
-    static int codeR;
+    int codeR=0;
     Date dateR;
     int heure;
     float paiement;

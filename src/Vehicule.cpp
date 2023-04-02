@@ -32,21 +32,20 @@ ostream& operator<<(ostream& out, Vehicule& v)
     }
     cout<<"Tarif: ";
     out<<v.tarif<<endl;
-    cout<<"nombre de roues: ";
-    out<<v.nbRoues<<endl;
+    //cout<<"nombre de roues: ";
+    //out<<v.nbRoues<<endl;
 }
 istream& operator>>(istream& in, Vehicule& v)
 {
     int t;
-    cout<<"veh elli bl &"<<endl;
     cout<<"entrer votre matricule"<<endl;
     in>>v.matricule;
     cout<<"entrer votre marque"<<endl;
     in>>v.marque;
     cout<<"entrer l'age du vehicule"<<endl;
     in>>v.age;
-    cout<<"entrer le nombre des roues"<<endl;
-    in>>v.nbRoues;
+    //cout<<"entrer le nombre des roues"<<endl;
+    //in>>v.nbRoues;
     cout<<"entrer le type de consommation"<<endl;
     do{
         cout<<"\t 1 : Diesel "<<endl;

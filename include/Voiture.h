@@ -16,6 +16,11 @@ class Voiture : public Vehicule
         void affiche();
         void saisie();
         virtual ~Voiture();
+        friend istream& operator>>(istream&, Voiture&);
+        void changeEtatRoueAvG(){etatRoueAvG = false;}
+        void changeEtatRoueAvD(){etatRoueAvD = false ;}
+        void changeEtatRoueArG(){etatRoueAvG = false;}
+        void changeEtatRoueArD(){etatRoueAvD = false ;}
 
 
     protected:

@@ -28,6 +28,10 @@ class Vehicule
         friend ostream& operator<<(ostream&, Vehicule*);
         virtual void affiche();
         virtual void saisie();
+        void changeEtatCarosserie(){etatCarosserie = false;}
+        void changeEtatFeux(){etatFeux = false;}
+        void changeEtatFrein(){etatFrein = false;}
+        void changeEtatDirection(){etatDirection = false;}
 
     protected:
 

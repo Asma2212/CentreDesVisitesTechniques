@@ -17,8 +17,8 @@ int main()
     Client clt;
     Agent ag;
 
-    CentreVT C,C1;
-    fstream f;
+    CentreVT c,C1;
+   /* fstream f;
     Equipement E;
     E.ajouterEq(C);
     CentreVT::creer(f);
@@ -26,9 +26,9 @@ int main()
     f.seekg(0);
     f>>&C1;
     cout<<C1;
-    f.close();
+    f.close();*/
 
-           /* do{
+            do{
         cout<<"_________________________"<<endl;
         cout<<"1: Espace Client "<<endl;
         cout<<"2: Espace Agent"<<endl;
@@ -48,7 +48,7 @@ int main()
         if(esp==2){
 
     }
-    else*/
+    else
 
     return 0;
 }

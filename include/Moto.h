@@ -13,6 +13,9 @@ class Moto : public Vehicule
         virtual ~Moto();
         void affiche();
         void saisie();
+        friend istream& operator>>(istream&, Moto&);
+        void changeEtatRoueAv(){etatRoueAv = false;}
+        void changeEtatRoueAr(){etatRoueAr = false ;}
 
     protected:
 

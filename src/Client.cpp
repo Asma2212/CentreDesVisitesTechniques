@@ -58,8 +58,13 @@ void Client::consulterRes(){
     int i;
     Reservation r;
     cout<<"la liste des reservations"<<endl;
+    cout<<"vous avez au total "<<listRes.size()<< "reservation(s)"<<endl;
 for(unsigned int i=0;i<listRes.size();i++)
+{
+    cout<<"------- RESERVATION NUM"<<i+1<<" -------"<<endl;
     cout<<listRes[i];
+}
+
 }
 
 void Client::effectuerRes(){
