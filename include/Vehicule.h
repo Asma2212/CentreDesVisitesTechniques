@@ -3,6 +3,7 @@
 #include <iostream>
 #include "TypeConsommation.h"
 #include"string"
+#include "MyExceptions.h"
 using namespace std;
 
 class Vehicule
