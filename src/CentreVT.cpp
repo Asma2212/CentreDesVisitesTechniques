@@ -1,7 +1,7 @@
 #include "CentreVT.h"
 #include "Equipement.h"
 #include"Personne.h"
-#include"Client.h"
+//#include"Client.h"
 CentreVT::CentreVT()
 {
     //ctor
@@ -55,7 +55,6 @@ istream& operator>>(istream& in,CentreVT* C)
         Equipement * E = new Equipement() ;
         in>>*E;
         C->equipements.push_back(E);
-    //    i+=1;
     }
    /* while(1)
     {
