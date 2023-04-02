@@ -21,6 +21,7 @@ class Reservation
         friend ostream& operator<<(ostream&, Reservation&);
         friend istream& operator>>(istream&, Reservation&);
         friend istream& operator>>(istream&, Reservation*);
+        friend ostream& operator<<(ostream&, Reservation*);
         void saisieRes();
         void setPayee(){ payee = true ;}
         void setVehicule(Vehicule&);

@@ -31,6 +31,7 @@ void Client::menuClient(CentreVT cvt){
     }while(this);*/
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
 //recuperer();
+//consulterRes();
 //cout<<*this;
          do{
         cout<<"_________________________"<<endl;
@@ -73,7 +74,7 @@ void Client::effectuerRes(){
             cerr<<"ERREUR: "<<e.what()<<endl;
     }
     listRes.push_back(r);
-    enregistrer(r);
+    //enregistrer(r);
 }
 bool Client::existDate(Date d,int h)
 {
@@ -97,8 +98,8 @@ void Client::enregistrer(Reservation r)
  ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
  if (!Fichier) cout<<"Erreur Fichier";
  for(unsigned int i=0;i< listRes.size();i++){
- Fichier <<listRes[i];
- //r=ptemp->psuivant;
+ Fichier <<&listRes[i];
+
  }
 Fichier.close() ;
 }
@@ -106,13 +107,20 @@ void Client::recuperer()
 {
  ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
  if (!Fichier) cout<<"Le fichier n'existe pas il sera cree lors de l'enregistrement";
- Reservation* r;
- while(!Fichier.eof())
+ Reservation r;
+ //while(!Fichier.eof())
+ //{
+     try{
+   Fichier>>&r;
+//Fichier>>ws;
+   r.getDate().affiche();
+ listRes.push_back(r);
+ }catch(exception const &e)
  {
-   Fichier>>r;
- listRes.push_back(*r);
- //Fichier>>ws;
+     cerr<<"exceeption"<<e.what()<<endl;
  }
+
+ //}
 Fichier.close() ;
 }
 

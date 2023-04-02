@@ -7,20 +7,27 @@ Reservation::Reservation()
 ostream& operator<<(ostream& out, Reservation& r)
 {
 
-      out<<"date de Reservation: ";
+    cout<<"date de Reservation: ";
     out<<r.dateR;
-      out<<"heure : ";
+    cout<<"heure : ";
     out<<r.heure<<endl;
-    out<<"vehicule : ";
+    cout<<"vehicule : ";
     if(typeid(*r.v) == typeid(Camion))
-        out<<"CAMION"<<endl;
+        {
+            r.v=new Camion(static_cast<const Camion&>(*r.v));
+            cout<<"CAMION"<<endl;
+        }
     else
         if(typeid(*r.v) == typeid(Moto))
-            out<<"MOTO"<<endl;
+           {
+             cout<<"MOTO"<<endl;
+           }
+
         else
-            out<<"VOITURE"<<endl;
+            cout<<"VOITURE"<<endl;
     out<<*r.v;
     //r.v->affiche();
+    return out;
 }
 void Reservation::saisieRes(){
     int type;
@@ -64,15 +71,32 @@ void Reservation::saisieRes(){
 
 }
 
+ostream& operator<<(ostream& out, Reservation* r)
+{
+    cout<<"res out elli bl *"<<endl;
+    out<<r->dateR;
+    out<<r->heure;
+    out<<*r->v;
+    return out;
+}
+
 istream& operator>>(istream& in, Reservation* r)
 {
+    Vehicule *v1 = new Vehicule();
+    cout<<"res elli bl *"<<endl;
+    //in.getline(r->dateR, 100, '\n');
     in>>r->dateR;
+    //cout<<"date"<<r->dateR;
     in>>r->heure;
-    in>>r->v;
+        cout<<"heure"<<r->heure;
+    in>>v1;
+    r->v=v1;
+    return in;
 }
 istream& operator>>(istream& in, Reservation& r)
 {
    int type,e;
+   cout<<"res elli bl &"<<endl;
     do{
     cout<<"Date de reservation"<<endl;
     in>>r.dateR;

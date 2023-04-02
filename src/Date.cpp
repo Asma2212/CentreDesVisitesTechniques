@@ -22,6 +22,26 @@ ostream& operator<<(ostream& out,Date& D)
     out<<D.annee<<endl;
     return out;
 }
+void Date::affiche()
+{
+    cout<<jour<<"/";
+    cout<<mois<<"/";
+    cout<<annee<<endl;
+}
+istream& operator>>(istream& in,Date* D)
+{
+    in>>D->jour;
+    in>>D->mois;
+    in>>D->annee;
+    return in;
+}
+ostream& operator<<(ostream& out,Date* D)
+{
+    out<<D->jour;
+    out<<D->mois;
+    out<<D->annee;
+    return out;
+}
 bool operator==(Date& d1,Date& d2)
 {
     if((d1.jour==d2.jour)&&(d1.mois==d2.mois)&&(d1.annee=d2.annee))

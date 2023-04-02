@@ -17,27 +17,28 @@ cout<<*this;
 }
 ostream& operator<<(ostream& out, Vehicule& v)
 {
-    out<<"matricule: ";
+    cout<<"matricule: ";
     out<<v.matricule<<endl;
-    out<<"marque: ";
+    cout<<"marque: ";
     out<<v.marque<<endl;
-    out<<"age: ";
+    cout<<"age: ";
     out<<v.age<<endl;
-    out<<"Type de consommation : ";
+    cout<<"Type de consommation : ";
     switch(v.typeCons){
     case Diesel : out<<"Diesel"<<endl;break;
     case Electrique : out<<"Electrique"<<endl;break;
     case Essence : out<<"Essence"<<endl;break;
     case Hybride : out<<"Hybride"<<endl;break;
     }
-    out<<"Tarif: ";
+    cout<<"Tarif: ";
     out<<v.tarif<<endl;
-    out<<"nombre de roues: ";
+    cout<<"nombre de roues: ";
     out<<v.nbRoues<<endl;
 }
 istream& operator>>(istream& in, Vehicule& v)
 {
     int t;
+    cout<<"veh elli bl &"<<endl;
     cout<<"entrer votre matricule"<<endl;
     in>>v.matricule;
     cout<<"entrer votre marque"<<endl;
@@ -61,14 +62,41 @@ istream& operator>>(istream& in, Vehicule& v)
             case 4 : v.typeCons=Hybride;break;
         }
     }while(t <0 || t>4);
+    return in;
+}
+ostream& operator<<(ostream& out, Vehicule* v)
+{
+    cout<<"veh out elli bl *"<<endl;
+    out<<v->matricule;
+    out<<v->marque;
+    out<<v->age;
+    out<<v->nbRoues;
+    //in>>v->typeCons;
+
+    return out;
 }
 istream& operator>>(istream& in, Vehicule* v)
 {
+    string msg;
+//    Vehicule v = new Vehicule();
+    //cout<<"veh elli bl *"<<endl;
+    //in.getline(v->matricule, 100, '\n');
     in>>v->matricule;
+    cout<<"mat"<<v->matricule;
     in>>v->marque;
+    cout<<"marque"<<v->marque;
     in>>v->age;
+    cout<<"age"<<v->age;
+   // in>>Diesel;
+   // v->typeCons=Diesel;
+  // getline(in,msg,'\n');
+ //  cout<<"hhhhhh"<<msg;
+//    in>>v->typeCons;
     in>>v->nbRoues;
-    //in>>v->typeCons;
+    cout<<"nbRoures"<<v->nbRoues;
+
+
+    return in;
 }
 
 Vehicule::~Vehicule()

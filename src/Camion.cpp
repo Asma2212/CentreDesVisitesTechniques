@@ -18,11 +18,8 @@ void Camion::saisie(){
 }
 ostream& operator<<(ostream& out, Camion& c)
 {
+cout<<"jeee";
 out<<c;
-/*Vehicule *v;
-v= new Camion(static_cast<const Camion&>(c));
-operator<<(out,*v);*/
-
 cout<<"charge: ";
 out<<c.charge<<endl ;
 }

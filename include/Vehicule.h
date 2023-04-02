@@ -25,6 +25,7 @@ class Vehicule
         friend ostream& operator<<(ostream&, Vehicule&);
         friend istream& operator>>(istream&, Vehicule&);
         friend istream& operator>>(istream&, Vehicule*);
+        friend ostream& operator<<(ostream&, Vehicule*);
         virtual void affiche();
         virtual void saisie();
 
