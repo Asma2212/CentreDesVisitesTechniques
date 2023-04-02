@@ -17,16 +17,15 @@ cout<<*this;
 }
 ostream& operator<<(ostream& out, Vehicule& v)
 {
-    int ag;
+    //string ag;
     cout<<"matricule: ";
     out<<v.matricule<<endl;
     cout<<"marque: ";
     out<<v.marque<<endl;
     try
     {cout<<"age: ";
-    out<<ag<<endl;
-    if(!isdigit(ag)) throw MyExceptions("erreur d'authentification");
-
+    out<<v.age<<endl;
+    if(!isdigit(v.age)) throw MyExceptions("erreur d'authentification");
     }catch(MyExceptions e)
     {
         cerr<<"erreeeeuur"<<e.what()<<endl;;
