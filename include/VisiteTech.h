@@ -7,8 +7,8 @@
 #include"CentreVT.h"
 #include"Test.h"
 
-
 using namespace std;
+class CentreVT;
 class Test;
 
 class VisiteTech
