@@ -40,7 +40,7 @@ cout << "Bienvenue Cher Client "<<getNomP()<<endl;
          cout << "1: Effectuer une reservation" <<endl;
          cout << "2: Annuler une reservation" <<endl;
          cout << "3: Consulter votre liste des reservations" <<endl;
-         cout << "4: Sortir" << endl;
+         cout << "4: Se deconnecter" << endl;
          cout<<"_________________________"<<endl;
          cin>>cl;
         if(!cin) throw runtime_error("Vous devez entrer un entier");
@@ -56,7 +56,6 @@ cout << "Bienvenue Cher Client "<<getNomP()<<endl;
         cerr<<e.what()<<endl;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        //cl=0;
     }
     }while(cl!=4);
 

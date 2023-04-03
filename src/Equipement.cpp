@@ -33,22 +33,22 @@ istream& operator>>(istream& in,Equipement* E)
 }
 istream& operator>>(istream& in,Equipement& E)
 {
-   // cout<<"quantite"<<endl;
+    cout<<"quantite"<<endl;
     in>>E.quantite;
-  //  cout<<"reference"<<endl;
+    cout<<"reference"<<endl;
     in.ignore();
     getline(in,E.rf,'\n');
- //   cout<<"libelle"<<endl;
+    cout<<"libelle"<<endl;
     getline(in,E.libelle,'\n');
     return in;
 }
 ostream& operator<<(ostream& out,const Equipement& E)
 {
-  //  out<<"quantite: ";
+    out<<"quantite: ";
     out<<E.quantite<<endl;
-   // out<<"reference: ";
+    out<<"reference: ";
     out<<E.rf<<endl;
-  //  out<<"libelle: ";
+    out<<"libelle: ";
     out<<E.libelle<<endl;
 
     return out;
@@ -62,9 +62,9 @@ void Equipement::ajouterEq(CentreVT& C)
         Equipement *E=new Equipement();
         cin>>*E;
         C.equipements.push_back(E);
-        cout<<"ajouter un equipement"<<endl;
+        cout<<"vous voulez ajouter un autre equipement(taper o pour oui)"<<endl;
         cin >> rep;
-      } while(rep=='o' || rep == 'O');
+      } while(rep =='o' || rep == 'O');
 
 }
 void Equipement::suppEq(string rf,CentreVT& C)
@@ -74,9 +74,11 @@ void Equipement::suppEq(string rf,CentreVT& C)
         if(rf==C.equipements[i]->rf)
         {
             C.equipements.erase(C.equipements.begin()+i);
-            break;
+            cout<<"suppression terminee"<<endl;
+            return;
         }
     }
+    cout<<"reference introuvable"<<endl;
 }
 void Equipement::modifierEq(string rf,CentreVT& C)
 {
@@ -95,10 +97,20 @@ void Equipement::modifierEq(string rf,CentreVT& C)
         }
         i+=1;
     }
-    if(trouver=false)
-        cout<<"equipement non trouve !"<<endl;
+    if(trouver==false)
+        cout<<"equipement introuvable !"<<endl;
+    else
+        cout<<"modification terminee"<<endl;
 
 }
+
+void Equipement::afficherEq(CentreVT& C)
+{
+    if(C.equipements.size()==0) cout<<"liste des equipements est vide"<<endl;
+    for(unsigned i=0;i<C.equipements.size();i++)
+        cout<<*C.equipements[i];
+}
+
 Equipement::~Equipement()
 {
     //dtor

@@ -22,6 +22,7 @@ class Equipement
         void ajouterEq(CentreVT& );
         void suppEq(string,CentreVT&);
         void modifierEq(string,CentreVT&);
+        void afficherEq(CentreVT&);
       //  string getref();
         virtual ~Equipement();
     friend class Agent;

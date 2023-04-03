@@ -7,6 +7,28 @@ Reservation::Reservation()
     nbInstance++;
     codeR=nbInstance;
 }
+
+Reservation::Reservation(const Reservation & r)
+{
+    codeR=r.codeR;
+    dateR=r.dateR;
+    heure=r.heure;
+    v=r.v;
+
+}
+Reservation& Reservation::operator=(const Reservation & r)
+{
+if(this!=&r)
+{
+delete[]r.v;
+codeR=r.codeR;
+dateR=r.dateR;
+heure=r.heure;
+}
+return *this;
+}
+
+
 ostream& operator<<(ostream& out, Reservation& r)
 {
     cout<<"code de Reservation: ";
