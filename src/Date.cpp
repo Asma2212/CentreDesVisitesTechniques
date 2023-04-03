@@ -42,9 +42,9 @@ ostream& operator<<(ostream& out,Date* D)
     out<<D->annee;
     return out;
 }
-bool operator==(Date& d1,Date& d2)
+bool operator==(const Date& d1,const Date& d2)
 {
-    if((d1.jour==d2.jour)&&(d1.mois==d2.mois)&&(d1.annee=d2.annee))
+    if((d1.jour==d2.jour)&&(d1.mois==d2.mois)&&(d1.annee==d2.annee))
         return true;
     return false;
 }

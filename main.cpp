@@ -36,11 +36,11 @@ int main()
         cout<<"_________________________"<<endl;
     cout<<"Tapez votre choix "<<endl;
     cin>>esp ;
-    }while(esp>4 && esp<0);
     // ******** ESPACE CLIENT ***********
     if(esp == 1){
 
          clt.menuClient(c);
+         esp=0;
 
     }
     // ******** ESPACE ADMIN ***********
@@ -48,7 +48,8 @@ int main()
         if(esp==2){
 
     }
-    else
+    else{}
 
+    }while(esp>4 || esp<1);
     return 0;
 }

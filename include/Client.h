@@ -6,6 +6,9 @@
 #include <Personne.h>
 #include"CentreVT.h"
 #include"Reservation.h"
+#include<cctype>
+#include<limits>
+#include"Date.h"
 using namespace std;
 
 
@@ -14,11 +17,11 @@ class Client : public Personne
     public:
         Client();
         virtual ~Client();
+        void menuClient(CentreVT);
         void sinscrire(CentreVT&);
         void effectuerRes();
         void consulterRes();
-        void menuClient(CentreVT);
-
+        void supprimerRes();
         Reservation & operator[](int);
         int getCin(){
         return this->cn ;

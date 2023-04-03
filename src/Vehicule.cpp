@@ -22,14 +22,8 @@ ostream& operator<<(ostream& out, Vehicule& v)
     out<<v.matricule<<endl;
     cout<<"marque: ";
     out<<v.marque<<endl;
-    try
-    {cout<<"age: ";
+    cout<<"age: ";
     out<<v.age<<endl;
-    if(!isdigit(v.age)) throw MyExceptions("erreur d'authentification");
-    }catch(MyExceptions e)
-    {
-        cerr<<"erreeeeuur"<<e.what()<<endl;;
-    }
     cout<<"Type de consommation : ";
     switch(v.typeCons){
     case Diesel : out<<"Diesel"<<endl;break;
@@ -49,8 +43,17 @@ istream& operator>>(istream& in, Vehicule& v)
     in>>v.matricule;
     cout<<"entrer votre marque"<<endl;
     in>>v.marque;
-    cout<<"entrer l'age du vehicule"<<endl;
+    while(1){
+    try
+    {cout<<"entrer l'age du vehicule"<<endl;
     in>>v.age;
+    if(!cin) throw std::runtime_error("erreur d'authentification");
+    break;
+    }catch(std::runtime_error& e)
+    {
+        cerr<<"erreeeeuur"<<e.what()<<endl;
+    }
+    }
     //cout<<"entrer le nombre des roues"<<endl;
     //in>>v.nbRoues;
     cout<<"entrer le type de consommation"<<endl;
@@ -72,7 +75,6 @@ istream& operator>>(istream& in, Vehicule& v)
 }
 ostream& operator<<(ostream& out, Vehicule* v)
 {
-    cout<<"veh out elli bl *"<<endl;
     out<<v->matricule;
     out<<v->marque;
     out<<v->age;

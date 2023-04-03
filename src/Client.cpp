@@ -6,7 +6,6 @@ Client::Client()
 }
 void Client::menuClient(CentreVT cvt){
     int cl,c;
-    Reservation r;
         cout<<"\n********Espace Client*******\n"<<endl;
   /*      do{
         cout<<"1: S'authentifier "<<endl;
@@ -33,19 +32,34 @@ cout << "Bienvenue Cher Client "<<getNomP()<<endl;
 //recuperer();
 //consulterRes();
 //cout<<*this;
-         do{
+    //do{
+    do{
+    try
+    {
         cout<<"_________________________"<<endl;
-         cout << "1: effectuer une reservation" <<endl;
-         cout << "2: consulter votre liste des reservations" <<endl;
-         cout << "3: sortir" << endl;
+         cout << "1: Effectuer une reservation" <<endl;
+         cout << "2: Annuler une reservation" <<endl;
+         cout << "3: Consulter votre liste des reservations" <<endl;
+         cout << "4: Sortir" << endl;
          cout<<"_________________________"<<endl;
          cin>>cl;
-         switch(cl)
+        if(!cin) throw runtime_error("Vous devez entrer un entier");
+                 switch(cl)
          {
              case 1 : effectuerRes();break;
-             case 2 : consulterRes();break;
+             case 2 : supprimerRes();break;
+             case 3 : consulterRes();break;
          }
-         }while(cl!=3);
+
+    }catch(runtime_error& e)
+    {
+        cerr<<e.what()<<endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        //cl=0;
+    }
+    }while(cl!=4);
+
 }
 void Client::sinscrire(CentreVT& c)
 {
@@ -54,11 +68,12 @@ void Client::sinscrire(CentreVT& c)
         cout<<"compte creer avec succees"<<endl;
 }
 
+//******************** AFFICHER LES RESERVATIONS *************************** //
+
 void Client::consulterRes(){
     int i;
-    Reservation r;
     cout<<"la liste des reservations"<<endl;
-    cout<<"vous avez au total "<<listRes.size()<< "reservation(s)"<<endl;
+    cout<<"vous avez au total "<<listRes.size()<< " reservation(s)"<<endl;
 for(unsigned int i=0;i<listRes.size();i++)
 {
     cout<<"------- RESERVATION NUM"<<i+1<<" -------"<<endl;
@@ -66,6 +81,8 @@ for(unsigned int i=0;i<listRes.size();i++)
 }
 
 }
+
+//******************** EFFECTUER UNE RESERVATION *************************** //
 
 void Client::effectuerRes(){
     Reservation r ;
@@ -81,13 +98,36 @@ void Client::effectuerRes(){
     listRes.push_back(r);
     //enregistrer(r);
 }
+
+//******************** SUPPRIMER UNE RESERVATION *************************** //
+
+void Client::supprimerRes()
+{
+    int cd;
+    cout<<"Entrer le code du reservation a supprimer"<<endl;
+    cin>>cd;
+    for(unsigned int i=0;i< listRes.size();i++)
+    {
+        if(listRes[i].getCodeR()==cd)
+        {
+            listRes.erase(listRes.begin()+i);
+            cout<<"suppression effectuer avec sucees"<<endl;
+            return;
+        }
+
+    }
+    cout<<"code introuvable"<<endl;
+
+}
+
+
 bool Client::existDate(Date d,int h)
 {
     for(unsigned int i=0;i< listRes.size();i++)
-        if((listRes[i].getDate().jour == d.jour )&&(listRes[i].getHeure()==h))//TESTER DATE ET HEURE,
+        if((listRes[i].getDate() == d )&&(listRes[i].getHeure()==h))//TESTER DATE ET HEURE,
         {
           cout<<"date indisponible"<<endl;
-          cout<<"on a une autre réservation la meme date a "<<listRes[i].getHeure()<<endl;
+          cout<<"on a une autre réservation la meme date a "<<listRes[i].getHeure()<<" H"<<endl;
           return true;
         }else
         {
@@ -97,6 +137,9 @@ bool Client::existDate(Date d,int h)
         }
 
 }
+
+
+//******************** FICHIER *************************** //
 
 void Client::enregistrer(Reservation r)
 {
@@ -128,6 +171,8 @@ void Client::recuperer()
  //}
 Fichier.close() ;
 }
+
+//******************** SURCHARGE DES OPERATEURS *************************** //
 
 ostream& operator<<(ostream& out, Client& c)
 {

@@ -10,7 +10,8 @@ using namespace std;
 
 class Reservation
 {
-    int codeR=0;
+    static int nbInstance;
+    int codeR;
     Date dateR;
     int heure;
     float paiement;
@@ -27,6 +28,7 @@ class Reservation
         void setVehicule(Vehicule&);
         Date getDate(){return dateR;}
         int getHeure(){return heure;}
+        int getCodeR(){return codeR;}
         virtual ~Reservation(){}
 
     protected:

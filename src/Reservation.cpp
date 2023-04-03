@@ -1,17 +1,20 @@
 #include "Reservation.h"
 
+int Reservation::nbInstance = 0;
+
 Reservation::Reservation()
 {
-    this->codeR++ ;
+    nbInstance++;
+    codeR=nbInstance;
 }
 ostream& operator<<(ostream& out, Reservation& r)
 {
     cout<<"code de Reservation: ";
-    out<<r.codeR;
+    out<<r.codeR<<endl;
     cout<<"date de Reservation: ";
     out<<r.dateR;
     cout<<"heure : ";
-    out<<r.heure;
+    out<<r.heure<<endl;
     cout<<"vehicule : ";
     if(typeid(*r.v) == typeid(Camion))
         {
@@ -74,7 +77,6 @@ void Reservation::saisieRes(){
 
 ostream& operator<<(ostream& out, Reservation* r)
 {
-    cout<<"res out elli bl *"<<endl;
     out<<r->dateR;
     out<<r->heure;
     out<<*r->v;
@@ -84,7 +86,6 @@ ostream& operator<<(ostream& out, Reservation* r)
 istream& operator>>(istream& in, Reservation* r)
 {
     Vehicule *v1 = new Vehicule();
-    cout<<"res elli bl *"<<endl;
     //in.getline(r->dateR, 100, '\n');
     in>>r->dateR;
     //cout<<"date"<<r->dateR;
@@ -97,7 +98,6 @@ istream& operator>>(istream& in, Reservation* r)
 istream& operator>>(istream& in, Reservation& r)
 {
    int type,e;
-   cout<<"res elli bl &"<<endl;
     do{
     cout<<"Date de reservation"<<endl;
     in>>r.dateR;

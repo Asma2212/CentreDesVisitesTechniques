@@ -1,11 +1,10 @@
+#ifndef DATE_H
+#define DATE_H
 #include <iostream>
 #include <fstream>
 #include <time.h>
 #include<string>
 using namespace std;
-#ifndef DATE_H
-#define DATE_H
-
 
 class Date
 {
@@ -22,7 +21,7 @@ class Date
         friend ostream& operator<<(ostream& out,Date& D);
         friend istream& operator>>(istream& in,Date* D);
         friend ostream& operator<<(ostream& out,Date* D);
-        friend bool operator==(Date&,Date&);
+        friend bool operator==(const Date&,const Date&);
         Date dateCourante();
         bool verifDate(Date);
         virtual ~Date();
