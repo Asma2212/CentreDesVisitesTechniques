@@ -41,7 +41,7 @@ Equipement& Agent::rechEq(string rf, CentreVT& C)
     }
     if(trouver==false)
     {
-        cout<<"equipement non trouve !"<<endl;
+        cout<<"equipement introuvable !"<<endl;
         return E;
     }
 }

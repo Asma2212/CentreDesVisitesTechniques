@@ -37,7 +37,7 @@ ostream& operator<<(ostream& out, Reservation& r)
     out<<r.dateR;
     cout<<"heure : ";
     out<<r.heure<<endl;
-    cout<<"vehicule : ";
+   /* cout<<"vehicule : ";
     if(typeid(*r.v) == typeid(Camion))
         {
             r.v=new Camion(static_cast<const Camion&>(*r.v));
@@ -50,7 +50,7 @@ ostream& operator<<(ostream& out, Reservation& r)
            }
 
         else
-            cout<<"VOITURE"<<endl;
+            cout<<"VOITURE"<<endl;*/
     //out<<*r.v;
     r.v->affiche();
     return out;
@@ -198,5 +198,3 @@ void Reservation::setVehicule(Vehicule& v1){
         else
             v=new Voiture(static_cast<const Voiture&>(v1));
 }
-
-

@@ -19,7 +19,7 @@ int main()
     Equipement e;
     CentreVT c,C1;
     string rf;
-
+/*
     fstream f;
     Equipement E;
     E.ajouterEq(C);
@@ -28,7 +28,7 @@ int main()
     f.seekg(0);
     f>>&C1;
     cout<<C1;
-    f.close();
+    f.close();*/
 
             do{
         cout<<"_________________________"<<endl;
@@ -49,7 +49,33 @@ int main()
     else
         if(esp==2){
 
+               do{
+             try
+            {
+        cout<<"_________________________"<<endl;
+         cout << "1: rechercher un equipement" <<endl;
+         cout <<"2: Consulter la liste des equipements" <<endl;
+         cout << "3: Se deconnecter" << endl;
+         cout<<"_________________________"<<endl;
+         cin>>ad;
+         if(!cin) throw runtime_error("Vous devez entrer un entier");
+                 switch(ad)
+         {
+             case 1:
+                 cout<<"entrer la reference de l'equipement a modifier"<<endl;
+                 cin>>rf;
+                 ag.rechEq(rf,c);break;
+             case 2 : ag.ConsulterEq(c) ;break;
+         }
+         }catch(runtime_error& e)
+        {
+        cerr<<e.what()<<endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
 
+    }while(ad!=3);
+    esp=0;
 
     }
     else{
@@ -69,7 +95,7 @@ int main()
          {
              case 1 : e.ajouterEq(c);break;
              case 2 :
-                 cout<<"entrer la refernce de l'equipement a modifier"<<endl;
+                 cout<<"entrer la reference de l'equipement a modifier"<<endl;
                  cin>>rf;
                  e.modifierEq(rf,c);break;
              case 3 :

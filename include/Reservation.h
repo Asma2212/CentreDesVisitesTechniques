@@ -20,9 +20,6 @@ class Reservation
     bool payee = false ;
     public:
         Reservation();
-        Reservation(const Reservation &);
-        Reservation & operator=(const Reservation &);
-        virtual ~Reservation(){ delete v;}
         friend ostream& operator<<(ostream&, Reservation&);
         friend istream& operator>>(istream&, Reservation&);
         friend istream& operator>>(istream&, Reservation*);
@@ -33,6 +30,10 @@ class Reservation
         Date getDate(){return dateR;}
         int getHeure(){return heure;}
         int getCodeR(){return codeR;}
+        Reservation(const Reservation &);
+        Reservation & operator=(const Reservation &);
+
+        //virtual ~Reservation(){ delete []v;}
 
     protected:
 

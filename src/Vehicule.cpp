@@ -43,17 +43,8 @@ istream& operator>>(istream& in, Vehicule& v)
     in>>v.matricule;
     cout<<"entrer votre marque"<<endl;
     in>>v.marque;
-    while(1){
-    try
-    {cout<<"entrer l'age du vehicule"<<endl;
+    cout<<"entrer l'age du vehicule"<<endl;
     in>>v.age;
-    if(!cin) throw std::runtime_error("erreur d'authentification");
-    break;
-    }catch(std::runtime_error& e)
-    {
-        cerr<<"erreeeeuur"<<e.what()<<endl;
-    }
-    }
     //cout<<"entrer le nombre des roues"<<endl;
     //in>>v.nbRoues;
     cout<<"entrer le type de consommation"<<endl;

@@ -7,7 +7,7 @@ Client::Client()
 void Client::menuClient(CentreVT cvt){
     int cl,c;
         cout<<"\n********Espace Client*******\n"<<endl;
-  /*      do{
+/*        do{
         cout<<"1: S'authentifier "<<endl;
         cout<<"2: Creer un compte"<<endl;
     cout<<"Tapez votre choix "<<endl;
@@ -141,7 +141,7 @@ bool Client::existDate(Date d,int h)
 
 
 //******************** FICHIER *************************** //
-
+/*
 void Client::enregistrer(Reservation r)
 {
  ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
@@ -151,6 +151,7 @@ void Client::enregistrer(Reservation r)
  }
 Fichier.close();
 }
+
 void Client::recuperer()
 {
  ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
@@ -171,7 +172,7 @@ void Client::recuperer()
  //}
 Fichier.close() ;
 }
-
+*/
 //******************** SURCHARGE DES OPERATEURS *************************** //
 
 ostream& operator<<(ostream& out, Client& c)

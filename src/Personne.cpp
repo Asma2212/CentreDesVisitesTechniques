@@ -26,10 +26,10 @@ istream& operator>>(istream& in, Personne& P)
     in.ignore(); //check
     getline(in,P.nom,'\n');
     getline(in,P.prenom,'\n');
-    cout<<"numero de telephone"<<endl;
+   /* cout<<"numero de telephone"<<endl;
     in>>P.numTel;
     cout<<"date de naissance"<<endl;
-    in>>P.dateNaiss;
+    in>>P.dateNaiss;*/
     cout<<"email"<<endl;
     in.ignore();
     getline(in,P.email,'\n');
