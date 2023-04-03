@@ -104,9 +104,11 @@ void Client::effectuerRes(){
 void Client::supprimerRes()
 {
     int cd;
+    if(listRes.size()==0) cout<<"vous n'avez pas des reservations"<<endl;
+    else{
     cout<<"Entrer le code du reservation a supprimer"<<endl;
     cin>>cd;
-    for(unsigned int i=0;i< listRes.size();i++)
+    for(unsigned int i=0;i<listRes.size();i++)
     {
         if(listRes[i].getCodeR()==cd)
         {
@@ -117,7 +119,7 @@ void Client::supprimerRes()
 
     }
     cout<<"code introuvable"<<endl;
-
+    }
 }
 
 

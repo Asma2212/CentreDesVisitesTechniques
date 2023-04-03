@@ -11,7 +11,7 @@ ostream& operator<<(ostream& out, VisiteTech& V)
     out<<"table des visites ";
     for(unsigned i=0;i<V.tests.size();i++)
           out<<V.tests[i]<<'\t';
-          return out
+          return out;
 }
 istream& operator>>(istream& in, VisiteTech& V)
 {
