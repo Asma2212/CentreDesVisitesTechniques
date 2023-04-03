@@ -20,7 +20,7 @@ int main()
     CentreVT c,C1;
     string rf;
 
-   /* fstream f;
+    fstream f;
     Equipement E;
     E.ajouterEq(C);
     CentreVT::creer(f);
@@ -28,7 +28,7 @@ int main()
     f.seekg(0);
     f>>&C1;
     cout<<C1;
-    f.close();*/
+    f.close();
 
             do{
         cout<<"_________________________"<<endl;
