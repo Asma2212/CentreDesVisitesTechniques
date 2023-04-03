@@ -9,6 +9,7 @@ using namespace std;
 class Equipement;
 class Personne;
 class Agent;
+class VisiteTech;
 class CentreVT
 {
     string nom="Centre Abir et Asma";
@@ -27,6 +28,7 @@ class CentreVT
     friend class Personne;
     friend class Agent;
     friend class Client;
+    friend class VisiteTech;
 
 };
 
