@@ -11,6 +11,14 @@ istream& operator>>(istream& in,Agent& A)
     in>>*P;
     cout<<"poste :";
     getline(in,A.poste);
+    cout<<"remplir la table des visites"<<endl;
+    char rep;
+    do{VisiteTech *V=new VisiteTech();
+        in>>*V;
+        A.listVisites.push_back(V);
+        cout<<"ajouter une visite "<<endl;
+        cin >> rep;
+      } while(rep=='o' || rep == 'O');
 }
 //ostream& operator<<(ostream&, Agent&);
 void Agent::ConsulterEq(CentreVT& C)

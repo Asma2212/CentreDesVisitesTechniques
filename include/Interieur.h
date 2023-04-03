@@ -9,10 +9,6 @@ class Interieur : public Test
     public:
         Interieur();
         virtual ~Interieur();
-
-    protected:
-
-    private:
 };
 
 #endif // INTERIEUR_H

@@ -16,9 +16,7 @@ class Exterieur : public Test
         bool testCarrosserie(Vehicule*);
         bool testFeux(Vehicule*);
         bool testRoues(Vehicule*);
-    protected:
 
-    private:
 };
 
 #endif // EXTERIEUR_H

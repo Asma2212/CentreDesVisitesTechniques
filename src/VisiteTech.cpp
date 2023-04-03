@@ -18,13 +18,13 @@ istream& operator>>(istream& in, VisiteTech& V)
     cout<<"code"<<endl;
     in>>V.codeV;
     char rep;
-    cout<<"remplir le tableau tests"<<endl;
+   /* cout<<"remplir le tableau tests"<<endl;
     do{Test *T=new Test();
         in>>*T;
         V.tests.push_back(T);
         cout<<"ajouter un test "<<endl;
         cin >> rep;
-      } while(rep=='o' || rep == 'O');
+      } while(rep=='o' || rep == 'O');*/
 
 }
 void VisiteTech::modifierVisite(CentreVT C,string code)

@@ -9,10 +9,10 @@ using namespace std;
 
 class Test
 {
-    bool etat;
+    bool etatInt;
+    bool etatExt;
     public:
         Test();
-        friend istream& operator>>(istream& in, Test& T);
         friend ostream& operator<<(ostream& out, Test& T);
         virtual ~Test();
 };
