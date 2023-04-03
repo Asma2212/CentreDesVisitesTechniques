@@ -147,10 +147,9 @@ void Client::enregistrer(Reservation r)
  ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
  if (!Fichier) cout<<"Erreur Fichier";
  for(unsigned int i=0;i< listRes.size();i++){
- Fichier <<&listRes[i];
-
+ Fichier<<&listRes[i];
  }
-Fichier.close() ;
+Fichier.close();
 }
 void Client::recuperer()
 {

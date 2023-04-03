@@ -6,6 +6,7 @@
 #include"Moto.h"
 #include"Voiture.h"
 #include"Camion.h"
+#include<limits>
 using namespace std;
 
 class Reservation

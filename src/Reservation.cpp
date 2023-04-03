@@ -99,21 +99,44 @@ void Reservation::saisieRes(){
 
 ostream& operator<<(ostream& out, Reservation* r)
 {
+    //enregistrer dans fichier
+      out<<"code de Reservation: ";
+    out<<r->codeR<<endl;
+    out<<"date de Reservation: ";
     out<<r->dateR;
-    out<<r->heure;
-    out<<*r->v;
+    out<<"heure : ";
+    out<<r->heure<<endl;
+    out<<"vehicule : ";
+    if(typeid(*r->v) == typeid(Camion))
+        {
+            r->v=new Camion(static_cast<const Camion&>(*r->v));
+            out<<"CAMION"<<endl;
+        }
+    else
+        if(typeid(*r->v) == typeid(Moto))
+           {
+             out<<"MOTO"<<endl;
+           }
+
+        else
+            out<<"VOITURE"<<endl;
+   /* out<<r->dateR;
+    out<<r->heure<<endl;*/
+
+    out<<r->v;
+
     return out;
 }
 
 istream& operator>>(istream& in, Reservation* r)
 {
+
     Vehicule *v1 = new Vehicule();
-    //in.getline(r->dateR, 100, '\n');
     in>>r->dateR;
     //cout<<"date"<<r->dateR;
     in>>r->heure;
         cout<<"heure"<<r->heure;
-    in>>v1;
+    in>>*v1;
     r->v=v1;
     return in;
 }
