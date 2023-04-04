@@ -29,7 +29,7 @@ void Client::menuClient(CentreVT cvt){
         }
     }while(this);*/
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
-//recuperer();
+recuperer();
 //consulterRes();
 //cout<<*this;
     //do{
@@ -95,7 +95,7 @@ void Client::effectuerRes(){
             cerr<<"ERREUR: "<<e.what()<<endl;
     }
     listRes.push_back(r);
-    //enregistrer(r);
+    enregistrer(r);
 }
 
 //******************** SUPPRIMER UNE RESERVATION *************************** //
@@ -141,14 +141,12 @@ bool Client::existDate(Date d,int h)
 
 
 //******************** FICHIER *************************** //
-/*
+
 void Client::enregistrer(Reservation r)
 {
- ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
+ ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::app);
  if (!Fichier) cout<<"Erreur Fichier";
- for(unsigned int i=0;i< listRes.size();i++){
- Fichier<<&listRes[i];
- }
+ Fichier<<&r;
 Fichier.close();
 }
 
@@ -156,23 +154,19 @@ void Client::recuperer()
 {
  ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
  if (!Fichier) cout<<"Le fichier n'existe pas il sera cree lors de l'enregistrement";
- Reservation r;
+
  //while(!Fichier.eof())
  //{
-     try{
+ Reservation r;
    Fichier>>&r;
 //Fichier>>ws;
-   r.getDate().affiche();
+//r.getDate().affiche();
  listRes.push_back(r);
- }catch(exception const &e)
- {
-     cerr<<"exceeption"<<e.what()<<endl;
- }
 
- //}
+//}
 Fichier.close() ;
 }
-*/
+
 //******************** SURCHARGE DES OPERATEURS *************************** //
 
 ostream& operator<<(ostream& out, Client& c)
