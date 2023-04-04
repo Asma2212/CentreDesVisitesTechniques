@@ -18,6 +18,8 @@ class Agent : public Personne
         Agent();
         bool validerEtatVisite(VisiteTech);
         void EnregistreVisite(VisiteTech);
+        void authentifier(CentreVT&);
+        void sinscrire(CentreVT&);
         void ConsulterEq(CentreVT&);
         Equipement& rechEq(string,CentreVT&);
         friend istream& operator>>(istream& ,Agent&);

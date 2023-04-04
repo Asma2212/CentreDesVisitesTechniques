@@ -21,6 +21,59 @@ istream& operator>>(istream& in,Agent& A)
       } while(rep=='o' || rep == 'O');
 }
 //ostream& operator<<(ostream&, Agent&);
+void Agent::sinscrire(CentreVT& C)
+{
+   char rep;
+    do{
+        Agent *A=new Agent();
+        cin>>*A;
+        C.personnes.push_back(A);
+        cout<<"ajouter un agent"<<endl;
+        cin >> rep;
+      } while(rep=='o' || rep == 'O');
+}
+void Agent::authentifier(CentreVT& C)
+{
+    string mdp;
+    Agent A;
+    int cn;
+    char choix;
+    bool cnCorr= false;
+    bool auth=false;
+    while(!auth)
+    {
+        cout<<"entrez votre cin"<<endl;
+        cin>>cn;
+        cout<<"entrez votre mot de passe "<<endl;
+        cin>>mdp;
+        for(unsigned i=0;i<C.personnes.size();i++)
+        {
+            cnCorr=true;
+            if(cn==C.personnes[i]->cn)
+            {
+                if(mdp.compare(C.personnes[i]->mdp)==0)
+                {
+                    cout<<"vous etes connecte avec succes "<<endl;
+                    auth=true;
+                    break;
+                }
+                else
+                {
+                    cout<<"mot de passe incorrect !"<<endl;
+                    break;
+                }
+            }
+        }
+        if(!cnCorr){
+            cout<<"cn introuvable !"<<endl;
+            cout<<"Taper 'r' pour retourner et 'c' pour continuer"<<endl;
+            cin>>choix;
+            if((choix == 'r' )|| (choix == 'R'))
+                throw MyExceptions("erreur d'authentification");
+        }
+
+    }
+}
 void Agent::ConsulterEq(CentreVT& C)
 {
     for(unsigned i=0;i<C.equipements.size();i++)

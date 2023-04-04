@@ -10,7 +10,7 @@ using namespace std;
 
 class Personne
 {
-    protected :
+    protected:
     int cn;
     string nom;
     string prenom;
@@ -20,9 +20,9 @@ class Personne
     string mdp;
     public:
         Personne(){};
-        void inscrire(CentreVT&);
-        void authentifier(CentreVT&);
-        void modifierD(CentreVT&);
+        virtual void sinscrire(CentreVT&);
+        virtual void authentifier(CentreVT&);
+        virtual void modifierD(CentreVT&);
         friend ostream& operator<<(ostream& out, Personne& P);
         friend istream& operator>>(istream& in, Personne& P);
         virtual ~Personne();
