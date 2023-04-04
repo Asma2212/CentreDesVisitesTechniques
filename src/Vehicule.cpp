@@ -66,20 +66,20 @@ istream& operator>>(istream& in, Vehicule& v)
 }
 ostream& operator<<(ostream& out, Vehicule* v)
 {
-    out<<"matricule: ";
+    //out<<"matricule: ";
     out<<v->matricule<<endl;
-    out<<"marque: ";
+    //out<<"marque: ";
     out<<v->marque<<endl;
-    out<<"age: ";
+    //out<<"age: ";
     out<<v->age<<endl;
-    out<<"Type de consommation : ";
+    /*out<<"Type de consommation : ";
     switch(v->typeCons){
     case Diesel : out<<"Diesel"<<endl;break;
     case Electrique : out<<"Electrique"<<endl;break;
     case Essence : out<<"Essence"<<endl;break;
     case Hybride : out<<"Hybride"<<endl;break;
     }
-    out<<"Tarif: ";
+    out<<"Tarif: ";*/
     out<<v->tarif<<endl;
 /*
     out<<v->matricule<<endl;
@@ -97,15 +97,11 @@ ostream& operator<<(ostream& out, Vehicule* v)
 }
 istream& operator>>(istream& in, Vehicule* v)
 {
-    string msg;
     in>>v->matricule;
-    cout<<"mat"<<v->matricule;
     in>>v->marque;
-    cout<<"marque"<<v->marque;
     in>>v->age;
-    cout<<"age"<<v->age;
-   // in>>v->nbRoues;
-   // cout<<"nbRoures"<<v->nbRoues;
+    //in>>v->nbRoues;
+   //cout<<"nbRoures"<<v->nbRoues;
 
 
     return in;
