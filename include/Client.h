@@ -19,6 +19,8 @@ class Client : public Personne
         virtual ~Client();
         void menuClient(CentreVT);
         void sinscrire(CentreVT&);
+        void authentifier(CentreVT&);
+        void modifierD(CentreVT&);
         void effectuerRes();
         void consulterRes();
         void supprimerRes();

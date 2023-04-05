@@ -49,9 +49,9 @@ void Agent::authentifier(CentreVT& C)
         for(unsigned i=0;i<C.personnes.size();i++)
         {
             cnCorr=true;
-            if(cn==C.personnes[i]->cn)
+            if(cn==C.personnes[i]->getcn())
             {
-                if(mdp.compare(C.personnes[i]->mdp)==0)
+                if(mdp.compare(C.personnes[i]->getmdp())==0)
                 {
                     cout<<"vous etes connecte avec succes "<<endl;
                     auth=true;
@@ -97,6 +97,26 @@ Equipement& Agent::rechEq(string rf, CentreVT& C)
         cout<<"equipement introuvable !"<<endl;
         return E;
     }
+}
+void Agent::modifierD(CentreVT& C)
+{
+    int i=0;
+    bool trouver=false;
+    cout<<"entrez le cin de la personne a modifier "<<endl;
+    cin>>this->cn;
+    while(i<C.personnes.size()) //modifier la condition de while.
+    {
+        if(this->cn==C.personnes[i]->getcn())
+        {
+            cin>>*C.personnes[i];
+            trouver=true;
+            break;
+        }
+        i+=1;
+    }
+    if(trouver=false)
+        cout<<"personne non trouve !"<<endl;
+
 }
 Agent::~Agent()
 {

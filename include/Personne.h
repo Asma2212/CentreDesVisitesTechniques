@@ -19,10 +19,13 @@ class Personne
     string email;
     string mdp;
     public:
-        Personne(){};
-        virtual void sinscrire(CentreVT&);
-        virtual void authentifier(CentreVT&);
-        virtual void modifierD(CentreVT&);
+        Personne();
+        virtual void sinscrire(CentreVT&)=0;
+        virtual void authentifier(CentreVT&)=0;
+        virtual void modifierD(CentreVT&)=0;
+        int getcn(){return cn;};
+        string getmdp(){return mdp;};
+        string getEmail(){return email;};
         friend ostream& operator<<(ostream& out, Personne& P);
         friend istream& operator>>(istream& in, Personne& P);
         virtual ~Personne();

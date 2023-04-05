@@ -1,6 +1,6 @@
 #include "Personne.h"
 #include"CentreVT.h"
-
+Personne::Personne(){};
 ostream& operator<<(ostream& out, Personne& P)
 {
     cout<<"cin: ";
@@ -39,26 +39,7 @@ istream& operator>>(istream& in, Personne& P)
 
 }
 
-void Personne::modifierD(CentreVT& C)
-{
-    int i=0;
-    bool trouver=false;
-    cout<<"entrez le cin de la personne a modifier "<<endl;
-    cin>>this->cn;
-    while(i<C.personnes.size()) //modifier la condition de while.
-    {
-        if(this->cn==C.personnes[i]->cn)
-        {
-            cin>>*C.personnes[i];
-            trouver=true;
-            break;
-        }
-        i+=1;
-    }
-    if(trouver=false)
-        cout<<"personne non trouve !"<<endl;
 
-}
 Personne::~Personne()
 {
     //dtor
