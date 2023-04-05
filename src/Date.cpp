@@ -37,7 +37,6 @@ istream& operator>>(istream& in,Date* D)
 }
 ostream& operator<<(ostream& out,Date* D)
 {
-    cout<<"HNEEE"<<endl;
     out<<D->jour<<endl;
     out<<D->mois<<endl;
     out<<D->annee<<endl;

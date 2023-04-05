@@ -35,6 +35,8 @@ class Client : public Personne
         void ajouterRes(Reservation&);
         void enregistrer(Reservation);
         void recuperer();
+        void creer(fstream &);
+        void reload();
         friend ostream& operator<<(ostream&, Client&);
         friend istream& operator>>(istream&, Client&);
     protected:

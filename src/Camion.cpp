@@ -20,6 +20,7 @@ void Camion::saisie(){
 }
 ostream& operator<<(ostream& out, Camion& c)
 {
+cout<<"ouuh ouuhh";
 out<<c;
 cout<<"charge: ";
 out<<c.charge<<endl ;
@@ -27,11 +28,6 @@ return out;
 }
 istream& operator>>(istream& in, Camion& c)
 {
-/*Vehicule *v;
-v= new Camion(static_cast<const Camion&>(c));
-cin>>*v;
-cout<<v;
-c = (Camion)v ;*/
 in>>c;
 c.nbRoues=4;
 cout<<"entrer la charge du camion"<<endl;
@@ -39,6 +35,24 @@ in>>c.charge;
 c.tarif=50;
 //c.charge=11.3;
 return in;
+}
+
+ostream& operator<<(ostream& out, Camion* c)
+{
+    Vehicule *v =c;
+    out<<v;
+   // out<<c->charge;
+   // out<<c->nbRouesSupp;
+
+    return out;
+}
+istream& operator>>(istream& in, Camion* c)
+{
+     Vehicule *v=c;
+    in>>v;
+   // in>>c->charge;
+   // in>>c->nbRouesSupp;
+    return in;
 }
 Camion::~Camion()
 {

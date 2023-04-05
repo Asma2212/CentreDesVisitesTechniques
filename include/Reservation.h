@@ -7,6 +7,8 @@
 #include"Voiture.h"
 #include"Camion.h"
 #include<limits>
+#include<iomanip>
+#include <string.h>
 using namespace std;
 
 class Reservation

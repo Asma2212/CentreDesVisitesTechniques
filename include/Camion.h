@@ -18,6 +18,8 @@ class Camion : public Vehicule
         void saisie();
         friend ostream& operator<<(ostream&, Camion&);
         friend istream& operator>>(istream&, Camion&);
+        friend ostream& operator<<(ostream&, Camion*);
+        friend istream& operator>>(istream&, Camion*);
         float getCharge(){return charge;}
 
     protected:

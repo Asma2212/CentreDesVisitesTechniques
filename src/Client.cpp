@@ -168,11 +168,12 @@ void Client::supprimerRes()
     else{
     cout<<"Entrer le code du reservation a supprimer"<<endl;
     cin>>cd;
-    for(unsigned int i=0;i<listRes.size();i++)
+    for(int i=0;i<listRes.size();i++)
     {
         if(listRes[i].getCodeR()==cd)
         {
             listRes.erase(listRes.begin()+i);
+            reload();
             cout<<"suppression effectuer avec sucees"<<endl;
             return;
         }
@@ -203,6 +204,13 @@ bool Client::existDate(Date d,int h)
 
 //******************** FICHIER *************************** //
 
+void Client::creer(fstream &f)
+{
+ f.open("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::in | ios::out | ios::trunc);
+ if (!f) cout<<"Erreur Fichier";
+}
+
+
 void Client::enregistrer(Reservation r)
 {
  ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::app);
@@ -213,19 +221,31 @@ Fichier.close();
 
 void Client::recuperer()
 {
- ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt");
- if (!Fichier) cout<<"Le fichier n'existe pas il sera cree lors de l'enregistrement";
+ ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::app);
+ if (!Fichier) cout<<"Le fichier n'existe pas ";
 
- //while(!Fichier.eof())
- //{
+ while(1)
+ {
  Reservation r;
    Fichier>>&r;
+   if(Fichier.eof()) break;
 //Fichier>>ws;
 //r.getDate().affiche();
  listRes.push_back(r);
-
-//}
+}
 Fichier.close() ;
+}
+void Client::reload()
+{
+fstream f;
+ creer(f);
+ f.clear();
+
+for(unsigned int i=0;i<listRes.size();i++)
+ {
+   f<<&listRes[i];
+}
+f.close() ;
 }
 
 //******************** SURCHARGE DES OPERATEURS *************************** //

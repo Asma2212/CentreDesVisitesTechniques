@@ -4,6 +4,7 @@
 #include "TypeConsommation.h"
 #include"string"
 #include "MyExceptions.h"
+#include<iomanip>
 using namespace std;
 
 class Vehicule

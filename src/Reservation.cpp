@@ -100,11 +100,9 @@ void Reservation::saisieRes(){
 ostream& operator<<(ostream& out, Reservation* r)
 {
     //enregistrer dans fichier
-     // out<<"code de Reservation: ";
-    //out<<r->codeR<<endl;
-    //out<<"date de Reservation: ";
+
+    out<<r->codeR<<endl;
     out<<&r->dateR;
-   // out<<"heure : ";
     out<<r->heure<<endl;
    /* out<<"vehicule : ";
     if(typeid(*r->v) == typeid(Camion))
@@ -122,22 +120,65 @@ ostream& operator<<(ostream& out, Reservation* r)
             out<<"VOITURE"<<endl;*/
    /* out<<r->dateR;
     out<<r->heure<<endl;*/
+if(typeid(*r->v)==typeid(Camion))
+{
+    out<<"Camion"<<endl;
+    out<<new Camion(static_cast<Camion&>(*r->v))<<endl;
+}
+else
+    if(typeid(*r->v)==typeid(Moto))
+    {
+        out<<"Moto"<<endl;;
+        out<<new Moto(static_cast<Moto&>(*r->v))<<endl;
+    }
 
-    out<<r->v;
+    else
+    {
+        out<<"Voiture"<<endl;
+        out<<new Voiture(static_cast<Voiture&>(*r->v))<<endl;
+    }
+
 
     return out;
 }
 
 istream& operator>>(istream& in, Reservation* r)
 {
-
-    Vehicule *v1 = new Vehicule();
-   // in.getline();
+    string ch;
+    int i;
+    Vehicule *v1 = new Vehicule() ;
+   in>>r->codeR;
     in>>r->dateR;
     //cout<<"date"<<r->dateR;
     in>>r->heure;
+    in>>ch;
+   // in>>v1;
+ /*      if(ch=="Camion")
+{
+    cout<<"dkhaal affiche";
+    v1=new Camion(static_cast<Camion&>(*r->v));
+    in>>v1;
+    v1->affiche();
+}
+
+/*else
+    if(typeid(*r->v)==typeid(Moto))
+        {
+        v1=new Moto(static_cast<Moto&>(*r->v));
+        in>>v1;
+        }
+    else
+    {
+
+        v1=new Voiture(static_cast<Voiture&>(*r->v));
+        in>>v1;
+    }*/
+   //
+    //
+
     in>>v1;
     r->v=v1;
+
     return in;
 }
 istream& operator>>(istream& in, Reservation& r)

@@ -66,20 +66,20 @@ istream& operator>>(istream& in, Vehicule& v)
 }
 ostream& operator<<(ostream& out, Vehicule* v)
 {
-    //out<<"matricule: ";
     out<<v->matricule<<endl;
-    //out<<"marque: ";
     out<<v->marque<<endl;
-    //out<<"age: ";
     out<<v->age<<endl;
-    /*out<<"Type de consommation : ";
-    switch(v->typeCons){
-    case Diesel : out<<"Diesel"<<endl;break;
-    case Electrique : out<<"Electrique"<<endl;break;
-    case Essence : out<<"Essence"<<endl;break;
-    case Hybride : out<<"Hybride"<<endl;break;
-    }
-    out<<"Tarif: ";*/
+    if(v->typeCons == Diesel )
+        out<<"Diesel"<<endl;
+    else
+        if(v->typeCons==Electrique)
+            out<<"Electrique"<<endl;
+        else
+            if(v->typeCons==Essence)
+                out<<"Essence"<<endl;
+            else
+                out<<"Hybride"<<endl;
+
     out<<v->tarif<<endl;
 /*
     out<<v->matricule<<endl;
@@ -97,13 +97,24 @@ ostream& operator<<(ostream& out, Vehicule* v)
 }
 istream& operator>>(istream& in, Vehicule* v)
 {
+    string ch;
     in>>v->matricule;
     in>>v->marque;
     in>>v->age;
-    //in>>v->nbRoues;
+    in>>ch;
+        if( ch == "Diesel" )
+        v->typeCons = Diesel;
+    else
+        if(ch=="Electrique")
+            v->typeCons=Electrique;
+        else
+            if(ch=="Essence")
+                v->typeCons=Essence;
+            else
+                v->typeCons=Hybride;
+
+    in>>v->nbRoues;
    //cout<<"nbRoures"<<v->nbRoues;
-
-
     return in;
 }
 
