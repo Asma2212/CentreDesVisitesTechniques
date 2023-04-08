@@ -22,7 +22,7 @@ bool Exterieur::testCarrosserie(Vehicule* v)
     cin>>t;
     }while((t!='o')&&(t!='m'));
     if(t=='m'){
-     v->changeEtatCarosserie();
+    // v->changeEtatCarosserie();
      return false ;
     }
     return true;
@@ -36,7 +36,7 @@ bool Exterieur::testFeux(Vehicule* v)
     cin>>t;
     }while((t!='o')&&(t!='m'));
     if(t=='m'){
-     v->changeEtatFeux();
+     //v->changeEtatFeux();
      return false ;
     }
     return true;

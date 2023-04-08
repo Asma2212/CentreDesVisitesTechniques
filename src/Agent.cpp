@@ -1,4 +1,5 @@
 #include "Agent.h"
+#include"Test.h"
 #include "Equipement.h"
 #include"CentreVT.h"
 Agent::Agent()
@@ -116,6 +117,12 @@ void Agent::modifierD(CentreVT& C)
     }
     if(trouver=false)
         cout<<"personne non trouve !"<<endl;
+
+}
+void Agent::validerEtatVisite(VisiteTech VT,Vehicule* V)
+{
+    VT.saisiEtatInt(V);
+    VT.saisitEtatExt(V);
 
 }
 Agent::~Agent()

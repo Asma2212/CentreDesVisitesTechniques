@@ -16,7 +16,7 @@ class Agent : public Personne
     vector <VisiteTech*> listVisites;
     public:
         Agent();
-        bool validerEtatVisite(VisiteTech);
+        void validerEtatVisite(VisiteTech,Vehicule*);
         void EnregistreVisite(VisiteTech);
         void authentifier(CentreVT&);
         void sinscrire(CentreVT&);

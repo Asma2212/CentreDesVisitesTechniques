@@ -9,8 +9,7 @@ using namespace std;
 
 class Test
 {
-    bool etatInt;
-    bool etatExt;
+
     public:
         Test();
         friend ostream& operator<<(ostream& out, Test& T);

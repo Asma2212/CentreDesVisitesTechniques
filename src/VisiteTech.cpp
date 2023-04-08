@@ -1,4 +1,7 @@
 #include "VisiteTech.h"
+#include"Test.h"
+#include"Exterieur.h"
+#include"Interieur.h"
 
 VisiteTech::VisiteTech()
 {
@@ -6,25 +9,16 @@ VisiteTech::VisiteTech()
 }
 ostream& operator<<(ostream& out, VisiteTech& V)
 {
-    out<<"code : ";
-    out<<V.codeV;
-    out<<"table des visites ";
-    for(unsigned i=0;i<V.tests.size();i++)
-          out<<V.tests[i]<<'\t';
+    out<<"code : "<<V.codeV<<endl;
+    out<<"testes"<<endl;
+    out<<V.etatExt<<endl;
+    out<<V.etatInt<<endl;
           return out;
 }
 istream& operator>>(istream& in, VisiteTech& V)
 {
     cout<<"code"<<endl;
     in>>V.codeV;
-    char rep;
-   /* cout<<"remplir le tableau tests"<<endl;
-    do{Test *T=new Test();
-        in>>*T;
-        V.tests.push_back(T);
-        cout<<"ajouter un test "<<endl;
-        cin >> rep;
-      } while(rep=='o' || rep == 'O');*/
 
 }
 void VisiteTech::modifierVisite(CentreVT C,string code)
@@ -46,6 +40,22 @@ void VisiteTech::modifierVisite(CentreVT C,string code)
     if(trouver=false)
         cout<<"visite non trouve !"<<endl;
 
+}
+void VisiteTech::saisitEtatExt(Vehicule *V)
+{
+    Exterieur E;
+    if(E.testRoues(V)==true && E.testCarrosserie(V)==true && E.testFeux(V)==true)
+        etatExt=true;
+    else
+        etatExt=false;
+}
+void VisiteTech::saisiEtatInt(Vehicule *V)
+{
+    Interieur I;
+    if(I.testFrein(V)==true && I.testDirection(V)==true)
+            etatInt=true;
+    else
+        etatInt=false;
 }
 VisiteTech::~VisiteTech()
 {
