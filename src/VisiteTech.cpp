@@ -3,16 +3,19 @@
 #include"Exterieur.h"
 #include"Interieur.h"
 
+int VisiteTech::nbVisite = 0;
 VisiteTech::VisiteTech()
 {
-    //ctor
+    nbVisite++;
+    codeV=nbVisite;
 }
-ostream& operator<<(ostream& out, VisiteTech& V)
+ostream& operator<<(ostream& out,const VisiteTech& v)
 {
-    out<<"code : "<<V.codeV<<endl;
+    out<<"code : "<<v.codeV<<endl;
     out<<"testes"<<endl;
-    out<<V.etatExt<<endl;
-    out<<V.etatInt<<endl;
+    out<<v.etatExt<<endl;
+    out<<v.etatInt<<endl;
+    out<<*(v.res)<<endl;
           return out;
 }
 istream& operator>>(istream& in, VisiteTech& V)
@@ -57,6 +60,7 @@ void VisiteTech::saisiEtatInt(Vehicule *V)
     else
         etatInt=false;
 }
+
 VisiteTech::~VisiteTech()
 {
     //dtor

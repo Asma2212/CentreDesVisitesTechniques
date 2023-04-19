@@ -11,6 +11,7 @@
 
 class Interieur : public Test
 {
+    bool *etatInt;
     public:
         Interieur();
         bool testDirection(Vehicule* V);

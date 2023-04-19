@@ -4,7 +4,7 @@ Client::Client()
 {
     //ctor
 }
-void Client::menuClient(CentreVT cvt){
+void Client::menuClient(CentreVT* cvt){
     int cl,c;
         cout<<"\n********Espace Client*******\n"<<endl;
 /*        do{
@@ -29,7 +29,7 @@ void Client::menuClient(CentreVT cvt){
         }
     }while(this);*/
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
-recuperer();
+recuperer(cvt);
 //consulterRes();
 //cout<<*this;
     //do{
@@ -46,7 +46,7 @@ recuperer();
         if(!cin) throw runtime_error("Vous devez entrer un entier");
                  switch(cl)
          {
-             case 1 : effectuerRes();break;
+             case 1 : effectuerRes(cvt);break;
              case 2 : supprimerRes();break;
              case 3 : consulterRes();break;
          }
@@ -144,7 +144,7 @@ for(unsigned int i=0;i<listRes.size();i++)
 
 //******************** EFFECTUER UNE RESERVATION *************************** //
 
-void Client::effectuerRes(){
+void Client::effectuerRes(CentreVT* cvt){
     Reservation r ;
     try{
     do{
@@ -155,6 +155,7 @@ void Client::effectuerRes(){
     {
             cerr<<"ERREUR: "<<e.what()<<endl;
     }
+    cvt->ajouterVisite(&r);
     listRes.push_back(r);
     enregistrer(r);
 }
@@ -219,7 +220,7 @@ void Client::enregistrer(Reservation r)
 Fichier.close();
 }
 
-void Client::recuperer()
+void Client::recuperer(CentreVT* cvt)
 {
  ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::app);
  if (!Fichier) cout<<"Le fichier n'existe pas ";
@@ -231,8 +232,10 @@ void Client::recuperer()
    if(Fichier.eof()) break;
 //Fichier>>ws;
 //r.getDate().affiche();
+cvt->ajouterVisite(&r);
  listRes.push_back(r);
 }
+cvt->consulterVisite();
 Fichier.close() ;
 }
 void Client::reload()

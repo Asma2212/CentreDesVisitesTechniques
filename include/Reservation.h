@@ -37,6 +37,7 @@ class Reservation
 
         //virtual ~Reservation(){ delete []v;}
 
+
     protected:
 
     private:

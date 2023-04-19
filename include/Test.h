@@ -1,15 +1,14 @@
 #ifndef TEST_H
 #define TEST_H
+
 #include <iostream>
 #include <fstream>
 #include<string>
-#include"VisiteTech.h"
 
 using namespace std;
 
 class Test
 {
-
     public:
         Test();
         friend ostream& operator<<(ostream& out, Test& T);

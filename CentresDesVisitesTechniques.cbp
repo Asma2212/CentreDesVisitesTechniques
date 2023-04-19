@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Admin.h" />
 		<Unit filename="include/Agent.h" />
 		<Unit filename="include/Camion.h" />
 		<Unit filename="include/CentreVT.h" />
@@ -54,6 +55,7 @@
 		<Unit filename="include/VisiteTech.h" />
 		<Unit filename="include/Voiture.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Admin.cpp" />
 		<Unit filename="src/Agent.cpp" />
 		<Unit filename="src/Camion.cpp" />
 		<Unit filename="src/CentreVT.cpp" />

@@ -8,9 +8,9 @@ char confirm()
 {
     char t;
     do{
-    cout<<"s'il est en bon etat entrez o sinon entrer m"<<endl;
+    cout<<"s'il est en bon etat entrez o sinon entrer n"<<endl;
     cin>>t;
-    }while((t!='o')&&(t!='m'));
+    }while((t!='o')&&(t!='n'));
     return t;
 }
 bool Exterieur::testCarrosserie(Vehicule* v)
@@ -22,7 +22,7 @@ bool Exterieur::testCarrosserie(Vehicule* v)
     cin>>t;
     }while((t!='o')&&(t!='m'));
     if(t=='m'){
-    // v->changeEtatCarosserie();
+    v->changeEtatCarosserie();
      return false ;
     }
     return true;
@@ -43,23 +43,24 @@ bool Exterieur::testFeux(Vehicule* v)
 }
 bool Exterieur::testRoues(Vehicule* v)
 {
-    Voiture *vt;
-    Moto *m;
+Voiture *vt;
+    Moto m;
     Camion*c;
     char t;
     cout<<"Tester les roues"<<endl;
     if(typeid(v) == typeid(Moto))
         {
-    //v=new Moto(static_cast<const Moto&>(*v));
+    //v=&m;
+    //v=new Moto();
     cout<<"Tester roue avant "<<endl;
     t=confirm();
-    if(t=='m'){
-     //v->changeEtatRoueAv();
+    if(t=='n'){
+     static_cast<Moto*>(v)->changeEtatRoueAv();
      return false ;
-     }
-     cout<<"Tester roue arriere "<<endl;
+    }}
+    /* cout<<"Tester roue arriere "<<endl;
     t=confirm();
-    if(t=='m'){
+    if(t=='n'){
      //v->changeEtatRoueAr();
      return false ;
     }
@@ -81,7 +82,7 @@ bool Exterieur::testRoues(Vehicule* v)
     else
     {
 
-    }
+    }*/
     return true;
 }
 

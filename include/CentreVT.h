@@ -1,6 +1,6 @@
 #ifndef CENTREVT_H
 #define CENTREVT_H
-
+#include<Reservation.h>
 #include<string>
 #include <vector>
 #include"VisiteTech.h"
@@ -10,6 +10,7 @@ class Equipement;
 class Personne;
 class Agent;
 class VisiteTech;
+
 class CentreVT
 {
     string nom="Centre Abir et Asma";
@@ -23,6 +24,9 @@ class CentreVT
         friend ostream& operator<<(ostream& out,CentreVT& C);
         friend ostream& operator<<(ostream& out,CentreVT* C);
         friend istream& operator>>(istream& in,CentreVT* C);
+        void ajouterVisite(Reservation* r);
+        void consulterVisite();
+        void affecterAgentsVisites();
 
     friend class Equipement;
     friend class Personne;

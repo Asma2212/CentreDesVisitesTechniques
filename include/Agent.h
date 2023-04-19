@@ -5,8 +5,6 @@
 #include <fstream>
 #include<string>
 #include "Personne.h"
-#include"VisiteTech.h"
-#include"CentreVT.h"
 #include"Equipement.h"
 using namespace std;
 

@@ -4,8 +4,6 @@
 #include <iostream>
 #include<string>
 #include <Personne.h>
-#include"CentreVT.h"
-#include"Reservation.h"
 #include<cctype>
 #include<limits>
 #include"Date.h"
@@ -17,11 +15,11 @@ class Client : public Personne
     public:
         Client();
         virtual ~Client();
-        void menuClient(CentreVT);
+        void menuClient(CentreVT*);
         void sinscrire(CentreVT&);
         void authentifier(CentreVT&);
         void modifierD(CentreVT&);
-        void effectuerRes();
+        void effectuerRes(CentreVT*);
         void consulterRes();
         void supprimerRes();
         Reservation & operator[](int);
@@ -34,7 +32,7 @@ class Client : public Personne
         bool existDate(Date,int);
         void ajouterRes(Reservation&);
         void enregistrer(Reservation);
-        void recuperer();
+        void recuperer(CentreVT*);
         void creer(fstream &);
         void reload();
         friend ostream& operator<<(ostream&, Client&);

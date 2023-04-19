@@ -82,6 +82,28 @@ istream& operator>>(istream& in,CentreVT* C)
     return in;
 }
 
+void CentreVT::ajouterVisite(Reservation* r){
+VisiteTech* v = new VisiteTech();
+cout<<"ajouterVisiste"<<endl;
+v->setRes(r);
+visites.push_back(v);
+}
+
+void CentreVT::consulterVisite(){
+cout<<"la liste des Visites Techniques :"<<endl;
+cout<<"vous avez au total "<<visites.size()<< " visites(s)"<<endl;
+for(unsigned int i=0;i<visites.size();i++)
+{
+    cout<<"------- Visite NUM"<<i+1<<" -------"<<endl;
+    cout<<*visites[i];
+}
+
+}
+
+void CentreVT::affecterAgentsVisites(){
+
+}
+
 CentreVT::~CentreVT()
 {
     //dtor

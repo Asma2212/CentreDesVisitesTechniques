@@ -155,7 +155,6 @@ istream& operator>>(istream& in, Reservation* r)
    // in>>v1;
  /*      if(ch=="Camion")
 {
-    cout<<"dkhaal affiche";
     v1=new Camion(static_cast<Camion&>(*r->v));
     in>>v1;
     v1->affiche();

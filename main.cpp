@@ -9,6 +9,7 @@
 #include"Agent.h"
 #include"Client.h"
 #include"exception"
+#include"VisiteTech.h"
 using namespace std;
 
 int main()
@@ -41,11 +42,13 @@ int main()
     // ******** ESPACE CLIENT ***********
     if(esp == 1){
 
-         clt.menuClient(c);
+         clt.menuClient(&c);
+         cout<<"affVisite"<<endl;
+         c.consulterVisite();
          esp=0;
 
     }
-    // ******** ESPACE ADMIN ***********
+    // ******** ESPACE AGENT ***********
     else
         if(esp==2){
 
@@ -78,6 +81,7 @@ int main()
     esp=0;
 
     }
+    // ******** ESPACE ADMIN ***********
     else{
             do{
              try

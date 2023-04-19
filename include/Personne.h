@@ -6,6 +6,8 @@
 #include<string>
 #include"CentreVT.h"
 #include"Date.h"
+#include"Reservation.h"
+#include"VisiteTech.h"
 using namespace std;
 
 class Personne
