@@ -1,7 +1,4 @@
 #include "VisiteTech.h"
-#include"Test.h"
-#include"Exterieur.h"
-#include"Interieur.h"
 
 int VisiteTech::nbVisite = 0;
 VisiteTech::VisiteTech()

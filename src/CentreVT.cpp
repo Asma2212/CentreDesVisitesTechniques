@@ -1,6 +1,5 @@
 #include "CentreVT.h"
-#include "Equipement.h"
-#include"Personne.h"
+
 //#include"Client.h"
 CentreVT::CentreVT()
 {
@@ -84,9 +83,10 @@ istream& operator>>(istream& in,CentreVT* C)
 
 void CentreVT::ajouterVisite(Reservation* r){
 VisiteTech* v = new VisiteTech();
-cout<<"ajouterVisiste"<<endl;
+cout<<"ajouterVisite"<<endl;
 v->setRes(r);
 visites.push_back(v);
+
 }
 
 void CentreVT::consulterVisite(){
@@ -101,7 +101,31 @@ for(unsigned int i=0;i<visites.size();i++)
 }
 
 void CentreVT::affecterAgentsVisites(){
+int nb,j=0;;
+nb=nombreAgents();
+if(nb==0)
+    cout<<"vous devez avoir au minimum un agent"<<endl;
+else{
+for(unsigned int i=0;i<personnes.size();i++)
+    if(typeid(personnes[i])==typeid(Agent*))
+        {
+            Agent* ag;
+           // personnes[i]=new Agent(static_cast<Agent&>(personnes[i]);
+            while(ag->getNbVisites()<(visites.size()/nb)){
+                 ag->ajouterVisite(visites[j]);
+                 j++;
+            }
 
+        }
+}
+}
+//error: invalid use of incomplete type 'class Agent'|
+int CentreVT::nombreAgents(){
+int n=0;
+for(unsigned int i=0;i<personnes.size();i++)
+    if(typeid(personnes[i])==typeid(Agent*))
+            n++;
+return n;
 }
 
 CentreVT::~CentreVT()

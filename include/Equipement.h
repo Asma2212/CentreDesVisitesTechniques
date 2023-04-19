@@ -1,12 +1,11 @@
 #ifndef EQUIPEMENT_H
 #define EQUIPEMENT_H
-
 #include <iostream>
 #include <fstream>
-#include<string>
+//#include<string>
 #include"CentreVT.h"
 using namespace std;
-
+class CentreVT;
 class Equipement
 {
     string rf;

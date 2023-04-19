@@ -4,12 +4,11 @@
 #include <iostream>
 #include <fstream>
 #include<string>
-#include"CentreVT.h"
 #include"Date.h"
 #include"Reservation.h"
-#include"VisiteTech.h"
+//#include"CentreVT.h"
 using namespace std;
-
+class CentreVT;
 class Personne
 {
     protected:

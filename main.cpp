@@ -4,12 +4,13 @@
 #include<string>
 #include<vector>
 #include"Date.h"
-#include"Equipement.h"
 #include"Personne.h"
 #include"Agent.h"
 #include"Client.h"
+#include"Equipement.h"
 #include"exception"
 #include"VisiteTech.h"
+#include"CentreVT.h"
 using namespace std;
 
 int main()

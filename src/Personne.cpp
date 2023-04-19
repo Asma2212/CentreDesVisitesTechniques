@@ -1,5 +1,4 @@
 #include "Personne.h"
-#include"CentreVT.h"
 Personne::Personne(){};
 ostream& operator<<(ostream& out, Personne& P)
 {

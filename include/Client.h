@@ -7,6 +7,8 @@
 #include<cctype>
 #include<limits>
 #include"Date.h"
+#include <vector>
+#include "CentreVT.h"
 using namespace std;
 
 

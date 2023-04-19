@@ -1,16 +1,19 @@
 #ifndef CENTREVT_H
 #define CENTREVT_H
-#include<Reservation.h>
-#include<string>
-#include <vector>
-#include"VisiteTech.h"
+#include<Agent.h>
+//#include<Reservation.h>
+//#include<string>
+//#include <vector>
+//#include"Personne.h"
+//#include"VisiteTech.h"
+//#include "Equipement.h"
 
 using namespace std;
-class Equipement;
-class Personne;
+
 class Agent;
 class VisiteTech;
-
+class Personne;
+class Equipement;
 class CentreVT
 {
     string nom="Centre Abir et Asma";
@@ -27,6 +30,7 @@ class CentreVT
         void ajouterVisite(Reservation* r);
         void consulterVisite();
         void affecterAgentsVisites();
+        int nombreAgents();
 
     friend class Equipement;
     friend class Personne;

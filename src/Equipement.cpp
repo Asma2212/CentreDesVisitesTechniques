@@ -1,5 +1,4 @@
 #include "Equipement.h"
-#include"CentreVT.h"
 
 Equipement::Equipement()
 {

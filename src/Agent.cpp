@@ -1,7 +1,5 @@
 #include "Agent.h"
-#include"Test.h"
-#include "Equipement.h"
-#include"CentreVT.h"
+
 Agent::Agent()
 {
     //ctor

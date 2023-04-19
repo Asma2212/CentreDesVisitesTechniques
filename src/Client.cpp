@@ -227,13 +227,13 @@ void Client::recuperer(CentreVT* cvt)
 
  while(1)
  {
- Reservation r;
-   Fichier>>&r;
+ Reservation* r=new Reservation();
+   Fichier>>r;
    if(Fichier.eof()) break;
 //Fichier>>ws;
 //r.getDate().affiche();
-cvt->ajouterVisite(&r);
- listRes.push_back(r);
+cvt->ajouterVisite(r);
+ listRes.push_back(*r);
 }
 cvt->consulterVisite();
 Fichier.close() ;

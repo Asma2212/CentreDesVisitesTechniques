@@ -1,16 +1,17 @@
 #ifndef VISITETECH_H
 #define VISITETECH_H
-#include<string>
-#include <vector>
-#include <iostream>
-#include <fstream>
+//#include<string>
+//#include <vector>
+//#include <iostream>
+//#include <fstream>
 #include"CentreVT.h"
 #include"Vehicule.h"
 #include"Exterieur.h"
+#include"Interieur.h"
 #include "Reservation.h"
 
 using namespace std;
-class CentreVT;
+//class CentreVT;
 
 
 class VisiteTech

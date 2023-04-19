@@ -1,12 +1,14 @@
 #ifndef AGENT_H
 #define AGENT_H
 #include<vector>
-#include <iostream>
-#include <fstream>
-#include<string>
+//#include"CentreVT.h"
 #include "Personne.h"
-#include"Equipement.h"
+//#include"Test.h"
+#include "Equipement.h"
+#include "VisiteTech.h"
 using namespace std;
+class VisiteTech;
+class Equipement;
 
 class Agent : public Personne
 {
@@ -20,6 +22,8 @@ class Agent : public Personne
         void sinscrire(CentreVT&);
         void modifierD(CentreVT&);
         void ConsulterEq(CentreVT&);
+        void ajouterVisite(VisiteTech* v){listVisites.push_back(v);}
+        int getNbVisites(){return listVisites.size();}
         Equipement& rechEq(string,CentreVT&);
         friend istream& operator>>(istream& ,Agent&);
         friend ostream& operator<<(ostream&, Agent&);
