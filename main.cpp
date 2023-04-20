@@ -44,41 +44,15 @@ int main()
     if(esp == 1){
 
          clt.menuClient(&c);
-         cout<<"affVisite"<<endl;
-         c.consulterVisite();
+      /*   cout<<"affVisite"<<endl;
+         c.consulterVisite();*/
          esp=0;
 
     }
     // ******** ESPACE AGENT ***********
     else
         if(esp==2){
-
-               do{
-             try
-            {
-        cout<<"_________________________"<<endl;
-         cout << "1: rechercher un equipement" <<endl;
-         cout <<"2: Consulter la liste des equipements" <<endl;
-         cout << "3: Se deconnecter" << endl;
-         cout<<"_________________________"<<endl;
-         cin>>ad;
-         if(!cin) throw runtime_error("Vous devez entrer un entier");
-                 switch(ad)
-         {
-             case 1:
-                 cout<<"entrer la reference de l'equipement a modifier"<<endl;
-                 cin>>rf;
-                 ag.rechEq(rf,c);break;
-             case 2 : ag.ConsulterEq(c) ;break;
-         }
-         }catch(runtime_error& e)
-        {
-        cerr<<e.what()<<endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
-
-    }while(ad!=3);
+            ag.menuAgent(&c);
     esp=0;
 
     }
@@ -92,7 +66,10 @@ int main()
          cout << "2: modifier un equipement" <<endl;
          cout <<"3: supprimer un equipement"<<endl;
          cout <<"4: Consulter la liste des equipements" <<endl;
-         cout << "5: Se deconnecter" << endl;
+         cout <<"5: Ajouter un agent" <<endl;
+         cout <<"6: Consulter la liste des agents" <<endl;
+         cout <<"7: Affecter les visites aux agents" <<endl;
+         cout <<"8: Se deconnecter" << endl;
          cout<<"_________________________"<<endl;
          cin>>ad;
          if(!cin) throw runtime_error("Vous devez entrer un entier");
@@ -108,6 +85,9 @@ int main()
                  cin>>rf;
                  e.suppEq(rf,c);break;
              case 4 : e.afficherEq(c) ;break;
+             case 5 : c.ajouterAgent();break;
+             case 6 :c.afficherAgents();break;
+             case 7: c.affecterAgentsVisites();break;
          }
          }catch(runtime_error& e)
         {
@@ -116,7 +96,7 @@ int main()
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
 
-    }while(ad!=5);
+    }while(ad!=8);
     esp=0;
     }
 

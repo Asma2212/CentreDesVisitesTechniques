@@ -4,20 +4,99 @@ Agent::Agent()
 {
     //ctor
 }
+
+Agent::Agent(const Agent& ag) {
+    *this=ag;
+    listVisites = ag.listVisites;
+
+}
+void Agent::menuAgent(CentreVT* c){
+     int ad,cd;
+     string rf;
+     char verif;
+     bool tst=false;
+     VisiteTech * vt;
+        cout<<"\n********Espace Agent*******\n"<<endl;
+        authentifier(*c);
+        //cin>>*this;
+cout << "Bienvenue Cher Agent "<<getNomP()<<endl;
+
+ do{
+             try
+            {
+        cout<<"_________________________"<<endl;
+         cout << "1: rechercher un equipement" <<endl;
+         cout <<"2: Consulter la liste des equipements" <<endl;
+         cout<<"3: Consulter ma liste des visites"<<endl;
+         cout<<"4: accéder à une visite"<<endl;
+         cout <<"5: Se deconnecter" << endl;
+         cout<<"_________________________"<<endl;
+         cin>>ad;
+         if(!cin) throw runtime_error("Vous devez entrer un entier");
+                 switch(ad)
+         {
+             case 1:
+                 cout<<"entrer la reference de l'equipement a modifier"<<endl;
+                 cin>>rf;
+                 rechEq(rf,*c);break;
+             case 2 :ConsulterEq(*c) ;break;
+             case 3:consulterVisites();break;
+             case 4:
+                do{
+                cout<<"entrer le code de la visite"<<endl;
+                 cin>>cd;
+                 for(unsigned int i=0;i<listVisites.size();i++)
+                    if(cd==listVisites[i]->getCode())
+                       {
+                            tst=true;
+                          vt = listVisites[i];
+                          break;
+                       }
+                cout<<"code Introuvable"<<endl;
+
+                }while(!tst);
+                cout<<*vt;
+                cout<<"Commencer la visite"<<endl;
+                        vt->testExt.testCarrosserie(vt->res->v);
+                    break;
+
+         }
+         }catch(runtime_error& e)
+        {
+        cerr<<e.what()<<endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+
+    }while(ad!=5);
+
+}
+ostream& operator<<(ostream& out,Agent& ag){
+    Personne *p=&ag;
+    out<<*p;
+    cout<<"Poste : "<<ag.poste<<endl;
+    cout<<"Liste des visites"<<endl;
+        if(ag.listVisites.size()==0)
+            cout<<"aucune visite affectee"<<endl;
+        else
+        for(unsigned int i=0;i<ag.listVisites.size();i++)
+            out<<*ag.listVisites[i];
+
+}
 istream& operator>>(istream& in,Agent& A)
 {
     Personne *P=&A;
     in>>*P;
     cout<<"poste :";
     getline(in,A.poste);
-    cout<<"remplir la table des visites"<<endl;
+  /*  cout<<"remplir la table des visites"<<endl;
     char rep;
     do{VisiteTech *V=new VisiteTech();
         in>>*V;
         A.listVisites.push_back(V);
         cout<<"ajouter une visite "<<endl;
         cin >> rep;
-      } while(rep=='o' || rep == 'O');
+      } while(rep=='o' || rep == 'O');*/
 }
 //ostream& operator<<(ostream&, Agent&);
 void Agent::sinscrire(CentreVT& C)
@@ -53,6 +132,8 @@ void Agent::authentifier(CentreVT& C)
                 if(mdp.compare(C.personnes[i]->getmdp())==0)
                 {
                     cout<<"vous etes connecte avec succes "<<endl;
+                    Agent* ag = new Agent(static_cast<const Agent&>(*C.personnes[i]));
+                    *this = *ag;
                     auth=true;
                     break;
                 }
@@ -122,6 +203,11 @@ void Agent::validerEtatVisite(VisiteTech VT,Vehicule* V)
     VT.saisiEtatInt(V);
     VT.saisitEtatExt(V);
 
+}
+void Agent::consulterVisites(){
+cout<<"vous avez au total "<<listVisites.size()<<" visite(s)"<<endl;
+for(unsigned int i=0;i<listVisites.size();i++)
+    cout<<*listVisites[i];
 }
 Agent::~Agent()
 {

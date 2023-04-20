@@ -2,7 +2,8 @@
 
 Voiture::Voiture()
 {
-    //ctor
+    tarif=20.0;
+    nbRoues=4;
 }
 void Voiture::affiche(){
     Vehicule::affiche();
@@ -14,8 +15,6 @@ void Voiture::saisie(){
 istream& operator>>(istream& in, Voiture& v)
 {
 in>>v;
-v.nbRoues=4;
-v.tarif=40;
 }
 
 Voiture::~Voiture()

@@ -37,7 +37,7 @@ ostream& operator<<(ostream& out, Reservation& r)
     out<<r.dateR;
     cout<<"heure : ";
     out<<r.heure<<endl;
-   /* cout<<"vehicule : ";
+    cout<<"vehicule : ";
     if(typeid(*r.v) == typeid(Camion))
         {
             r.v=new Camion(static_cast<const Camion&>(*r.v));
@@ -50,8 +50,9 @@ ostream& operator<<(ostream& out, Reservation& r)
            }
 
         else
-            cout<<"VOITURE"<<endl;*/
+            cout<<"VOITURE"<<endl;
     //out<<*r.v;
+
     r.v->affiche();
     return out;
 }
@@ -146,37 +147,32 @@ istream& operator>>(istream& in, Reservation* r)
 {
     string ch;
     int i;
-    Vehicule *v1 = new Vehicule() ;
    in>>r->codeR;
     in>>r->dateR;
-    //cout<<"date"<<r->dateR;
     in>>r->heure;
     in>>ch;
-   // in>>v1;
- /*      if(ch=="Camion")
+   // in>>r->v;
+      if(ch=="Camion")
 {
-    v1=new Camion(static_cast<Camion&>(*r->v));
-    in>>v1;
-    v1->affiche();
+    Camion* c =new Camion();
+       in>>c;
+    r->v=c;
 }
 
-/*else
-    if(typeid(*r->v)==typeid(Moto))
+else
+    if(ch=="Moto")
         {
-        v1=new Moto(static_cast<Moto&>(*r->v));
-        in>>v1;
+        Moto* m =new Moto();
+       in>>m;
+        r->v=m;
         }
     else
     {
 
-        v1=new Voiture(static_cast<Voiture&>(*r->v));
-        in>>v1;
-    }*/
-   //
-    //
-
-    in>>v1;
-    r->v=v1;
+        Voiture* vt =new Voiture();
+        in>>vt;
+        r->v=vt;
+    }
 
     return in;
 }

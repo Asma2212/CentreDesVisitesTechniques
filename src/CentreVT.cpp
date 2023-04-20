@@ -107,13 +107,14 @@ if(nb==0)
     cout<<"vous devez avoir au minimum un agent"<<endl;
 else{
 for(unsigned int i=0;i<personnes.size();i++)
-    if(typeid(personnes[i])==typeid(Agent*))
+    if(typeid(*personnes[i])==typeid(Agent))
         {
             Agent* ag;
-           // personnes[i]=new Agent(static_cast<Agent&>(personnes[i]);
+           ag=new Agent(static_cast<Agent&>(*personnes[i]));
             while(ag->getNbVisites()<(visites.size()/nb)){
                  ag->ajouterVisite(visites[j]);
                  j++;
+                 personnes[i]=ag;
             }
 
         }
@@ -123,11 +124,35 @@ for(unsigned int i=0;i<personnes.size();i++)
 int CentreVT::nombreAgents(){
 int n=0;
 for(unsigned int i=0;i<personnes.size();i++)
-    if(typeid(personnes[i])==typeid(Agent*))
+    if(typeid(*personnes[i])==typeid(Agent))
             n++;
 return n;
 }
 
+void CentreVT::ajouterAgent(){
+char rep;
+    do{
+        Agent *A=new Agent();
+        cin>>*A;
+        personnes.push_back(A);
+        cout<<"vous voulez ajouter un autre un agent(o/n)"<<endl;
+        cin >> rep;
+      } while(rep=='o' || rep == 'O');
+
+}
+
+void CentreVT::afficherAgents(){
+for(unsigned int i=0;i<personnes.size();i++)
+{
+    //cout<<new Agent(static_cast<Agent&>(*personnes[i]));
+    if(typeid(*personnes[i])==typeid(Agent))
+    {
+         Agent* ag=new Agent(static_cast<Agent&>(*personnes[i]));
+        cout<<*ag;
+    }
+
+}
+}
 CentreVT::~CentreVT()
 {
     //dtor

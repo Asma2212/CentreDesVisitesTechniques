@@ -30,6 +30,8 @@ class CentreVT
         void ajouterVisite(Reservation* r);
         void consulterVisite();
         void affecterAgentsVisites();
+        void ajouterAgent();
+        void afficherAgents();
         int nombreAgents();
 
     friend class Equipement;

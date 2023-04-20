@@ -28,9 +28,6 @@ class Client : public Personne
         int getCin(){
         return this->cn ;
         }
-        string getNomP(){
-        return this->nom +" " + this->prenom ;
-        }
         bool existDate(Date,int);
         void ajouterRes(Reservation&);
         void enregistrer(Reservation);

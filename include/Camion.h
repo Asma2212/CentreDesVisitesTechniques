@@ -21,6 +21,7 @@ class Camion : public Vehicule
         friend ostream& operator<<(ostream&, Camion*);
         friend istream& operator>>(istream&, Camion*);
         float getCharge(){return charge;}
+        void changeEtatRoueSupp(){ etatRoueSupp = false;}
 
     protected:
 

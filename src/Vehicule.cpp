@@ -1,19 +1,25 @@
 #include "Vehicule.h"
 
-Vehicule::Vehicule(string matricule,string marque ,int age ,TypeConsommation typeCons ,int nbRoues,bool etatFeux,bool etatFrein,bool etatCarosserie,bool etatDirection)
+Vehicule::Vehicule(string matricule,string marque ,int age ,TypeConsommation typeCons ,int nbRoues,float tarif,bool etatFeux,bool etatFrein,bool etatCarosserie,bool etatDirection)
 {
     this->matricule=matricule;
     this->marque=marque ;
     this->age=age ;
     this->typeCons=typeCons ;
     this->nbRoues=nbRoues ;
-    this->tarif=10.0;
+    //this->tarif=10.0;
 }
 void Vehicule::saisie(){
 cin>>*this ;
 }
 void Vehicule::affiche(){
 cout<<*this;
+}
+string afficheValide(bool e)
+{
+    if(e==1)
+        return "valide ";
+return "non valide X";
 }
 ostream& operator<<(ostream& out, Vehicule& v)
 {
@@ -24,6 +30,8 @@ ostream& operator<<(ostream& out, Vehicule& v)
     out<<v.marque<<endl;
     cout<<"age: ";
     out<<v.age<<endl;
+    cout<<"nb Roues:";
+    out<<v.nbRoues<<endl;
     cout<<"Type de consommation : ";
     switch(v.typeCons){
     case Diesel : out<<"Diesel"<<endl;break;
@@ -33,8 +41,17 @@ ostream& operator<<(ostream& out, Vehicule& v)
     }
     cout<<"Tarif: ";
     out<<v.tarif<<endl;
-    //cout<<"nombre de roues: ";
-    //out<<v.nbRoues<<endl;
+    cout<<"etat Roues: ";
+    out<<afficheValide(v.etatRoues)<<endl;
+    cout<<"etat Carosserie: ";
+    out<<afficheValide(v.etatCarosserie)<<endl;
+    cout<<"etat direction: ";
+    out<<afficheValide(v.etatDirection)<<endl;
+    cout<<"etat Frein: ";
+    out<<afficheValide(v.etatFrein)<<endl;
+    cout<<"etat Feux: ";
+    out<<afficheValide(v.etatFeux)<<endl;
+
 }
 istream& operator>>(istream& in, Vehicule& v)
 {
@@ -68,6 +85,7 @@ ostream& operator<<(ostream& out, Vehicule* v)
 {
     out<<v->matricule<<endl;
     out<<v->marque<<endl;
+    out<<v->nbRoues<<endl;
     out<<v->age<<endl;
     if(v->typeCons == Diesel )
         out<<"Diesel"<<endl;
@@ -81,6 +99,11 @@ ostream& operator<<(ostream& out, Vehicule* v)
                 out<<"Hybride"<<endl;
 
     out<<v->tarif<<endl;
+    out<<v->etatRoues<<endl;
+    out<<v->etatCarosserie<<endl;
+    out<<v->etatDirection<<endl;
+    out<<v->etatFeux<<endl;
+    out<<v->etatFrein<<endl;
 /*
     out<<v->matricule<<endl;
     out<<v->marque<<endl;
@@ -98,8 +121,10 @@ ostream& operator<<(ostream& out, Vehicule* v)
 istream& operator>>(istream& in, Vehicule* v)
 {
     string ch;
+    int e;
     in>>v->matricule;
     in>>v->marque;
+    in>>v->nbRoues;
     in>>v->age;
     in>>ch;
         if( ch == "Diesel" )
@@ -113,10 +138,16 @@ istream& operator>>(istream& in, Vehicule* v)
             else
                 v->typeCons=Hybride;
 
-    in>>v->nbRoues;
+    in>>v->tarif;
+in>>v->etatRoues;
+    in>>v->etatCarosserie;
+    in>>v->etatDirection;
+    in>>v->etatFeux;
+    in>>v->etatFrein;
    //cout<<"nbRoures"<<v->nbRoues;
     return in;
 }
+
 
 Vehicule::~Vehicule()
 {

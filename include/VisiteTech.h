@@ -31,9 +31,12 @@ class VisiteTech
         void saisiEtatInt(Vehicule*);
         void saisitEtatExt(Vehicule*);
         void setRes(Reservation* r){this->res=r;}
+        int getCode(){return codeV;}
         virtual ~VisiteTech();
         friend class Test;
         friend class Reservation;
+        friend class Agent;
+
 
 };
 

@@ -17,16 +17,18 @@ class Agent : public Personne
     public:
         Agent();
         void validerEtatVisite(VisiteTech,Vehicule*);
-        void EnregistreVisite(VisiteTech);
+        void menuAgent(CentreVT*);
         void authentifier(CentreVT&);
         void sinscrire(CentreVT&);
         void modifierD(CentreVT&);
         void ConsulterEq(CentreVT&);
         void ajouterVisite(VisiteTech* v){listVisites.push_back(v);}
+        void consulterVisites();
         int getNbVisites(){return listVisites.size();}
         Equipement& rechEq(string,CentreVT&);
         friend istream& operator>>(istream& ,Agent&);
-        friend ostream& operator<<(ostream&, Agent&);
+        friend ostream& operator<<(ostream&,Agent&);
+        Agent(const Agent &);
         virtual ~Agent();
 };
 

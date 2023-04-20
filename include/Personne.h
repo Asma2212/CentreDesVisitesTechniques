@@ -27,6 +27,9 @@ class Personne
         int getcn(){return cn;};
         string getmdp(){return mdp;};
         string getEmail(){return email;};
+        string getNomP(){
+        return this->nom +" " + this->prenom ;
+        }
         friend ostream& operator<<(ostream& out, Personne& P);
         friend istream& operator>>(istream& in, Personne& P);
         virtual ~Personne();

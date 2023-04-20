@@ -34,7 +34,7 @@ class Reservation
         int getCodeR(){return codeR;}
         Reservation(const Reservation &);
         Reservation & operator=(const Reservation &);
-
+        friend class Agent;
         //virtual ~Reservation(){ delete []v;}
 
 
