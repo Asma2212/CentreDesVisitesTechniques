@@ -53,11 +53,12 @@ cout << "Bienvenue Cher Agent "<<getNomP()<<endl;
                           break;
                        }
                 cout<<"code Introuvable"<<endl;
-
                 }while(!tst);
                 cout<<*vt;
                 cout<<"Commencer la visite"<<endl;
                         vt->testExt.testCarrosserie(vt->res->v);
+                        vt->testExt.testFeux(vt->res->v);
+                        vt->testExt.testRoues(vt->res->v);
                     break;
 
          }

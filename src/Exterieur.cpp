@@ -30,7 +30,7 @@ bool Exterieur::testFeux(Vehicule* v)
     cout<<"Tester Feux"<<endl;
 t=confirm();
     if(t=='m'){
-     //v->changeEtatFeux();
+     v->changeEtatFeux();
      return false ;
     }
     return true;
@@ -50,10 +50,9 @@ Voiture *vt;
     t=confirm();
     if(t=='n'){
      static_cast<Camion*>(v)->changeEtatRoueSupp();
-     return false ;
     }
     }
-    cout<<"Tester roue"<<endl;
+    cout<<"Tester roue normal"<<endl;
     t=confirm();
     if(t=='n'){
     v->changeEtatRoues();
