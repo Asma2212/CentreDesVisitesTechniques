@@ -9,11 +9,13 @@
 #include"Date.h"
 #include <vector>
 #include "CentreVT.h"
+#include "ElementsMap.h"
 using namespace std;
 
 
 class Client : public Personne
 {    vector<Reservation> listRes ;
+     ElementsMap<int,VisiteTech> MapVisites;
     public:
         Client();
         virtual ~Client();
