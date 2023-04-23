@@ -1,15 +1,15 @@
 #include "ElementsMap.h"
 
 template<class K, class V>
-void ElementsMap<K,V>::ajouterElement(const K& cle, const V& valeur) {
+void ElementsMap<K,V>::ajouterElement(K& cle,V& valeur) {
         elements.insert(pair<K, V>(cle, valeur));
     }
 template<class K, class V>
-void ElementsMap<K,V>::supprimerElement(const K& cle) {
+void ElementsMap<K,V>::supprimerElement(K& cle) {
         elements.erase(cle);
     }
 template<class K, class V>
-V ElementsMap<K,V>::getElement(const K& cle){
+V ElementsMap<K,V>::getElement(K& cle){
         auto it = elements.find(cle);
         if (it != elements.end()) {
             return it->second;
