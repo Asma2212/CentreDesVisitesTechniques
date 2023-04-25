@@ -13,7 +13,7 @@ class ElementsMap {
     ElementsMap(){}
     virtual ~ElementsMap(){}
 
-    void ajouterElement(K& cle,V& valeur);
+    void ajouterElement(const K& cle,const V& valeur);
     void supprimerElement(K& cle);
     V getElement(K& cle);
     vector<V> getElements();

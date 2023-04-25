@@ -27,7 +27,7 @@ class CentreVT
         friend ostream& operator<<(ostream& out,CentreVT& C);
         friend ostream& operator<<(ostream& out,CentreVT* C);
         friend istream& operator>>(istream& in,CentreVT* C);
-        void ajouterVisite(Reservation* r);
+        VisiteTech ajouterVisite(Reservation* r);
         void consulterVisite();
         void affecterAgentsVisites();
         void ajouterAgent();

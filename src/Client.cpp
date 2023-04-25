@@ -4,6 +4,8 @@ Client::Client()
 {
     //ctor
 }
+
+
 void Client::menuClient(CentreVT* cvt){
     int cl,c;
         cout<<"\n********Espace Client*******\n"<<endl;
@@ -146,6 +148,7 @@ for(unsigned int i=0;i<listRes.size();i++)
 
 void Client::effectuerRes(CentreVT* cvt){
     Reservation r ;
+    VisiteTech v;
     try{
     do{
     cin>>r;
@@ -155,7 +158,8 @@ void Client::effectuerRes(CentreVT* cvt){
     {
             cerr<<"ERREUR: "<<e.what()<<endl;
     }
-    cvt->ajouterVisite(&r);
+    v=cvt->ajouterVisite(&r);
+    MapVisites.ajouterElement(r.getCodeR(),v);
     listRes.push_back(r);
     enregistrer(r);
 }
@@ -266,7 +270,10 @@ istream& operator>>(istream& in, Client& c)
     for(unsigned int i=0;i< c.listRes.size();i++)
         in>>c.listRes[i];
 }
-
+template<class K, class V>
+void ElementsMap<K, V>::ajouterElement(const K& cle, const V& valeur) {
+    elements.insert(make_pair(cle, valeur));
+}
 Client::~Client()
 {
     //dtor

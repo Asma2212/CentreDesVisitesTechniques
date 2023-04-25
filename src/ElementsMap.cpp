@@ -1,7 +1,7 @@
 #include "ElementsMap.h"
 
 template<class K, class V>
-void ElementsMap<K,V>::ajouterElement(K& cle,V& valeur) {
+void ElementsMap<K,V>::ajouterElement(const K& cle,const V& valeur) {
         elements.insert(pair<K, V>(cle, valeur));
     }
 template<class K, class V>

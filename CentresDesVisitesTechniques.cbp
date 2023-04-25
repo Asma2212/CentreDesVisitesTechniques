@@ -34,12 +34,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Admin.h" />
 		<Unit filename="include/Agent.h" />
 		<Unit filename="include/Camion.h" />
 		<Unit filename="include/CentreVT.h" />
 		<Unit filename="include/Client.h" />
 		<Unit filename="include/Date.h" />
+		<Unit filename="include/ElementsMap.h" />
 		<Unit filename="include/Equipement.h" />
 		<Unit filename="include/Exterieur.h" />
 		<Unit filename="include/Interieur.h" />
@@ -55,12 +55,12 @@
 		<Unit filename="include/VisiteTech.h" />
 		<Unit filename="include/Voiture.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Admin.cpp" />
 		<Unit filename="src/Agent.cpp" />
 		<Unit filename="src/Camion.cpp" />
 		<Unit filename="src/CentreVT.cpp" />
 		<Unit filename="src/Client.cpp" />
 		<Unit filename="src/Date.cpp" />
+		<Unit filename="src/ElementsMap.cpp" />
 		<Unit filename="src/Equipement.cpp" />
 		<Unit filename="src/Exterieur.cpp" />
 		<Unit filename="src/Interieur.cpp" />
