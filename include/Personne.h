@@ -14,14 +14,20 @@ class Personne
 {
     protected:
     int cn;
+    string email;
+    string mdp;
     string nom;
     string prenom;
     int numTel;
     Date dateNaiss;
-    string email;
-    string mdp;
     vector<string*> professions;
     public:
+        personne(int cn,string email,string mdp)
+        {
+            this->cn=cn;
+            this->email= email;
+            this->mdp=mdp;
+        }
         Personne();
         virtual void sinscrire(CentreVT&)=0;
         virtual void authentifier(CentreVT&)=0;

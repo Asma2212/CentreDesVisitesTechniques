@@ -66,6 +66,7 @@ cout << "Bienvenue Cher Agent "<<getNomP()<<endl;
                         testInt.testFrein(vt->res->v);
                         vt->test.push_front(&testInt);
                         vt->test.push_front(&testExt);
+                        cout << "\n Les etats de votre vehicule Apres la visite: \n";
                         etatExt = testInt.getEtatFinal();
                         etatInt = testInt.getEtatFinal();
                         if(etatInt == false || etatExt == false)

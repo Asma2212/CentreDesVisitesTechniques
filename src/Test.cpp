@@ -25,11 +25,11 @@ void Test::affichierEtats(){
 bool Test::getEtatFinal(){
     bool etatFinal = true;
         multimap<string, bool*>::iterator it;
-    cout << "\n Les etats de votre vehicule Apres la visite: \n";
     for (it = etatsTest.begin(); it != etatsTest.end(); ++it) {
-        cout <<"\t etat "<<it->first <<" : "<<it->second<<endl;
-        if(*it->second == false)
-            etatFinal = false;
+        if(*it->second == true)
+            cout <<"\t etat "<<it->first <<" : "<<" valide "<<endl;
+        else
+            cout <<"\t etat "<<it->first <<" : "<<" INvalide "<<endl;
     }
     return etatFinal;
 

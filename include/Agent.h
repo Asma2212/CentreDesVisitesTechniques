@@ -6,11 +6,12 @@
 //#include"Test.h"
 #include "Equipement.h"
 #include "VisiteTech.h"
+#include "Travailleur.h"
 using namespace std;
 class VisiteTech;
 class Equipement;
 
-class Agent : public Personne
+class Agent : public Personne , public Travailleur
 {
     string poste;
     vector <VisiteTech*> listVisites;

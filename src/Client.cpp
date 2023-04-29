@@ -239,7 +239,7 @@ void Client::recuperer(CentreVT* cvt)
 cvt->ajouterVisite(r);
  listRes.push_back(*r);
 }
-cvt->consulterVisite();
+//cvt->consulterVisite();
 Fichier.close() ;
 }
 void Client::reload()

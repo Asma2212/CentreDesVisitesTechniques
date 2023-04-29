@@ -87,7 +87,7 @@ v->setRes(r);
 visites.push_back(v);
 return v;
 }
-
+/*
 void CentreVT::consulterVisite(){
 cout<<"la liste des Visites Techniques :"<<endl;
 cout<<"vous avez au total "<<visites.size()<< " visites(s)"<<endl;
@@ -151,7 +151,7 @@ for(unsigned int i=0;i<personnes.size();i++)
     }
 
 }
-}
+}*/
 CentreVT::~CentreVT()
 {
     //dtor

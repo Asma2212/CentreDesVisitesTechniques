@@ -16,26 +16,30 @@ char confirmer()
 bool Exterieur::testCarrosserie(Vehicule* v)
 {
     char t;
+    bool* e;
     cout<<"\n********** Tester la carrosserie **********"<<endl;
     t=confirmer();
     if(t=='n'){
     v->changeEtatCarosserie();
-    //*etatTest=false;
-     return false ;
-    }
-    return true;
+    *e=false;
+    }else
+    *e=true ;
+    ajouterEtatTest("Carrosserie",e);
+    return *e;
 }
 bool Exterieur::testFeux(Vehicule* v)
 {
         char t;
+        bool*e;
     cout<<"\n********** Tester Feux **********"<<endl;
     t=confirmer();
     if(t=='n'){
      v->changeEtatFeux();
-     //*etatTest=false;
-     return false ;
-    }
-    return true;
+     *e=false;
+    }else
+    *e=true ;
+    ajouterEtatTest("Feux",e);
+    return *e;
 }
 bool Exterieur::testRoues(Vehicule* v)
 {
@@ -43,24 +47,28 @@ Voiture *vt;
     Moto m;
     Camion*c;
     char t;
-    cout<<"\n********** Tester les roues **********\n"<<endl;
+    bool*e;
     if(typeid(*v) == typeid(Camion))
         {
+    cout<<"\n---------- Tester les roues ----------\n"<<endl;
     cout<<"********** Tester roue Supplementaire **********\n"<<endl;
     t=confirmer();
     if(t=='n'){
      static_cast<Camion*>(v)->changeEtatRoueSupp();
-    }
+     *e=false;
+    }else
+    *e=true ;
+    ajouterEtatTest("Roues Supplementaires",e);
     }
     cout<<"********** Tester les roues normal **********"<<endl;
     t=confirmer();
     if(t=='n'){
-    //*etatTest=false;
     v->changeEtatRoues();
-    return false;
-    }
-
-    return true;
+    *e=false;
+    }else
+    *e=true ;
+    ajouterEtatTest("Roues normals",e);
+    return *e;
 }
 
 Exterieur::~Exterieur()

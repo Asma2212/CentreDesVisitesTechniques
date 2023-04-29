@@ -16,26 +16,30 @@ char confirm()
 bool Interieur::testDirection(Vehicule* v)
 {
     char t;
+    bool*e;
     cout<<"\n********** Tester la direction **********"<<endl;
     t=confirm();
     if(t=='n'){
     v->changeEtatDirection();
-    //*etatTest=false;
-     return false ;
-    }
-    return true;
+    *e=false;
+    }else
+    *e=true ;
+    ajouterEtatTest("Direction",e);
+    return * e;
 }
 bool Interieur::testFrein(Vehicule* v)
 {
     char t;
+    bool *e;
     cout<<"\n********** Tester les freins **********"<<endl;
     t=confirm();
     if(t=='n'){
     v->changeEtatFrein();
-    //*etatTest=false;
-     return false ;
-    }
-    return true;
+    *e=false;
+    }else
+    *e=true ;
+    ajouterEtatTest("Freins",e);
+    return *e;
 }
 Interieur::~Interieur()
 {

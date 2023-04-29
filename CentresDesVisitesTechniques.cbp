@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Admin.h" />
 		<Unit filename="include/Agent.h" />
 		<Unit filename="include/Camion.h" />
 		<Unit filename="include/CentreVT.h" />
@@ -48,6 +49,7 @@
 		<Unit filename="include/Personne.h" />
 		<Unit filename="include/Reservation.h" />
 		<Unit filename="include/Test.h" />
+		<Unit filename="include/Travailleur.h" />
 		<Unit filename="include/TypeConsommation.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -55,6 +57,7 @@
 		<Unit filename="include/VisiteTech.h" />
 		<Unit filename="include/Voiture.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Admin.cpp" />
 		<Unit filename="src/Agent.cpp" />
 		<Unit filename="src/Camion.cpp" />
 		<Unit filename="src/CentreVT.cpp" />
@@ -69,6 +72,7 @@
 		<Unit filename="src/Personne.cpp" />
 		<Unit filename="src/Reservation.cpp" />
 		<Unit filename="src/Test.cpp" />
+		<Unit filename="src/Travailleur.cpp" />
 		<Unit filename="src/Vehicule.cpp" />
 		<Unit filename="src/VisiteTech.cpp" />
 		<Unit filename="src/Voiture.cpp" />

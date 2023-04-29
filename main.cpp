@@ -11,6 +11,7 @@
 #include"exception"
 #include"VisiteTech.h"
 #include"CentreVT.h"
+#include "Admin.h"
 using namespace std;
 
 int main()
@@ -18,9 +19,11 @@ int main()
     int esp,cnClient,cl,ad;
     Client clt;
     Agent ag;
+    Admin* admin;
     Equipement e;
     CentreVT c,C1;
     string rf;
+
 /*
     fstream f;
     Equipement E;
@@ -85,9 +88,9 @@ int main()
                  cin>>rf;
                  e.suppEq(rf,c);break;
              case 4 : e.afficherEq(c) ;break;
-             case 5 : c.ajouterAgent();break;
-             case 6 :c.afficherAgents();break;
-             case 7: c.affecterAgentsVisites();break;
+             case 5 : admin->ajouterAgent(c);break;
+             case 6 :admin->afficherAgents(c);break;
+             case 7: admin->affecterAgentsVisites(c);break;
          }
          }catch(runtime_error& e)
         {
