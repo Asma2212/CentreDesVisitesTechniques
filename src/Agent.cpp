@@ -11,6 +11,9 @@ Agent::Agent(const Agent& ag) {
 
 }
 void Agent::menuAgent(CentreVT* c){
+    Exterieur testExt;
+    Interieur testInt;
+    bool etatExt,etatInt;
      int ad,cd;
      string rf;
      char verif;
@@ -56,9 +59,17 @@ cout << "Bienvenue Cher Agent "<<getNomP()<<endl;
                 }while(!tst);
                 cout<<*vt;
                 cout<<"Commencer la visite"<<endl;
-                        vt->testExt.testCarrosserie(vt->res->v);
-                        vt->testExt.testFeux(vt->res->v);
-                        vt->testExt.testRoues(vt->res->v);
+                        testExt.testCarrosserie(vt->res->v);
+                        testExt.testFeux(vt->res->v);
+                        testExt.testRoues(vt->res->v);
+                        testInt.testDirection(vt->res->v);
+                        testInt.testFrein(vt->res->v);
+                        vt->test.push_front(&testInt);
+                        vt->test.push_front(&testExt);
+                        etatExt = testInt.getEtatFinal();
+                        etatInt = testInt.getEtatFinal();
+                        if(etatInt == false || etatExt == false)
+                            vt->setEtatFinal(false);
                     break;
 
          }
@@ -199,12 +210,13 @@ void Agent::modifierD(CentreVT& C)
         cout<<"personne non trouve !"<<endl;
 
 }
-void Agent::validerEtatVisite(VisiteTech VT,Vehicule* V)
+/*void Agent::validerEtatVisite(VisiteTech vt,Vehicule* v)
 {
-    VT.saisiEtatInt(V);
-    VT.saisitEtatExt(V);
+    if(vt.testExt.getEtat()==false || vt.testInt.getEtat()==false)
+        vt.etatTest = false;
 
-}
+
+}*/
 void Agent::consulterVisites(){
 cout<<"vous avez au total "<<listVisites.size()<<" visite(s)"<<endl;
 for(unsigned int i=0;i<listVisites.size();i++)

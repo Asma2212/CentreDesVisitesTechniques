@@ -1,6 +1,7 @@
 #ifndef VEHICULE_H
 #define VEHICULE_H
 #include <iostream>
+#include <vector>
 #include "TypeConsommation.h"
 #include"string"
 #include "MyExceptions.h"
@@ -16,6 +17,8 @@ class Vehicule
     TypeConsommation typeCons ;
     int nbRoues ;
     float tarif;
+    vector<string*> proprietaires;
+   // string* proprietaires;
     bool etatRoues=true;
     bool etatFeux=true;
     bool etatFrein=true;
@@ -36,6 +39,11 @@ class Vehicule
         void changeEtatFeux(){etatFeux = false;}
         void changeEtatFrein(){etatFrein = false;}
         void changeEtatDirection(){etatDirection = false;}
+        void ajouterProprietaire(string* p){
+        proprietaires.push_back(p);}
+        vector<string*> getProprietaire(){
+        return proprietaires;
+        }
 
     protected:
 

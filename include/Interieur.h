@@ -5,17 +5,16 @@
 #include<Moto.h>
 #include<Camion.h>
 #include<Voiture.h>
-#include<Exterieur.h>
 #include <Test.h>
 
 
 class Interieur : public Test
 {
-    bool *etatInt;
+  //  bool *etatInt;
     public:
         Interieur();
-        bool testDirection(Vehicule* V);
-        bool testFrein(Vehicule* V);
+        bool testDirection(Vehicule*);
+        bool testFrein(Vehicule*);
         virtual ~Interieur();
 };
 

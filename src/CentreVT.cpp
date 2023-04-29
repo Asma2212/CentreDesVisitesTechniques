@@ -81,12 +81,11 @@ istream& operator>>(istream& in,CentreVT* C)
     return in;
 }
 
-VisiteTech CentreVT::ajouterVisite(Reservation* r){
+VisiteTech* CentreVT::ajouterVisite(Reservation* r){
 VisiteTech* v = new VisiteTech();
-cout<<"ajouterVisite"<<endl;
 v->setRes(r);
 visites.push_back(v);
-return *v;
+return v;
 }
 
 void CentreVT::consulterVisite(){

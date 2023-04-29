@@ -11,6 +11,7 @@ class Date
 {
     public:
     int jour,mois,annee;
+   // Date* dateAct;
     public:
         Date(int j,int m,int a)
         {

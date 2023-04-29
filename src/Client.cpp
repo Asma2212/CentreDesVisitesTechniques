@@ -147,21 +147,21 @@ for(unsigned int i=0;i<listRes.size();i++)
 //******************** EFFECTUER UNE RESERVATION *************************** //
 
 void Client::effectuerRes(CentreVT* cvt){
-    Reservation r ;
-    VisiteTech v;
+    Reservation* r=new Reservation();
+    VisiteTech* v;
     try{
     do{
-    cin>>r;
-    }while(existDate(r.getDate(),r.getHeure()));
+    cin>>*r;
+    }while(existDate(r->getDate(),r->getHeure()));
 
     }catch(exception const &e)
     {
             cerr<<"ERREUR: "<<e.what()<<endl;
     }
-    v=cvt->ajouterVisite(&r);
-    MapVisites.ajouterElement(r.getCodeR(),v);
-    listRes.push_back(r);
-    enregistrer(r);
+    v=cvt->ajouterVisite(r);
+    MapVisites.ajouterElement(r->getCodeR(),*v);
+    listRes.push_back(*r);
+    enregistrer(*r);
 }
 
 //******************** SUPPRIMER UNE RESERVATION *************************** //

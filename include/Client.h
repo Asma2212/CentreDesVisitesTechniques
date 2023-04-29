@@ -22,11 +22,13 @@ class Client : public Personne
         void menuClient(CentreVT*);
         void sinscrire(CentreVT&);
         void authentifier(CentreVT&);
+
         void modifierD(CentreVT&);
         void effectuerRes(CentreVT*);
         void consulterRes();
         void supprimerRes();
         Reservation & operator[](int);
+
         int getCin(){
         return this->cn ;
         }

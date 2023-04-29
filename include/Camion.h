@@ -8,6 +8,7 @@ class Camion : public Vehicule
     float charge;
     int nbRouesSupp;
     bool etatRoueSupp=true;
+   // int* chargeSupp;
     public:
         Camion();
         Camion(float charge,int nbRouesSupp,bool etatRoueSupp,string matricule,string marque ,int age ,TypeConsommation typeCons ,int nbRoues,bool etatFeux,bool etatFrein,bool etatCarosserie,bool etatDirection)
