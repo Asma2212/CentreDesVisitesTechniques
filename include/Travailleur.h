@@ -1,17 +1,20 @@
 #ifndef TRAVAILLEUR_H
 #define TRAVAILLEUR_H
 
-#include "vector"
+#include "list"
 #include "string"
 using namespace std;
 
 class Travailleur
 {
 protected:
-    vector<string*> specialites;
+    list<string*> specialites;
     public:
         Travailleur();
         virtual ~Travailleur();
+        void ajouter(string* sp);
+        void modifier(string* sp);
+        void supprimer(string* sp);
 
     protected:
 

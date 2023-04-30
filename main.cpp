@@ -24,7 +24,8 @@ int main()
     CentreVT c,C1;
     string rf;
     c.recupererPers();
-    c.afficherListPersonne();
+    clt.recuperer(&c);
+    //c.afficherListPersonne();
 /*
     fstream f;
     Equipement E;
@@ -62,7 +63,7 @@ int main()
     }
     // ******** ESPACE ADMIN ***********
     else{
-            adm.sinscrire(c);
+            //adm.sinscrire(c);
             admin.authentifier(c);
             do{
              try
@@ -75,7 +76,8 @@ int main()
          cout <<"5: Ajouter un agent" <<endl;
          cout <<"6: Consulter la liste des agents" <<endl;
          cout <<"7: Affecter les visites aux agents" <<endl;
-         cout <<"8: Se deconnecter" << endl;
+         cout <<"8: Consulter tous les visites" <<endl;
+         cout <<"9: Se deconnecter" << endl;
          cout<<"_________________________"<<endl;
          cin>>ad;
          if(!cin) throw runtime_error("Vous devez entrer un entier");
@@ -94,6 +96,7 @@ int main()
              case 5 : admin.ajouterAgent(c);break;
              case 6 :admin.afficherAgents(c);break;
              case 7: admin.affecterAgentsVisites(c);break;
+             case 8: admin.consulterVisite(c);break;
          }
          }catch(runtime_error& e)
         {
@@ -102,7 +105,7 @@ int main()
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
 
-    }while(ad!=8);
+    }while(ad!=9);
     esp=0;
     }
 

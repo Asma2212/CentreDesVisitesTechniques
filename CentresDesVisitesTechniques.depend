@@ -172,7 +172,7 @@
 1679834740 source:c:\users\abirb\onedrive\documents\c\tpsemestre2\projetinfo\src\test.cpp
 	"Test.h"
 
-1682852400 source:c:\users\admin\desktop\centredesvisitestechniques\main.cpp
+1682885845 source:c:\users\admin\desktop\centredesvisitestechniques\main.cpp
 	<iostream>
 	<iostream>
 	<fstream>
@@ -188,7 +188,7 @@
 	"CentreVT.h"
 	"Admin.h"
 
-1682749549 c:\users\admin\desktop\centredesvisitestechniques\include\date.h
+1682877003 c:\users\admin\desktop\centredesvisitestechniques\include\date.h
 	<iostream>
 	<fstream>
 	<time.h>
@@ -205,7 +205,7 @@
 	<Client.h>
 	<fstream>
 
-1682788220 c:\users\admin\desktop\centredesvisitestechniques\include\visitetech.h
+1682876356 c:\users\admin\desktop\centredesvisitestechniques\include\visitetech.h
 	"CentreVT.h"
 	"Vehicule.h"
 	"Exterieur.h"
@@ -229,10 +229,10 @@
 	"VisiteTech.h"
 	"Travailleur.h"
 
-1682852461 source:c:\users\admin\desktop\centredesvisitestechniques\src\centrevt.cpp
+1682876100 source:c:\users\admin\desktop\centredesvisitestechniques\src\centrevt.cpp
 	"CentreVT.h"
 
-1681916505 source:c:\users\admin\desktop\centredesvisitestechniques\src\date.cpp
+1682877066 source:c:\users\admin\desktop\centredesvisitestechniques\src\date.cpp
 	"Date.h"
 
 1681916437 source:c:\users\admin\desktop\centredesvisitestechniques\src\equipement.cpp
@@ -264,18 +264,18 @@
 	<Voiture.h>
 	<Test.h>
 
-1682851906 source:c:\users\admin\desktop\centredesvisitestechniques\src\personne.cpp
+1682867639 source:c:\users\admin\desktop\centredesvisitestechniques\src\personne.cpp
 	"Admin.h"
 	"Client.h"
 	"Personne.h"
 
-1682792017 source:c:\users\admin\desktop\centredesvisitestechniques\src\test.cpp
+1682882177 source:c:\users\admin\desktop\centredesvisitestechniques\src\test.cpp
 	"Test.h"
 
 1682788341 source:c:\users\admin\desktop\centredesvisitestechniques\src\visitetech.cpp
 	"VisiteTech.h"
 
-1682791494 source:c:\users\admin\desktop\centredesvisitestechniques\src\agent.cpp
+1682866805 source:c:\users\admin\desktop\centredesvisitestechniques\src\agent.cpp
 	"Agent.h"
 
 1681972196 source:c:\users\admin\desktop\centredesvisitestechniques\src\camion.cpp
@@ -284,10 +284,10 @@
 1682749534 c:\users\admin\desktop\centredesvisitestechniques\include\camion.h
 	<Vehicule.h>
 
-1682852656 source:c:\users\admin\desktop\centredesvisitestechniques\src\client.cpp
+1682885809 source:c:\users\admin\desktop\centredesvisitestechniques\src\client.cpp
 	"Client.h"
 
-1682851981 c:\users\admin\desktop\centredesvisitestechniques\include\client.h
+1682875168 c:\users\admin\desktop\centredesvisitestechniques\include\client.h
 	<fstream>
 	<iostream>
 	<string>
@@ -299,8 +299,9 @@
 	"CentreVT.h"
 	"ElementsMap.h"
 	<VisiteTech.h>
+	<algorithm>
 
-1682847594 source:c:\users\admin\desktop\centredesvisitestechniques\src\reservation.cpp
+1682866419 source:c:\users\admin\desktop\centredesvisitestechniques\src\reservation.cpp
 	"Reservation.h"
 
 1681978800 c:\users\admin\desktop\centredesvisitestechniques\include\reservation.h
@@ -532,10 +533,10 @@
 1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\voiture.cpp
 	"Voiture.h"
 
-1682852762 source:c:\users\admin\desktop\centredesvisitestechniques\src\admin.cpp
+1682877240 source:c:\users\admin\desktop\centredesvisitestechniques\src\admin.cpp
 	"Admin.h"
 
-1682841552 c:\users\admin\desktop\centredesvisitestechniques\include\admin.h
+1682885711 c:\users\admin\desktop\centredesvisitestechniques\include\admin.h
 	"CentreVT.h"
 	<vector>
 	"Personne.h"
@@ -548,10 +549,10 @@
 1682399263 source:c:\users\admin\desktop\centredesvisitestechniques\src\elementsmap.cpp
 	"ElementsMap.h"
 
-1682790641 c:\users\admin\desktop\centredesvisitestechniques\include\travailleur.h
-	"vector"
+1682880370 c:\users\admin\desktop\centredesvisitestechniques\include\travailleur.h
+	"list"
 	"string"
 
-1682790437 source:c:\users\admin\desktop\centredesvisitestechniques\src\travailleur.cpp
+1682885794 source:c:\users\admin\desktop\centredesvisitestechniques\src\travailleur.cpp
 	"Travailleur.h"
 

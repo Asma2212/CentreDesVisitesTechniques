@@ -92,7 +92,7 @@ else
     else
     {
         out<<"Client"<<endl;
-        out<<new Client(static_cast<Client&>(*p))<<endl;
+        //out<<new Client(static_cast<Client&>(*p))<<endl;
     }
 
     out<<p->cn<<endl;

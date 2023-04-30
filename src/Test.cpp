@@ -28,8 +28,11 @@ bool Test::getEtatFinal(){
     for (it = etatsTest.begin(); it != etatsTest.end(); ++it) {
         if(*it->second == true)
             cout <<"\t etat "<<it->first <<" : "<<" valide "<<endl;
-        else
+        else{
             cout <<"\t etat "<<it->first <<" : "<<" INvalide "<<endl;
+            etatFinal=false;
+        }
+
     }
     return etatFinal;
 

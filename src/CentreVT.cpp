@@ -130,7 +130,7 @@ else
        personnes.push_back(ad);
         //p=ad;
         }
-    else
+    else if(ch=="Client")
     {
 
         Client* clt =new Client();
@@ -138,13 +138,7 @@ else
         personnes.push_back(clt);
         //p=clt;
     }
-
-   // Fichier>>r->v;
-
    if(Fichier.eof()) break;
-//Fichier>>ws;
-//r.getDate().affiche();
-//cvt->ajouterPersonne(p);
 }
 //cvt->consulterVisite();
 Fichier.close() ;
@@ -154,15 +148,17 @@ void CentreVT::afficherListPersonne(){
 for(int i=0;i<personnes.size();i++)
     if(typeid(*personnes[i])==typeid(Agent)){
         cout<<"-----AGENT------"<<endl;
-        cout<<new Agent(static_cast<Agent&>(*personnes[i]))<<endl;
+        cout<<static_cast<Agent&>(*personnes[i])<<endl;
     }else if (typeid(*personnes[i])==typeid(Admin)){
         cout<<"-----ADMIN------"<<endl;
-        cout<<new Admin(static_cast<Admin&>(*personnes[i]))<<endl;
+        cout<<static_cast<Admin&>(*personnes[i])<<endl;
     }else if (typeid(*personnes[i])==typeid(Client)){
         cout<<"-----Client------"<<endl;
         cout<<static_cast<Client&>(*personnes[i]);
     }
 }
+
+
 CentreVT::~CentreVT()
 {
     //dtor

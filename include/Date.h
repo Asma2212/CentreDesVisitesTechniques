@@ -24,6 +24,7 @@ class Date
         friend istream& operator>>(istream& in,Date* D);
         friend ostream& operator<<(ostream& out,Date* D);
         friend bool operator==(const Date&,const Date&);
+        friend bool operator<(const Date&,const Date&);
         Date dateCourante();
         bool verifDate(Date);
         virtual ~Date();

@@ -11,6 +11,7 @@
 #include "CentreVT.h"
 #include "ElementsMap.h"
 #include <VisiteTech.h>
+#include <algorithm>
 using namespace std;
 
 

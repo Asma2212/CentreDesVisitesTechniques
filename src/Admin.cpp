@@ -5,9 +5,36 @@ Admin::Admin()
     //ctor
 }
 
+ostream& operator<<(ostream& out,Admin& ad){
+    Personne *p=&ad;
+    out<<*p;
+   /* cout<<"Poste : "<<ag.poste<<endl;
+    cout<<"Liste des visites"<<endl;
+        if(ag.listVisites.size()==0)
+            cout<<"aucune visite affectee"<<endl;
+        else
+        for(unsigned int i=0;i<ag.listVisites.size();i++)
+            out<<*ag.listVisites[i];*/
+
+}
+istream& operator>>(istream& in,Admin& A)
+{
+    Personne *P=&A;
+    in>>*P;
+    /*cout<<"poste :";
+    getline(in,A.poste);*/
+}
+/*bool compareVisitesPatDate(const VisiteTech* v1, const VisiteTech* v2) {
+    return v1->getDate() < v2->getDate();
+}*/
+
 void Admin::consulterVisite(CentreVT& cvt){
 cout<<"la liste des Visites Techniques :"<<endl;
 cout<<"vous avez au total "<<cvt.visites.size()<< " visites(s)"<<endl;
+//sort(cvt.visites.begin(), cvt.visites.end(), compareVisitesParDate);
+sort(cvt.visites.begin(), cvt.visites.end(), [](VisiteTech* v1, VisiteTech* v2) {
+    return v1->getDate() < v2->getDate();
+});
 for(unsigned int i=0;i<cvt.visites.size();i++)
 {
     cout<<"------- Visite NUM"<<i+1<<" -------"<<endl;
@@ -75,6 +102,10 @@ void Admin::sinscrire(CentreVT& C)
         cn=11;
         email="AA";
         mdp="11";
+        dateNaiss = Date(22,12,2000);
+        nom="Administrateur";
+        prenom="Centre";
+        numTel=54209618;
         C.personnes.push_back(this);
         C.enregistrerPers(this);
 }

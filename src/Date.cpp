@@ -44,6 +44,19 @@ bool operator==(const Date& d1,const Date& d2)
         return true;
     return false;
 }
+bool operator<(const Date& d1, const Date& d2) {
+    if (d1.annee < d2.annee) {
+        return true;
+    } else if (d1.annee > d2.annee) {
+        return false;
+    } else if (d1.mois < d2.mois) {
+        return true;
+    } else if (d1.mois > d2.mois) {
+        return false;
+    } else {
+        return d1.jour < d2.jour;
+    }
+}
 Date Date::dateCourante(){
 Date d;
 time_t now;

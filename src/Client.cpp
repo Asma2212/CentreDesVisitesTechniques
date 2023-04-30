@@ -20,7 +20,6 @@ Client& Client::operator=(const Client& clt) {
 ostream& operator<<(ostream& out, Client* c)
 {
     Personne *p =c;
-    out<<"Client"<<endl;
     out<<p;
     /*for(int i=0;i<c->res.size();i++)
     out<<c->res<<endl;*/
@@ -59,7 +58,6 @@ void Client::menuClient(CentreVT* cvt){
         }
     }while(this);
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
-recuperer(cvt);
 //consulterRes();
 //cout<<*this;
     //do{
@@ -155,16 +153,25 @@ void Client::modifierD(CentreVT& C)
 
 }
 
+
 void Client::sinscrire(CentreVT& c)
 {
+    int nbP =0,codeCIN;
+    do{
     Client* clt = new Client();
         cin>>*this;
-        cout<<"heeee";
+        codeCIN = cn;
+        nbP = count_if(c.personnes.begin(), c.personnes.end(),[codeCIN](Personne* p) { return p->getcn() == codeCIN; });
+        if(nbP!=0)
+            {
+                cout<<"cin doit etre unique"<<endl;
+            }else{
         //clt=this;
         c.personnes.push_back(this);
         c.enregistrerPers(this);
         cout<<"compte creer avec succees"<<endl;
-        cout<<*c.personnes[0];
+        cout<<*c.personnes[0];}
+    }while(nbP!=0);
 }
 
 //******************** AFFICHER LES RESERVATIONS *************************** //
@@ -270,6 +277,7 @@ void Client::recuperer(CentreVT* cvt)
  {
  Reservation* r=new Reservation();
    Fichier>>r;
+   //cout<<*r;
    if(Fichier.eof()) break;
 //Fichier>>ws;
 //r.getDate().affiche();
