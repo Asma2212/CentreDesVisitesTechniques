@@ -5,31 +5,59 @@ Client::Client()
     //ctor
 }
 
+Client::Client(const Client& clt) : Personne(clt) {
+    this->listRes = clt.listRes;
+    this->MapVisites = clt.MapVisites;
+}
+Client& Client::operator=(const Client& clt) {
+    if (this != &clt) {
+        Personne::operator=(clt);
+        this->listRes = clt.listRes;
+        this->MapVisites = clt.MapVisites;
+    }
+    return *this;
+}
+ostream& operator<<(ostream& out, Client* c)
+{
+    Personne *p =c;
+    out<<"Client"<<endl;
+    out<<p;
+    /*for(int i=0;i<c->res.size();i++)
+    out<<c->res<<endl;*/
+    return out;
+}
+istream& operator>>(istream& in, Client* c)
+{
+    Personne *p=c;
+    in>>p;
+   //in>>c->res;
+    return in;
+}
 
 void Client::menuClient(CentreVT* cvt){
     int cl,c;
         cout<<"\n********Espace Client*******\n"<<endl;
-/*        do{
+        do{
         cout<<"1: S'authentifier "<<endl;
         cout<<"2: Creer un compte"<<endl;
     cout<<"Tapez votre choix "<<endl;
     cin>>c ;
         if(c == 1)
         try{
-        authentifier(cvt);
+        authentifier(*cvt);
         //cin>>*this;
         break;
         }catch(MyExceptions e){}
     else
         if(c == 2)
             try{
-         sinscrire(cvt);
+         sinscrire(*cvt);
          break ;
         }catch(exception const &e)
         {
             cerr<<"ERREUR: "<<e.what()<<endl;
         }
-    }while(this);*/
+    }while(this);
 cout << "Bienvenue Cher Client "<<getNomP()<<endl;
 recuperer(cvt);
 //consulterRes();
@@ -65,8 +93,9 @@ recuperer(cvt);
 void Client::authentifier(CentreVT& C)
 {
     string email,mdp;
+    Client c;
     char choix;
-    bool emailCorr= false;
+    bool cnCorr= false;
     bool auth=false;
     while(!auth)
     {
@@ -74,32 +103,35 @@ void Client::authentifier(CentreVT& C)
         cin>>email;
         cout<<"entrez votre mot de passe "<<endl;
         cin>>mdp;
-        for(unsigned i=0;i<C.personnes.size();i++)
+        for (unsigned i = 0; i < C.personnes.size(); i++)
         {
-            emailCorr=true;
-            if(email.compare(C.personnes[i]->getEmail())==0)
+            cnCorr = true;
+            Client* clt = dynamic_cast<Client*>(C.personnes[i]);
+            if (clt != nullptr && email == clt->getEmail())
             {
-                if(mdp.compare(C.personnes[i]->getmdp())==0)
+                if (mdp.compare(clt->getmdp()) == 0)
                 {
-                    cout<<"vous etes connecte avec succes "<<endl;
-                    auth=true;
+                    cout << "vous etes connecte avec succes " << endl;
+                    Client* cl = new Client(static_cast<const Client&>(*C.personnes[i]));
+                    *this = *clt;
+                    auth = true;
                     break;
                 }
                 else
                 {
-                    cout<<"mot de passe incorrect !"<<endl;
+                    cout << "mot de passe incorrect !" << endl;
                     break;
                 }
             }
         }
-        if(!emailCorr){
-            cout<<"email introuvable !"<<endl;
-            cout<<"Taper 'r' pour retourner et 'c' pour continuer"<<endl;
-            cin>>choix;
-            if((choix == 'r' )|| (choix == 'R'))
+        if (!cnCorr)
+        {
+            cout << "cn introuvable !" << endl;
+            cout << "Taper 'r' pour retourner ou 'c' pour continuer" << endl;
+            cin >> choix;
+            if ((choix == 'r') || (choix == 'R'))
                 throw MyExceptions("erreur d'authentification");
         }
-
     }
 }
 void Client::modifierD(CentreVT& C)
@@ -125,9 +157,14 @@ void Client::modifierD(CentreVT& C)
 
 void Client::sinscrire(CentreVT& c)
 {
+    Client* clt = new Client();
         cin>>*this;
+        cout<<"heeee";
+        //clt=this;
         c.personnes.push_back(this);
+        c.enregistrerPers(this);
         cout<<"compte creer avec succees"<<endl;
+        cout<<*c.personnes[0];
 }
 
 //******************** AFFICHER LES RESERVATIONS *************************** //
@@ -211,14 +248,14 @@ bool Client::existDate(Date d,int h)
 
 void Client::creer(fstream &f)
 {
- f.open("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::in | ios::out | ios::trunc);
+ f.open("Reservations.txt",ios::in | ios::out | ios::trunc);
  if (!f) cout<<"Erreur Fichier";
 }
 
 
 void Client::enregistrer(Reservation r)
 {
- ofstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::app);
+ ofstream Fichier("Reservations.txt",ios::app);
  if (!Fichier) cout<<"Erreur Fichier";
  Fichier<<&r;
 Fichier.close();
@@ -226,7 +263,7 @@ Fichier.close();
 
 void Client::recuperer(CentreVT* cvt)
 {
- ifstream Fichier("C:\\Users\\ADMIN\\Desktop\\Client.txt",ios::app);
+ ifstream Fichier("Reservations.txt",ios::app);
  if (!Fichier) cout<<"Le fichier n'existe pas ";
 
  while(1)
@@ -242,6 +279,7 @@ cvt->ajouterVisite(r);
 //cvt->consulterVisite();
 Fichier.close() ;
 }
+
 void Client::reload()
 {
 fstream f;
@@ -259,21 +297,26 @@ f.close() ;
 
 ostream& operator<<(ostream& out, Client& c)
 {
-    out<<c;
+    Personne *p=&c;
+    out<<*p;
      for(unsigned int i=0;i< c.listRes.size();i++)
         out<<c.listRes[i];
 
 }
 istream& operator>>(istream& in, Client& c)
 {
-    in>>c;
+    Personne *p=&c;
+    in>>*p;
     for(unsigned int i=0;i< c.listRes.size();i++)
         in>>c.listRes[i];
 }
+
 template<class K, class V>
 void ElementsMap<K, V>::ajouterElement(const K& cle, const V& valeur) {
     elements.insert(make_pair(cle, valeur));
 }
+
+
 Client::~Client()
 {
     //dtor

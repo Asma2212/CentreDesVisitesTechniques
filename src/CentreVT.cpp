@@ -87,71 +87,82 @@ v->setRes(r);
 visites.push_back(v);
 return v;
 }
-/*
-void CentreVT::consulterVisite(){
-cout<<"la liste des Visites Techniques :"<<endl;
-cout<<"vous avez au total "<<visites.size()<< " visites(s)"<<endl;
-for(unsigned int i=0;i<visites.size();i++)
+
+void CentreVT::creerFichierPersonne(fstream &f)
 {
-    cout<<"------- Visite NUM"<<i+1<<" -------"<<endl;
-    cout<<*visites[i];
+ f.open("Personnes.txt",ios::in | ios::out | ios::trunc);
+ if (!f) cout<<"Erreur Fichier";
 }
 
+
+void CentreVT::enregistrerPers(Personne* p)
+{
+ ofstream Fichier("Personnes.txt",ios::app);
+ if (!Fichier) cout<<"Erreur Fichier";
+ Fichier<<p;
+Fichier.close();
 }
 
-void CentreVT::affecterAgentsVisites(){
-int nb,j=0;;
-nb=nombreAgents();
-if(nb==0)
-    cout<<"vous devez avoir au minimum un agent"<<endl;
-else{
-for(unsigned int i=0;i<personnes.size();i++)
-    if(typeid(*personnes[i])==typeid(Agent))
+void CentreVT::recupererPers()
+{
+ ifstream Fichier("Personnes.txt",ios::app);
+ if (!Fichier) cout<<"Le fichier n'existe pas ";
+string ch;
+ while(1)
+ {
+/* Personne* p=new Personne();
+    cout<<"etape1";
+   Fichier>>p;*/
+    Fichier>>ch;
+         if(ch=="Agent")
+{
+    Agent* ag =new Agent();
+    Fichier>>ag;
+    personnes.push_back(ag);
+    //p=ag;
+}
+
+else
+    if(ch=="Admin")
         {
-            Agent* ag;
-           ag=new Agent(static_cast<Agent&>(*personnes[i]));
-            while(ag->getNbVisites()<(visites.size()/nb)){
-                 ag->ajouterVisite(visites[j]);
-                 j++;
-                 personnes[i]=ag;
-            }
-
+        Admin* ad =new Admin();
+       Fichier>>ad;
+       personnes.push_back(ad);
+        //p=ad;
         }
-}
-}
-//error: invalid use of incomplete type 'class Agent'|
-int CentreVT::nombreAgents(){
-int n=0;
-for(unsigned int i=0;i<personnes.size();i++)
-    if(typeid(*personnes[i])==typeid(Agent))
-            n++;
-return n;
-}
-
-void CentreVT::ajouterAgent(){
-char rep;
-    do{
-        Agent *A=new Agent();
-        cin>>*A;
-        personnes.push_back(A);
-        cout<<"vous voulez ajouter un autre un agent(o/n)"<<endl;
-        cin >> rep;
-      } while(rep=='o' || rep == 'O');
-
-}
-
-void CentreVT::afficherAgents(){
-for(unsigned int i=0;i<personnes.size();i++)
-{
-    //cout<<new Agent(static_cast<Agent&>(*personnes[i]));
-    if(typeid(*personnes[i])==typeid(Agent))
+    else
     {
-         Agent* ag=new Agent(static_cast<Agent&>(*personnes[i]));
-        cout<<*ag;
+
+        Client* clt =new Client();
+        Fichier>>clt;
+        personnes.push_back(clt);
+        //p=clt;
     }
 
+   // Fichier>>r->v;
+
+   if(Fichier.eof()) break;
+//Fichier>>ws;
+//r.getDate().affiche();
+//cvt->ajouterPersonne(p);
 }
-}*/
+//cvt->consulterVisite();
+Fichier.close() ;
+}
+
+void CentreVT::afficherListPersonne(){
+for(int i=0;i<personnes.size();i++)
+    if(typeid(*personnes[i])==typeid(Agent)){
+        cout<<"-----AGENT------"<<endl;
+        cout<<new Agent(static_cast<Agent&>(*personnes[i]))<<endl;
+    }else if (typeid(*personnes[i])==typeid(Admin)){
+        cout<<"-----ADMIN------"<<endl;
+        cout<<new Admin(static_cast<Admin&>(*personnes[i]))<<endl;
+    }else if (typeid(*personnes[i])==typeid(Client)){
+        cout<<"-----Client------"<<endl;
+        cout<<static_cast<Client&>(*personnes[i]);
+    }
+}
 CentreVT::~CentreVT()
 {
     //dtor

@@ -105,22 +105,6 @@ ostream& operator<<(ostream& out, Reservation* r)
     out<<r->codeR<<endl;
     out<<&r->dateR;
     out<<r->heure<<endl;
-   /* out<<"vehicule : ";
-    if(typeid(*r->v) == typeid(Camion))
-        {
-            r->v=new Camion(static_cast<const Camion&>(*r->v));
-            out<<"CAMION"<<endl;
-        }
-    else
-        if(typeid(*r->v) == typeid(Moto))
-           {
-             out<<"MOTO"<<endl;
-           }
-
-        else
-            out<<"VOITURE"<<endl;*/
-   /* out<<r->dateR;
-    out<<r->heure<<endl;*/
 if(typeid(*r->v)==typeid(Camion))
 {
     out<<"Camion"<<endl;

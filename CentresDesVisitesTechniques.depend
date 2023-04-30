@@ -172,7 +172,7 @@
 1679834740 source:c:\users\abirb\onedrive\documents\c\tpsemestre2\projetinfo\src\test.cpp
 	"Test.h"
 
-1681974198 source:c:\users\admin\desktop\centredesvisitestechniques\main.cpp
+1682852400 source:c:\users\admin\desktop\centredesvisitestechniques\main.cpp
 	<iostream>
 	<iostream>
 	<fstream>
@@ -186,6 +186,7 @@
 	"exception"
 	"VisiteTech.h"
 	"CentreVT.h"
+	"Admin.h"
 
 1682749549 c:\users\admin\desktop\centredesvisitestechniques\include\date.h
 	<iostream>
@@ -198,8 +199,11 @@
 	<fstream>
 	"CentreVT.h"
 
-1682804213 c:\users\admin\desktop\centredesvisitestechniques\include\centrevt.h
+1682852108 c:\users\admin\desktop\centredesvisitestechniques\include\centrevt.h
 	<Agent.h>
+	<Admin.h>
+	<Client.h>
+	<fstream>
 
 1682788220 c:\users\admin\desktop\centredesvisitestechniques\include\visitetech.h
 	"CentreVT.h"
@@ -209,7 +213,7 @@
 	"Reservation.h"
 	"list"
 
-1682804785 c:\users\admin\desktop\centredesvisitestechniques\include\personne.h
+1682849974 c:\users\admin\desktop\centredesvisitestechniques\include\personne.h
 	"MyExceptions.h"
 	<iostream>
 	<fstream>
@@ -225,7 +229,7 @@
 	"VisiteTech.h"
 	"Travailleur.h"
 
-1682803637 source:c:\users\admin\desktop\centredesvisitestechniques\src\centrevt.cpp
+1682852461 source:c:\users\admin\desktop\centredesvisitestechniques\src\centrevt.cpp
 	"CentreVT.h"
 
 1681916505 source:c:\users\admin\desktop\centredesvisitestechniques\src\date.cpp
@@ -260,7 +264,9 @@
 	<Voiture.h>
 	<Test.h>
 
-1681916486 source:c:\users\admin\desktop\centredesvisitestechniques\src\personne.cpp
+1682851906 source:c:\users\admin\desktop\centredesvisitestechniques\src\personne.cpp
+	"Admin.h"
+	"Client.h"
 	"Personne.h"
 
 1682792017 source:c:\users\admin\desktop\centredesvisitestechniques\src\test.cpp
@@ -278,10 +284,10 @@
 1682749534 c:\users\admin\desktop\centredesvisitestechniques\include\camion.h
 	<Vehicule.h>
 
-1682803650 source:c:\users\admin\desktop\centredesvisitestechniques\src\client.cpp
+1682852656 source:c:\users\admin\desktop\centredesvisitestechniques\src\client.cpp
 	"Client.h"
 
-1682777667 c:\users\admin\desktop\centredesvisitestechniques\include\client.h
+1682851981 c:\users\admin\desktop\centredesvisitestechniques\include\client.h
 	<fstream>
 	<iostream>
 	<string>
@@ -292,8 +298,9 @@
 	<vector>
 	"CentreVT.h"
 	"ElementsMap.h"
+	<VisiteTech.h>
 
-1681970410 source:c:\users\admin\desktop\centredesvisitestechniques\src\reservation.cpp
+1682847594 source:c:\users\admin\desktop\centredesvisitestechniques\src\reservation.cpp
 	"Reservation.h"
 
 1681978800 c:\users\admin\desktop\centredesvisitestechniques\include\reservation.h
@@ -525,10 +532,10 @@
 1680470458 source:c:\users\abirb\documents\centredesvisitestechniques\src\voiture.cpp
 	"Voiture.h"
 
-1682804698 source:c:\users\admin\desktop\centredesvisitestechniques\src\admin.cpp
+1682852762 source:c:\users\admin\desktop\centredesvisitestechniques\src\admin.cpp
 	"Admin.h"
 
-1682805130 c:\users\admin\desktop\centredesvisitestechniques\include\admin.h
+1682841552 c:\users\admin\desktop\centredesvisitestechniques\include\admin.h
 	"CentreVT.h"
 	<vector>
 	"Personne.h"

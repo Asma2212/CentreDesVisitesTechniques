@@ -29,6 +29,8 @@ class Personne
             this->mdp=mdp;
         }
         Personne();
+        Personne& operator=(const Personne& p);
+        Personne(const Personne& p);
         virtual void sinscrire(CentreVT&)=0;
         virtual void authentifier(CentreVT&)=0;
         virtual void modifierD(CentreVT&)=0;
@@ -45,6 +47,8 @@ class Personne
         }
         friend ostream& operator<<(ostream& out, Personne& P);
         friend istream& operator>>(istream& in, Personne& P);
+        friend ostream& operator<<(ostream& out, Personne* P);
+        friend istream& operator>>(istream& in, Personne* P);
         virtual ~Personne();
 };
 

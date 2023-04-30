@@ -19,11 +19,12 @@ int main()
     int esp,cnClient,cl,ad;
     Client clt;
     Agent ag;
-    Admin* admin;
+    Admin admin,adm;
     Equipement e;
     CentreVT c,C1;
     string rf;
-
+    c.recupererPers();
+    c.afficherListPersonne();
 /*
     fstream f;
     Equipement E;
@@ -61,6 +62,8 @@ int main()
     }
     // ******** ESPACE ADMIN ***********
     else{
+            adm.sinscrire(c);
+            admin.authentifier(c);
             do{
              try
             {
@@ -88,9 +91,9 @@ int main()
                  cin>>rf;
                  e.suppEq(rf,c);break;
              case 4 : e.afficherEq(c) ;break;
-             case 5 : admin->ajouterAgent(c);break;
-             case 6 :admin->afficherAgents(c);break;
-             case 7: admin->affecterAgentsVisites(c);break;
+             case 5 : admin.ajouterAgent(c);break;
+             case 6 :admin.afficherAgents(c);break;
+             case 7: admin.affecterAgentsVisites(c);break;
          }
          }catch(runtime_error& e)
         {

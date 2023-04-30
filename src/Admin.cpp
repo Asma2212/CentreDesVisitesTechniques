@@ -51,6 +51,7 @@ char rep;
         Agent *A=new Agent();
         cin>>*A;
         cvt.personnes.push_back(A);
+        cvt.enregistrerPers(A);
         cout<<"vous voulez ajouter un autre un agent(o/n)"<<endl;
         cin >> rep;
       } while(rep=='o' || rep == 'O');
@@ -69,6 +70,60 @@ for(unsigned int i=0;i<cvt.personnes.size();i++)
 
 }
 }
+void Admin::sinscrire(CentreVT& C)
+{
+        cn=11;
+        email="AA";
+        mdp="11";
+        C.personnes.push_back(this);
+        C.enregistrerPers(this);
+}
+void Admin::authentifier(CentreVT& C)
+{
+    string mdp;
+    Admin A;
+    int cn;
+    char choix;
+    bool cnCorr= false;
+    bool auth=false;
+    while(!auth)
+    {
+        cout<<"entrez votre cin"<<endl;
+        cin>>cn;
+        cout<<"entrez votre mot de passe "<<endl;
+        cin>>mdp;
+        for (unsigned i = 0; i < C.personnes.size(); i++)
+        {
+            cnCorr = true;
+            Admin* admin = dynamic_cast<Admin*>(C.personnes[i]);
+            if (admin != nullptr && cn == admin->getcn())
+            {
+                if (mdp.compare(admin->getmdp()) == 0)
+                {
+                    cout << "vous etes connecte avec succes " << endl;
+                    Admin* ad = new Admin(static_cast<const Admin&>(*C.personnes[i]));
+                    *this = *ad;
+                    auth = true;
+                    break;
+                }
+                else
+                {
+                    cout << "mot de passe incorrect !" << endl;
+                    break;
+                }
+            }
+        }
+        if (!cnCorr)
+        {
+            cout << "cn introuvable !" << endl;
+            cout << "Taper 'r' pour retourner ou 'c' pour continuer" << endl;
+            cin >> choix;
+            if ((choix == 'r') || (choix == 'R'))
+                throw MyExceptions("erreur d'authentification");
+        }
+    }
+}
+
 
 /*void Admin::ajouterAdmin(CentreVT& cvt){
 char rep;
@@ -76,7 +131,7 @@ char rep;
         Admin *A=new Admin();
         cin>>*A;
         cvt.personnes.push_back(A);
-        cout<<"vous voulez ajouter un autre un admin(o/n)"<<endl;
+        cout<<"vous voulez ajouter un autre admin(o/n)"<<endl;
         cin >> rep;
       } while(rep=='o' || rep == 'O');
 

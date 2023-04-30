@@ -17,6 +17,9 @@ class Admin: public Personne , public Travailleur
         void ajouterAgent(CentreVT&);
         void afficherAgents(CentreVT&);
         int nombreAgents(CentreVT&);
+        void sinscrire(CentreVT&);
+        void authentifier(CentreVT&);
+        void modifierD(CentreVT&){}
 
     protected:
 
