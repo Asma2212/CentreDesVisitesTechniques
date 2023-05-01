@@ -49,6 +49,7 @@
 		<Unit filename="include/Personne.h" />
 		<Unit filename="include/Reservation.h" />
 		<Unit filename="include/Test.h" />
+		<Unit filename="include/TimeDate.h" />
 		<Unit filename="include/Travailleur.h" />
 		<Unit filename="include/TypeConsommation.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -72,6 +73,7 @@
 		<Unit filename="src/Personne.cpp" />
 		<Unit filename="src/Reservation.cpp" />
 		<Unit filename="src/Test.cpp" />
+		<Unit filename="src/TimeDate.cpp" />
 		<Unit filename="src/Travailleur.cpp" />
 		<Unit filename="src/Vehicule.cpp" />
 		<Unit filename="src/VisiteTech.cpp" />

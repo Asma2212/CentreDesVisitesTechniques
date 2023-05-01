@@ -49,7 +49,16 @@ ostream& operator<<(ostream& out,const Equipement& E)
     out<<E.rf<<endl;
     out<<"libelle: ";
     out<<E.libelle<<endl;
-
+    stack<TimeDate*> temp = E.modeff;
+   if(!temp.empty())
+   {
+     out<<"modification effectuee"<<endl;
+     while(!temp.empty())
+     {
+         out<<*temp.top()<<endl;
+         temp.pop();
+     }
+   }
     return out;
 }
 
@@ -91,6 +100,9 @@ void Equipement::modifierEq(string rf,CentreVT& C)
             cin>>C.equipements[i]->libelle;
             cout<<"Donnez la nouvelle valeur de la quantite : ";
             cin>>C.equipements[i]->quantite;
+            TimeDate* D= new TimeDate();
+            *D=D->tempsCourant();
+            C.equipements[i]->modeff.push(D);
             trouver=true;
             break;
         }

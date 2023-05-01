@@ -31,13 +31,12 @@ class Client : public Personne
         void effectuerRes(CentreVT*);
         void consulterRes();
         void supprimerRes();
-        Reservation & operator[](int);
+       // Reservation & operator[](int);
 
-        int getCin(){
-        return this->cn ;
-        }
+        int getCin();
+        vector<Reservation> getList();
         bool existDate(Date,int);
-        void ajouterRes(Reservation&);
+      //  void ajouterRes(Reservation&);
         void enregistrer(Reservation);
         void recuperer(CentreVT*);
         void creer(fstream &);
@@ -46,9 +45,7 @@ class Client : public Personne
         friend istream& operator>>(istream&, Client&);
         friend ostream& operator<<(ostream&, Client*);
         friend istream& operator>>(istream&, Client*);
-    protected:
 
-    private:
 };
 
 #endif // CLIENT_H

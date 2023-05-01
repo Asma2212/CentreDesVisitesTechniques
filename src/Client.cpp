@@ -4,10 +4,19 @@ Client::Client()
 {
     //ctor
 }
-
+int Client::getCin(){
+    return this->cn ;
+}
 Client::Client(const Client& clt) : Personne(clt) {
     this->listRes = clt.listRes;
     this->MapVisites = clt.MapVisites;
+}
+vector<Reservation> Client::getList()
+{
+    vector<Reservation> tab;
+    for(unsigned i=0;this->listRes.size();i++)
+        tab.push_back(this->listRes[i]);
+    return tab;
 }
 Client& Client::operator=(const Client& clt) {
     if (this != &clt) {

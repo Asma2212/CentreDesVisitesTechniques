@@ -1,5 +1,6 @@
 #ifndef RESERVATION_H
 #define RESERVATION_H
+
 #include <time.h>
 #include"Date.h"
 #include"Vehicule.h"
@@ -9,8 +10,11 @@
 #include<limits>
 #include<iomanip>
 #include <string.h>
+#include<stack>
+#include"TimeDate.h"
 using namespace std;
 
+class Client;
 class Reservation
 {
     static int nbInstance;
@@ -18,6 +22,7 @@ class Reservation
     Date dateR;
     int heure;
     //float paiement;
+    stack<TimeDate*> modifcationEff;
     Vehicule *v ;
     bool payee = false ;
     public:
@@ -27,6 +32,7 @@ class Reservation
         friend istream& operator>>(istream&, Reservation*);
         friend ostream& operator<<(ostream&, Reservation*);
         void saisieRes();
+        void modifierRes(int,Client& );
         void setPayee(){ payee = true ;}
         void setVehicule(Vehicule&);
         Date getDate(){return dateR;}

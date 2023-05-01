@@ -2,8 +2,11 @@
 #define EQUIPEMENT_H
 #include <iostream>
 #include <fstream>
+#include<stack>
 //#include<string>
 #include"CentreVT.h"
+#include"Date.h"
+#include"TimeDate.h"
 using namespace std;
 class CentreVT;
 class Equipement
@@ -11,6 +14,7 @@ class Equipement
     string rf;
     string libelle;
     int quantite;
+    stack<TimeDate*> modeff;
     public:
         Equipement();
         Equipement(string,string,int);

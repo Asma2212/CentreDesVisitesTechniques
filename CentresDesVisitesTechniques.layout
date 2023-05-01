@@ -2,60 +2,67 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="include\Voiture.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Interieur.h" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="123" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Date.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="112" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Client.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="311" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="src\ElementsMap.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="113" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Date.cpp" open="1" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="571" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="include\Voiture.h" open="1" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="98" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Personne.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="src\Test.cpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2633" topLine="108" />
+			<Cursor1 position="904" topLine="17" />
 		</Cursor>
 	</File>
-	<File name="include\Moto.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Test.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="251" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Agent.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="567" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="src\Camion.cpp" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1211" topLine="46" />
-		</Cursor>
-	</File>
-	<File name="include\ElementsMap.h" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="299" topLine="0" />
+			<Cursor1 position="410" topLine="2" />
 		</Cursor>
 	</File>
 	<File name="src\Agent.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3335" topLine="0" />
+			<Cursor1 position="1906" topLine="45" />
 		</Cursor>
 		<Folding>
-			<Collapse line="126" />
-			<Collapse line="170" />
-			<Collapse line="175" />
-			<Collapse line="194" />
+			<Collapse line="119" />
 		</Folding>
 	</File>
-	<File name="include\Travailleur.h" open="1" top="1" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Equipement.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="185" topLine="0" />
+			<Cursor1 position="304" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Travailleur.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MyExceptions.cpp" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="29" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Test.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\TimeDate.h" open="1" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="410" topLine="3" />
+			<Cursor1 position="142" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\Moto.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -63,24 +70,19 @@
 			<Cursor1 position="178" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Client.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="include\TypeConsommation.h" open="1" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="263" topLine="27" />
+			<Cursor1 position="193" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Exterieur.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Reservation.h" open="1" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="837" topLine="39" />
+			<Cursor1 position="239" topLine="22" />
 		</Cursor>
 	</File>
-	<File name="src\CentreVT.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="src\TimeDate.cpp" open="1" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3841" topLine="144" />
-		</Cursor>
-	</File>
-	<File name="include\Exterieur.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="188" topLine="0" />
+			<Cursor1 position="209" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\VisiteTech.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -88,22 +90,54 @@
 			<Cursor1 position="150" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Admin.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Agent.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1365" topLine="39" />
-		</Cursor>
-		<Folding>
-			<Collapse line="81" />
-		</Folding>
-	</File>
-	<File name="include\Equipement.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="241" topLine="0" />
+			<Cursor1 position="567" topLine="10" />
 		</Cursor>
 	</File>
-	<File name="include\VisiteTech.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Personne.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="330" topLine="1" />
+			<Cursor1 position="2633" topLine="107" />
+		</Cursor>
+	</File>
+	<File name="include\Personne.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="186" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="src\Exterieur.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="837" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="include\MyExceptions.h" open="1" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="206" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Camion.cpp" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1211" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="include\Exterieur.h" open="1" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="188" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Travailleur.cpp" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\ElementsMap.h" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="299" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Admin.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="149" topLine="2" />
 		</Cursor>
 	</File>
 	<File name="src\Vehicule.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -114,64 +148,9 @@
 			<Collapse line="106" />
 		</Folding>
 	</File>
-	<File name="include\Vehicule.h" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="213" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="src\MyExceptions.cpp" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="29" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="include\CentreVT.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="995" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="src\Date.cpp" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Camion.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="173" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="src\Equipement.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="23" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\TypeConsommation.h" open="0" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="193" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Personne.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="186" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Voiture.cpp" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="252" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\MyExceptions.h" open="0" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="206" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Test.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="904" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="include\Reservation.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="716" topLine="21" />
+			<Cursor1 position="751" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\Interieur.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -179,51 +158,101 @@
 			<Cursor1 position="746" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="include\Admin.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Equipement.cpp" open="1" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="149" topLine="2" />
+			<Cursor1 position="1981" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\ElementsMap.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\VisiteTech.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="113" topLine="0" />
+			<Cursor1 position="333" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Date.h" open="0" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Camion.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="195" topLine="0" />
+			<Cursor1 position="173" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="src\Client.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Client.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4367" topLine="63" />
+			<Cursor1 position="112" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="93" />
-			<Collapse line="137" />
-			<Collapse line="171" />
-			<Collapse line="185" />
-			<Collapse line="206" />
-			<Collapse line="229" />
-			<Collapse line="249" />
-			<Collapse line="256" />
-			<Collapse line="264" />
-			<Collapse line="283" />
+			<Collapse line="3" />
+			<Collapse line="17" />
+			<Collapse line="21" />
+			<Collapse line="30" />
+			<Collapse line="38" />
+			<Collapse line="45" />
+			<Collapse line="101" />
+			<Collapse line="145" />
+			<Collapse line="167" />
+			<Collapse line="188" />
+			<Collapse line="202" />
+			<Collapse line="223" />
+			<Collapse line="246" />
+			<Collapse line="266" />
+			<Collapse line="273" />
+			<Collapse line="281" />
+			<Collapse line="286" />
+			<Collapse line="301" />
+			<Collapse line="316" />
+			<Collapse line="324" />
+			<Collapse line="332" />
+			<Collapse line="338" />
 		</Folding>
 	</File>
-	<File name="include\Interieur.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Vehicule.h" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="123" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Reservation.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2104" topLine="100" />
+			<Cursor1 position="213" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1356" topLine="62" />
+			<Cursor1 position="721" topLine="15" />
 		</Cursor>
+	</File>
+	<File name="include\Travailleur.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="185" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Voiture.cpp" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="252" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Reservation.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="973" topLine="15" />
+		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="11" />
+			<Collapse line="57" />
+			<Collapse line="83" />
+			<Collapse line="126" />
+			<Collapse line="155" />
+			<Collapse line="188" />
+			<Collapse line="235" />
+		</Folding>
+	</File>
+	<File name="src\CentreVT.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="366" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Moto.h" open="1" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="251" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Admin.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1365" topLine="39" />
+		</Cursor>
+		<Folding>
+			<Collapse line="76" />
+		</Folding>
 	</File>
 </CodeBlocks_layout_file>

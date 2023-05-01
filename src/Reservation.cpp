@@ -27,7 +27,33 @@ heure=r.heure;
 }
 return *this;
 }
-
+void Reservation::modifierRes(int cd,Client& C)
+{
+    vector<Reservation> L;
+    int i=0;
+    bool trouver=false;
+    L=C.getList();
+    while(i<L.size())
+    {
+        if(rf==L[i].codeR)
+        {
+            cout<<"Donnez la nouvelle date : ";
+            cin>>L[i].dateR;
+            cout<<"Donnez une nouvelle heure : ";
+            cin>>L[i].heure;
+            TimeDate* D= new TimeDate();
+            *D=D->tempsCourant();
+            L[i]->modificationEff.push(D);
+            trouver=true;
+            break;
+        }
+        i+=1;
+    }
+    if(trouver==false)
+        cout<<"Reservation introuvable !"<<endl;
+    else
+        cout<<"modification terminee"<<endl;
+}
 
 ostream& operator<<(ostream& out, Reservation& r)
 {

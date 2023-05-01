@@ -21,22 +21,23 @@ int main()
     Agent ag;
     Admin admin,adm;
     Equipement e;
-    CentreVT c,C1;
+    CentreVT c,C1,C;
     string rf;
     c.recupererPers();
     clt.recuperer(&c);
     //c.afficherListPersonne();
-/*
-    fstream f;
     Equipement E;
     E.ajouterEq(C);
-    CentreVT::creer(f);
-    f<<&C;
-    f.seekg(0);
-    f>>&C1;
-    cout<<C1;
-    f.close();*/
+    cout<<C;
+    cout<<"entrez la reference"<<endl;
+    cin>>rf;
+    e.modifierEq(rf,C);
+    cout<<"deuxieme modofication"<<endl;
+    e.modifierEq(rf,C);
+    cout<<C;
 
+
+/*
             do{
         cout<<"_________________________"<<endl;
         cout<<"1: Espace Client "<<endl;
@@ -48,10 +49,10 @@ int main()
     // ******** ESPACE CLIENT ***********
     if(esp == 1){
 
-         clt.menuClient(&c);
+         clt.menuClient(&c);*/
       /*   cout<<"affVisite"<<endl;
          c.consulterVisite();*/
-         esp=0;
+  /*       esp=0;
 
     }
     // ******** ESPACE AGENT ***********
@@ -109,6 +110,6 @@ int main()
     esp=0;
     }
 
-    }while(esp>4 || esp<1);
+    }while(esp>4 || esp<1);*/
     return 0;
 }
