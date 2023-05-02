@@ -31,6 +31,7 @@ class Client : public Personne
         void effectuerRes(CentreVT*);
         void consulterRes();
         void supprimerRes();
+        void modifierRes();
        // Reservation & operator[](int);
 
         int getCin();

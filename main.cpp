@@ -17,19 +17,15 @@ using namespace std;
 int main()
 {
     int esp,cnClient,cl,ad;
-    Client clt;
+    Client clt,clnt;
     Agent ag;
     Admin admin,adm;
     Equipement e;
     CentreVT c,C1;
     string rf;
     c.recupererPers();
-    clt.recuperer(&c);
+    clnt.recuperer(&c);
     //c.afficherListPersonne();
-
-
-
-
             do{
         cout<<"_________________________"<<endl;
         cout<<"1: Espace Client "<<endl;
@@ -40,7 +36,6 @@ int main()
     cin>>esp ;
     // ******** ESPACE CLIENT ***********
     if(esp == 1){
-
          clt.menuClient(&c);
       /*   cout<<"affVisite"<<endl;
          c.consulterVisite();*/

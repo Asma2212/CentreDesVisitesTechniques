@@ -29,16 +29,17 @@ Client& Client::operator=(const Client& clt) {
 ostream& operator<<(ostream& out, Client* c)
 {
     Personne *p =c;
-    out<<p;
-    /*for(int i=0;i<c->res.size();i++)
-    out<<c->res<<endl;*/
+    //out<<p;
+   /* for(int i=0;i<c->listRes.size();i++)
+    out<<&c->listRes[i]<<endl;*/
     return out;
 }
 istream& operator>>(istream& in, Client* c)
 {
     Personne *p=c;
     in>>p;
-   //in>>c->res;
+   /* for(int i=0;i<c->listRes.size();i++)
+    in>>&c->listRes[i];*/
     return in;
 }
 
@@ -76,8 +77,10 @@ cout << "Bienvenue Cher Client "<<getNomP()<<endl;
         cout<<"_________________________"<<endl;
          cout << "1: Effectuer une reservation" <<endl;
          cout << "2: Annuler une reservation" <<endl;
-         cout << "3: Consulter votre liste des reservations" <<endl;
-         cout << "4: Se deconnecter" << endl;
+         cout << "3: Modifier une reservation" <<endl;
+         cout << "4: Consulter votre liste des reservations" <<endl;
+         cout << "5: Modifier ses donnees" <<endl;
+         cout << "6: Se deconnecter" << endl;
          cout<<"_________________________"<<endl;
          cin>>cl;
         if(!cin) throw runtime_error("Vous devez entrer un entier");
@@ -85,7 +88,9 @@ cout << "Bienvenue Cher Client "<<getNomP()<<endl;
          {
              case 1 : effectuerRes(cvt);break;
              case 2 : supprimerRes();break;
-             case 3 : consulterRes();break;
+             case 3 : modifierRes();break;
+             case 4 : consulterRes();break;
+             case 5 : modifierD(*cvt);break;
          }
 
     }catch(runtime_error& e)
@@ -94,8 +99,8 @@ cout << "Bienvenue Cher Client "<<getNomP()<<endl;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
-    }while(cl!=4);
-
+    }while(cl!=6);
+cvt->reloadPers();
 }
 void Client::authentifier(CentreVT& C)
 {
@@ -242,6 +247,27 @@ void Client::supprimerRes()
 }
 
 
+void Client::modifierRes(){
+    //vector<Reservation> L;
+    int i=0,rf;
+    bool trouver=false;
+    cout<<"entrer le code de reservation a modifie"<<endl;
+    cin>>rf;
+    for(int i=0;i<listRes.size();i++)
+    {
+        if(rf==listRes[i].getCodeR())
+        {
+            listRes[i].modifierRes();
+            trouver = true;
+        }
+    }
+    if(trouver==false)
+        cout<<"Reservation introuvable !"<<endl;
+    else
+        cout<<"modification terminee"<<endl;
+
+reload();
+}
 bool Client::existDate(Date d,int h)
 {
     for(unsigned int i=0;i< listRes.size();i++)
@@ -324,8 +350,8 @@ istream& operator>>(istream& in, Client& c)
 {
     Personne *p=&c;
     in>>*p;
-    for(unsigned int i=0;i< c.listRes.size();i++)
-        in>>c.listRes[i];
+   /* for(unsigned int i=0;i< c.listRes.size();i++)
+        in>>c.listRes[i];*/
 }
 
 template<class K, class V>

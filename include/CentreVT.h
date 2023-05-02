@@ -35,6 +35,7 @@ class CentreVT
         void recupererPers();
         void creerFichierPersonne(fstream &);
         void afficherListPersonne();
+        void reloadPers();
 
        /* void consulterVisite();
         void affecterAgentsVisites();

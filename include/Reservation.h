@@ -32,7 +32,8 @@ class Reservation
         friend istream& operator>>(istream&, Reservation*);
         friend ostream& operator<<(ostream&, Reservation*);
         void saisieRes();
-        void modifierRes(int,Client& );
+       // void modifierRes(int,Client& );
+        void modifierRes();
         void setPayee(){ payee = true ;}
         void setVehicule(Vehicule&);
         Date getDate(){return dateR;}

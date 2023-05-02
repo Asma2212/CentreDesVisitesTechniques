@@ -144,6 +144,16 @@ else
 Fichier.close() ;
 }
 
+void CentreVT::reloadPers(){
+fstream f;
+ creerFichierPersonne(f);
+ f.clear();
+for(unsigned int i=0;i<personnes.size();i++)
+ {
+
+   f<<personnes[i];
+}
+}
 void CentreVT::afficherListPersonne(){
 for(int i=0;i<personnes.size();i++)
     if(typeid(*personnes[i])==typeid(Agent)){

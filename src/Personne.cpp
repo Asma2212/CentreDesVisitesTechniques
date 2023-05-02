@@ -54,21 +54,11 @@ istream& operator>>(istream& in, Personne& P)
     cout<<"cin"<<endl;
     in>>P.cn;
     cout<<"nom et prenom"<<endl;
-    /*in.ignore(); //check
-    getline(in,P.nom,'\n');
-    getline(in,P.prenom,'\n');*/
     in>>P.nom;
     in>>P.prenom;
-   /* cout<<"numero de telephone"<<endl;
-    in>>P.numTel;
-    cout<<"date de naissance"<<endl;
-    in>>P.dateNaiss;*/
     cout<<"email"<<endl;
-    /*in.ignore();
-    getline(in,P.email,'\n');*/
     in>>P.email;
-    cout<<"mots de passe"<<endl;
-    //getline(in,P.mdp,'\n');
+    cout<<"mot de pass"<<endl;
     in>>P.mdp;
     return in;
 
@@ -94,7 +84,6 @@ else
         out<<"Client"<<endl;
         //out<<new Client(static_cast<Client&>(*p))<<endl;
     }
-
     out<<p->cn<<endl;
     out<<p->email<<endl;
     out<<p->mdp<<endl;
@@ -102,14 +91,14 @@ else
     out<<p->prenom<<endl;
     out<<p->numTel<<endl;
     out<<&p->dateNaiss;
-
+if(typeid(*p)==typeid(Client))
+    out<<new Client(static_cast<Client&>(*p))<<endl;
 
     return out;
 }
 
 istream& operator>>(istream& in, Personne* p)
 {
-    string ch;
     int i;
     in>>p->cn;
     in>>p->email;
@@ -118,7 +107,6 @@ istream& operator>>(istream& in, Personne* p)
     in>>p->prenom;
     in>>p->numTel;
     in>>p->dateNaiss;
-
     return in;
 }
 

@@ -27,7 +27,7 @@ heure=r.heure;
 }
 return *this;
 }
-void Reservation::modifierRes(int cd,Client& C)
+/*void Reservation::modifierRes(int cd,Client& C)
 {
     vector<Reservation> L;
     int i=0;
@@ -53,6 +53,49 @@ void Reservation::modifierRes(int cd,Client& C)
         cout<<"Reservation introuvable !"<<endl;
     else
         cout<<"modification terminee"<<endl;
+}*/
+void Reservation::modifierRes()
+{
+    int type;
+            cout<<"Donnez la nouvelle date : ";
+            cin>>dateR;
+            cout<<"Donnez une nouvelle heure : ";
+            cin>>heure;
+            TimeDate* D= new TimeDate();
+            *D=D->tempsCourant();
+    cout<<"entrer le type du vehicule"<<endl;
+    cout<<"1:camion"<<endl;
+    cout<<"2:moto"<<endl;
+    cout<<"3:voiture"<<endl;
+    cin>>type;
+    switch(type)
+    {
+        case 1 :
+            {
+        Camion cm;
+        cm.saisie();
+      //  v=cm;
+        setVehicule(cm);
+        break;
+            }
+        case 2 :
+        {
+            Moto mt;
+            mt.saisie();
+            setVehicule(mt);
+            break;
+
+        }
+       case 3 :
+        {
+            Voiture vt;
+            vt.saisie();
+            setVehicule(vt);
+             break;
+
+        }
+        }
+
 }
 
 ostream& operator<<(ostream& out, Reservation& r)
