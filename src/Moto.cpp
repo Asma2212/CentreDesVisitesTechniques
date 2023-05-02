@@ -7,6 +7,15 @@ Moto::Moto()
 }
 void Moto::affiche(){
     Vehicule::affiche();
+    if(!this->visiteEff2.empty())
+   {
+     cout<<"visite effectuee"<<endl;
+     while(!this->visiteEff2.empty())
+     {
+         cout<<this->visiteEff2.top()<<endl;
+         this->visiteEff2.pop();
+     }
+   }
 }
 istream& operator>>(istream& in, Moto& m)
 {

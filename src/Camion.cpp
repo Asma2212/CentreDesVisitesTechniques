@@ -16,6 +16,15 @@ void Camion::affiche(){
         cout<<"valide "<<endl;
     else
         cout<<"non valide X"<<endl;
+    if(!this->visiteEff1.empty())
+   {
+     cout<<"visite effectuee"<<endl;
+     while(!this->visiteEff1.empty())
+     {
+         cout<<this->visiteEff1.top()<<endl;
+         this->visiteEff1.pop();
+     }
+   }
 }
 }
 void Camion::saisie(){
@@ -34,6 +43,15 @@ cout<<"nombre de roues: ";
 out<<c.nbRouesSupp<<endl ;
 cout<<"etat roues :";
 out<<c.etatRoueSupp<<endl;
+if(!c.visiteEff1.empty())
+   {
+     cout<<"visite effectuee"<<endl;
+     while(!c.visiteEff1.empty())
+     {
+         out<<c.visiteEff1.top()<<endl;
+         c.visiteEff1.pop();
+     }
+   }
 return out;
 }
 istream& operator>>(istream& in, Camion& c)
