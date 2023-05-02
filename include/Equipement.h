@@ -3,7 +3,6 @@
 #include <iostream>
 #include <fstream>
 #include<stack>
-//#include<string>
 #include"CentreVT.h"
 #include"Date.h"
 #include"TimeDate.h"
@@ -26,7 +25,6 @@ class Equipement
         void suppEq(string,CentreVT&);
         void modifierEq(string,CentreVT&);
         void afficherEq(CentreVT&);
-      //  string getref();
         virtual ~Equipement();
     friend class Agent;
 };

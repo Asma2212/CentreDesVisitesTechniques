@@ -13,7 +13,6 @@ VisiteTech::VisiteTech(const VisiteTech & v)
 {
     list<Test*>::iterator it;
     list<Test*> t;
-   // nbVisite = v.nbVisite;
     codeV=v.codeV;
 for(auto it = v.test.begin(); it!=v.test.end(); ++it)
 {
@@ -33,7 +32,7 @@ if(this!=&v)
 {
 delete[]v.res;
 test.clear();
-//nbVisite = v.nbVisite;
+
 codeV=v.codeV;
 for(auto it = v.test.begin(); it!=v.test.end(); ++it)
 {
@@ -81,22 +80,6 @@ void VisiteTech::modifierVisite(CentreVT C,string code)
         cout<<"visite non trouve !"<<endl;
 
 }
-/*void VisiteTech::saisitEtatExt(Vehicule *V)
-{
-    Exterieur E;
-    if(E.testRoues(V)==true && E.testCarrosserie(V)==true && E.testFeux(V)==true)
-        etatExt=true;
-    else
-        etatExt=false;
-}
-void VisiteTech::saisiEtatInt(Vehicule *V)
-{
-    Interieur I;
-    if(I.testFrein(V)==true && I.testDirection(V)==true)
-            etatInt=true;
-    else
-        etatInt=false;
-}*/
 
 VisiteTech::~VisiteTech()
 {

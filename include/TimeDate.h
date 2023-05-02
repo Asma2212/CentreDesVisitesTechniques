@@ -15,7 +15,6 @@ class TimeDate
         virtual ~TimeDate();
         TimeDate tempsCourant();
         friend ostream& operator<<(ostream& out,TimeDate& TD);
-      //  friend ostream& operator<<(ostream& out,TimeDate* D);
 };
 
 #endif // TIMEDATE_H

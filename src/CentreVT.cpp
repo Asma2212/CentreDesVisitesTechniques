@@ -55,29 +55,6 @@ istream& operator>>(istream& in,CentreVT* C)
         in>>*E;
         C->equipements.push_back(E);
     }
-   /* while(1)
-    {
-        in>>choix;
-        if(in.eof()) break;
-        if(choix==1)
-        {
-            Personne *P=new Personne();
-            in>>*P;
-            C->personnes.push_back(P);
-        }
-      /*if(choix==2)
-        {
-            Agent *A=new Agent();
-            in>>*A;
-            C->personnes.push_back(A);
-        }
-        if(choix==3)
-        {
-            Client *Cl=new Client();
-            in>>*Cl;
-            C->personnes.push_back(Cl);
-        }*/
-    //}
     return in;
 }
 

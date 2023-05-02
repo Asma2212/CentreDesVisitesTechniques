@@ -10,7 +10,6 @@
 
 class Exterieur : public Test
 {
-   // bool* etatExt;
     public:
         Exterieur();
         virtual ~Exterieur();
