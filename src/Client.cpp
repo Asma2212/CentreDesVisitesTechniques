@@ -219,6 +219,23 @@ void Client::effectuerRes(CentreVT* cvt){
     v=cvt->ajouterVisite(r);
     MapVisites.ajouterElement(r->getCodeR(),*v);
     listRes.push_back(*r);
+    int* code= new int();
+    Vehicule* veh = r->getVeh();
+    Voiture* V1;
+    V1 = dynamic_cast<voiture*>(veh);
+    if (V1 != nullptr)
+            V1.visiteEff.push(code);  // vh was successfully cast to a 'voiture' object
+    else {// vh is not a voiture object
+            Camion* C1;
+            C1 = dynamic_cast<Camion*>(veh);
+            if(C1 != nullptr)
+                    //C1.visiteEff.push(code)                 // vh was successfully cast to a 'Camion' object
+            else
+                Moto* M1;
+                M1 = dynamic_cast<Moto*>(veh);
+                if(M1 != nullptr)
+                    //M1.visiteEff.push(code);
+    }
     enregistrer(*r);
 }
 

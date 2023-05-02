@@ -33,6 +33,7 @@ class VisiteTech
         void saisiEtatInt(Vehicule*);
         void saisitEtatExt(Vehicule*);
         void setRes(Reservation* r){this->res=r;}
+        Reservation getRes(){return *res;}
         int getCode(){return codeV;}
         Date getDate(){return res->getDate();}
         void setEtatFinal(bool e){

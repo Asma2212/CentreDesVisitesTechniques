@@ -17,7 +17,7 @@ using namespace std;
 int main()
 {
     int esp,cnClient,cl,ad;
-    Client clt,clnt;
+    Client clt,clnt,C;
     Agent ag;
     Admin admin,adm;
     Equipement e;
@@ -26,7 +26,11 @@ int main()
     c.recupererPers();
     clnt.recuperer(&c);
     //c.afficherListPersonne();
-            do{
+
+
+
+
+           do{
         cout<<"_________________________"<<endl;
         cout<<"1: Espace Client "<<endl;
         cout<<"2: Espace Agent"<<endl;
@@ -39,7 +43,7 @@ int main()
          clt.menuClient(&c);
       /*   cout<<"affVisite"<<endl;
          c.consulterVisite();*/
-         esp=0;
+        esp=0;
 
     }
     // ******** ESPACE AGENT ***********

@@ -39,6 +39,7 @@ class Reservation
         Date getDate(){return dateR;}
         int getHeure(){return heure;}
         int getCodeR(){return codeR;}
+        Vehicule getVeh(){return *v;}
         Reservation(const Reservation &);
         Reservation & operator=(const Reservation &);
         friend class Agent;

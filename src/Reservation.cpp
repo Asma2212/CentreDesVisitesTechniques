@@ -27,33 +27,6 @@ heure=r.heure;
 }
 return *this;
 }
-/*void Reservation::modifierRes(int cd,Client& C)
-{
-    vector<Reservation> L;
-    int i=0;
-    bool trouver=false;
-    L=C.getList();
-    while(i<L.size())
-    {
-        if(rf==L[i].codeR)
-        {
-            cout<<"Donnez la nouvelle date : ";
-            cin>>L[i].dateR;
-            cout<<"Donnez une nouvelle heure : ";
-            cin>>L[i].heure;
-            TimeDate* D= new TimeDate();
-            *D=D->tempsCourant();
-            L[i]->modificationEff.push(D);
-            trouver=true;
-            break;
-        }
-        i+=1;
-    }
-    if(trouver==false)
-        cout<<"Reservation introuvable !"<<endl;
-    else
-        cout<<"modification terminee"<<endl;
-}*/
 void Reservation::modifierRes()
 {
     int type;
@@ -62,7 +35,6 @@ void Reservation::modifierRes()
             cout<<"Donnez une nouvelle heure : ";
             cin>>heure;
             TimeDate* D= new TimeDate();
-            *D=D->tempsCourant();
     cout<<"entrer le type du vehicule"<<endl;
     cout<<"1:camion"<<endl;
     cout<<"2:moto"<<endl;
@@ -92,10 +64,11 @@ void Reservation::modifierRes()
             vt.saisie();
             setVehicule(vt);
              break;
-
-        }
         }
 
+        }
+            *D=D->tempsCourant();
+            modifcationEff.push(D);
 }
 
 ostream& operator<<(ostream& out, Reservation& r)
@@ -121,8 +94,17 @@ ostream& operator<<(ostream& out, Reservation& r)
         else
             cout<<"VOITURE"<<endl;
     //out<<*r.v;
-
     r.v->affiche();
+    // stack<TimeDate*> temp = E.modeff;
+   if(!r.modifcationEff.empty())
+   {
+     out<<"modification effectuee"<<endl;
+     while(!r.modifcationEff.empty())
+     {
+         out<<*r.modifcationEff.top()<<endl;
+         r.modifcationEff.pop();
+     }
+   }
     return out;
 }
 void Reservation::saisieRes(){
@@ -286,4 +268,5 @@ void Reservation::setVehicule(Vehicule& v1){
             v=new Moto(static_cast<const Moto&>(v1));
         else
             v=new Voiture(static_cast<const Voiture&>(v1));
+
 }

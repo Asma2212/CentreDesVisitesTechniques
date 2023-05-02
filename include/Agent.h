@@ -23,7 +23,7 @@ class Agent : public Personne , public Travailleur
         void sinscrire(CentreVT&);
         void modifierD(CentreVT&);
         void ConsulterEq(CentreVT&);
-        void ajouterVisite(VisiteTech* v){listVisites.push_back(v);}
+        void ajouterVisite(VisiteTech* V){listVisites.push_back(V);}
         void consulterVisites();
         int getNbVisites(){return listVisites.size();}
         Equipement& rechEq(string,CentreVT&);
