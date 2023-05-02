@@ -229,12 +229,12 @@ void Client::effectuerRes(CentreVT* cvt){
             Camion* C1;
             C1 = dynamic_cast<Camion*>(veh);
             if(C1 != nullptr)
-                    //C1.visiteEff.push(code)                 // vh was successfully cast to a 'Camion' object
+                    //C1.visiteEff1.push(code)                 // vh was successfully cast to a 'Camion' object
             else
                 Moto* M1;
                 M1 = dynamic_cast<Moto*>(veh);
                 if(M1 != nullptr)
-                    //M1.visiteEff.push(code);
+                    //M1.visiteEff2.push(code);
     }
     enregistrer(*r);
 }
