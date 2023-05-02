@@ -191,6 +191,8 @@ istream& operator>>(istream& in, Reservation* r)
 {
     Camion* c =new Camion();
        in>>c;
+       int* code=new int(r->codeR);
+        c->getVE1().push(code);
     r->v=c;
 }
 
@@ -198,7 +200,9 @@ else
     if(ch=="Moto")
         {
         Moto* m =new Moto();
-       in>>m;
+        in>>m;
+        int* code=new int(r->codeR);
+        m->getVE2().push(code);
         r->v=m;
         }
     else
@@ -206,6 +210,8 @@ else
 
         Voiture* vt =new Voiture();
         in>>vt;
+        int* code=new int(r->codeR);
+        vt->getVE().push(code);
         r->v=vt;
     }
 

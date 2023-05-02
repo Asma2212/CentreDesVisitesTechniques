@@ -7,6 +7,15 @@ Voiture::Voiture()
 }
 void Voiture::affiche(){
     Vehicule::affiche();
+      if(!this->visiteEff.empty())
+   {
+     cout<<"visite effectuee"<<endl;
+     while(!this->visiteEff.empty())
+     {
+         cout<<this->visiteEff.top()<<endl;
+         this->visiteEff.pop();
+     }
+   }
 }
 void Voiture::saisie(){
    Vehicule::saisie();

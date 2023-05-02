@@ -28,9 +28,7 @@ int main()
     //c.afficherListPersonne();
 
 
-
-
-           do{
+            do{
         cout<<"_________________________"<<endl;
         cout<<"1: Espace Client "<<endl;
         cout<<"2: Espace Agent"<<endl;

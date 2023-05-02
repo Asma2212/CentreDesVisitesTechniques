@@ -58,6 +58,16 @@ ostream& operator<<(ostream& out, Camion* c)
 
     return out;
 }
+stack<int*> Camion::getVE1()
+{
+    stack<int*> L;
+    for(unsigned i=0;this->visiteEff1.size();i++)
+       {
+           L.push(this->visiteEff1.top());
+           this->visiteEff1.pop();
+       }
+    return L;
+}
 istream& operator>>(istream& in, Camion* c)
 {
      Vehicule *v=c;
