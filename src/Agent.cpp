@@ -5,11 +5,28 @@ Agent::Agent()
     //ctor
 }
 
-Agent::Agent(const Agent& ag) {
-    *this=ag;
-    listVisites = ag.listVisites;
+Agent::Agent(const Agent& ag): Personne(ag), Travailleur()  {
+    for (unsigned i = 0; i <ag.listVisites.size(); ++i){
+    this->listVisites.push_back(ag.listVisites[i]);
+        }
 
 }
+
+Agent& Agent::operator=(const Agent& ag){
+if (this != &ag) {
+Personne::operator=(ag);
+Travailleur::operator=(ag);
+for (unsigned i = 0; i <listVisites.size(); ++i){
+    delete listVisites[i];
+}
+this->listVisites.clear();
+for (unsigned i = 0; i <ag.listVisites.size(); ++i){
+    this->listVisites.push_back(ag.listVisites[i]);
+        }
+}
+        return *this;
+}
+
 void Agent::menuAgent(CentreVT* c){
     Exterieur testExt;
     Interieur testInt;
@@ -218,6 +235,9 @@ for(unsigned int i=0;i<listVisites.size();i++)
 }
 Agent::~Agent()
 {
-    //dtor
+   for (unsigned i = 0; i <listVisites.size(); ++i){
+    delete listVisites[i];
+}
+this->listVisites.clear();
 }
 

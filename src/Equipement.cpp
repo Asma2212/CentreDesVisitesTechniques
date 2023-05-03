@@ -25,9 +25,8 @@ ostream& operator<<(ostream& out,const Equipement* E)
 istream& operator>>(istream& in,Equipement* E)
 {
     in>>E->quantite;
-    in.ignore();
-    getline(in,E->rf,'\n');
-    getline(in,E->libelle,'\n');
+    in>>E->rf;
+    in>>E->libelle;
     return in;
 }
 istream& operator>>(istream& in,Equipement& E)
@@ -70,6 +69,7 @@ void Equipement::ajouterEq(CentreVT& C)
         Equipement *E=new Equipement();
         cin>>*E;
         C.equipements.push_back(E);
+        C.enregistrerEquipement(E);
         cout<<"vous voulez ajouter un autre equipement(taper o pour oui)"<<endl;
         cin >> rep;
       } while(rep =='o' || rep == 'O');
@@ -86,6 +86,7 @@ void Equipement::suppEq(string rf,CentreVT& C)
             return;
         }
     }
+   // C.reloadEquipement();
     cout<<"reference introuvable"<<endl;
 }
 void Equipement::modifierEq(string rf,CentreVT& C)
@@ -110,16 +111,24 @@ void Equipement::modifierEq(string rf,CentreVT& C)
     }
     if(trouver==false)
         cout<<"equipement introuvable !"<<endl;
-    else
+    else{
         cout<<"modification terminee"<<endl;
-
+        //C.reloadEquipement();
+    }
 }
 
 void Equipement::afficherEq(CentreVT& C)
 {
     if(C.equipements.size()==0) cout<<"liste des equipements est vide"<<endl;
-    for(unsigned i=0;i<C.equipements.size();i++)
-        cout<<*C.equipements[i];
+    else {
+    cout<<"Vous avez "<<C.equipements.size()<<" equipements"<<endl;
+    for(unsigned int i=0;i<C.equipements.size();i++){
+            if(C.equipements[i]->rf !=""){
+        cout<<"------ Equipement "<<i+1<<" ------- "<<endl;
+        cout<<*C.equipements[i];}
+    }
+    }
+
 }
 
 Equipement::~Equipement()

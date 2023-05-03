@@ -10,6 +10,8 @@ class Moto : public Vehicule
     public:
         Moto();
         virtual ~Moto();
+        Moto& operator=(const Moto&);
+        Moto(const Moto&);
         void affiche();
         void saisie();
         stack<int*> getVE2();

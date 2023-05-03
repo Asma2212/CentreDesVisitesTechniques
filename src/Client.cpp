@@ -192,6 +192,7 @@ void Client::sinscrire(CentreVT& c)
 
 void Client::consulterRes(){
     int i;
+    vector<VisiteTech> vt;
     cout<<"la liste des reservations"<<endl;
     cout<<"vous avez au total "<<listRes.size()<< " reservation(s)"<<endl;
 for(unsigned int i=0;i<listRes.size();i++)
@@ -199,7 +200,11 @@ for(unsigned int i=0;i<listRes.size();i++)
     cout<<"------- RESERVATION NUM"<<i+1<<" -------"<<endl;
     cout<<listRes[i];
 }
-
+ cout<<"nombre des visites : "<<MapVisites.taille()<<endl;
+ vt=MapVisites.getElements();
+    if(MapVisites.taille()!=0)
+        for(unsigned int i=0;i<MapVisites.taille();i++)
+            cout<<vt[i].getCode();
 }
 
 //******************** EFFECTUER UNE RESERVATION *************************** //
@@ -354,13 +359,42 @@ istream& operator>>(istream& in, Client& c)
         in>>c.listRes[i];*/
 }
 
+
 template<class K, class V>
 void ElementsMap<K, V>::ajouterElement(const K& cle, const V& valeur) {
     elements.insert(make_pair(cle, valeur));
 }
+template<class K, class V>
+vector<V> ElementsMap<K,V>::getElements(){
+        vector<V> result;
+        for (const auto& it : elements) {
+            result.push_back(it.second);
+        }
+        return result;
+    }
+template<class K, class V>
+int ElementsMap<K,V>::taille(){
+        return elements.size();
+    }
+template<class K, class V>
+void ElementsMap<K,V>::supprimerElement(K& cle) {
+        elements.erase(cle);
+    }
+template<class K, class V>
+void ElementsMap<K,V>::effacer(){
+        return elements.clear();
+    }
 
 
 Client::~Client()
 {
-    //dtor
+for (unsigned i = 0; i <listRes.size(); ++i){
+    delete &listRes[i];
+}
+/*for (auto& elem : MapVisites) {
+    delete elem.second;
+}*/
+    MapVisites.effacer();
+
+this->listRes.clear();
 }

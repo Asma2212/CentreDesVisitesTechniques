@@ -25,6 +25,7 @@ int main()
     string rf;
     c.recupererPers();
     clnt.recuperer(&c);
+    c.recupererEq();
     //c.afficherListPersonne();
 
 
@@ -53,7 +54,7 @@ int main()
     }
     // ******** ESPACE ADMIN ***********
     else{
-            //adm.sinscrire(c);
+           // adm.sinscrire(c);
             admin.authentifier(c);
             do{
              try

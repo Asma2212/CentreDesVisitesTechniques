@@ -26,16 +26,24 @@ class CentreVT
     public:
         CentreVT();
         virtual ~CentreVT();
+        CentreVT& operator=(const CentreVT&);
+        CentreVT(const CentreVT&);
         static void creer(fstream&);
         friend ostream& operator<<(ostream& out,CentreVT& C);
         friend ostream& operator<<(ostream& out,CentreVT* C);
         friend istream& operator>>(istream& in,CentreVT* C);
         VisiteTech* ajouterVisite(Reservation* r);
+        // Fichier personne
         void enregistrerPers(Personne*);
         void recupererPers();
         void creerFichierPersonne(fstream &);
         void afficherListPersonne();
         void reloadPers();
+        // Fichier equipement
+        void enregistrerEquipement(Equipement*);
+        void recupererEq();
+        void creerFichierEquipement(fstream &);
+        void reloadEquipement();
 
        /* void consulterVisite();
         void affecterAgentsVisites();

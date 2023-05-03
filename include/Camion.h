@@ -16,6 +16,8 @@ class Camion : public Vehicule
         :Vehicule(matricule,marque,age,typeCons ,nbRoues,etatFeux,etatFrein,etatCarosserie,etatDirection)
         {this->charge=charge;}
         virtual ~Camion();
+        Camion& operator=(const Camion&);
+        Camion(const Camion&);
         void affiche();
         void saisie();
         stack<int*> getVE1();

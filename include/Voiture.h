@@ -9,9 +9,12 @@ class Voiture : public Vehicule
     stack<int*> visiteEff;
     public:
         Voiture();
+        virtual ~Voiture();
+        Voiture& operator=(const Voiture&);
+        Voiture(const Voiture&);
         void affiche();
         void saisie();
-        virtual ~Voiture();
+
         friend istream& operator>>(istream&, Voiture&);
         friend ostream& operator<<(ostream&, Voiture&);
         stack<int*> getVE();

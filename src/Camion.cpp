@@ -5,7 +5,29 @@ Camion::Camion()
     tarif=30.0;
     nbRoues=4;
 }
+Camion::Camion(const Camion& c) : Vehicule(c){
+stack<int*> tempStack = c.visiteEff1;
+while(!tempStack.empty()){
+    this->visiteEff1.push(tempStack.top());
+    tempStack.pop();
+        }
+}
 
+Camion& Camion::operator=(const Camion& c){
+stack<int*> tempStack = c.visiteEff1;
+if (this != &c) {
+Vehicule::operator=(c);
+while(!visiteEff1.empty()){
+    delete visiteEff1.top();
+}
+//this->visiteEff1.clean();
+while(!c.visiteEff1.empty()){
+    this->visiteEff1.push(tempStack.top());
+    tempStack.pop();
+}
+}
+        return *this;
+}
 void Camion::affiche(){
     Vehicule::affiche();
     cout<<"charge: "<<charge<<endl;
@@ -97,5 +119,9 @@ istream& operator>>(istream& in, Camion* c)
 }
 Camion::~Camion()
 {
-    //dtor
+     while (!visiteEff1.empty()) {
+            int* ptr = visiteEff1.top();
+            delete ptr;
+            visiteEff1.pop();
+        }
 }

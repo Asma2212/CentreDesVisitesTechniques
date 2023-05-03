@@ -49,8 +49,11 @@ return *this;
 ostream& operator<<(ostream& out,const VisiteTech& v)
 {
     out<<"code : "<<v.codeV<<endl;
-    out<<"test"<<endl;
-    out<<v.etatTestFinal<<endl;
+    out<<"test Final ";
+    if(v.etatTestFinal)
+        out<<"Valide"<<endl;
+    else
+        out<<"INValide"<<endl;
     out<<*(v.res)<<endl;
           return out;
 }

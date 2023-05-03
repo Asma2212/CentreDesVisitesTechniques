@@ -5,6 +5,31 @@ Voiture::Voiture()
     tarif=20.0;
     nbRoues=4;
 }
+
+Voiture::Voiture(const Voiture& vt) : Vehicule(vt){
+stack<int*> tempStack = vt.visiteEff;
+while(!tempStack.empty()){
+    this->visiteEff.push(tempStack.top());
+    tempStack.pop();
+        }
+}
+
+Voiture& Voiture::operator=(const Voiture& vt){
+stack<int*> tempStack = vt.visiteEff;
+if (this != &vt) {
+Vehicule::operator=(vt);
+while(!visiteEff.empty()){
+    delete visiteEff.top();
+}
+//this->visiteEff1.clean();
+while(!tempStack.empty()){
+    this->visiteEff.push(tempStack.top());
+    tempStack.pop();
+}
+}
+        return *this;
+}
+
 void Voiture::affiche(){
     Vehicule::affiche();
       if(!this->visiteEff.empty())
@@ -51,5 +76,7 @@ stack<int*> Voiture::getVE()
 }
 Voiture::~Voiture()
 {
-    //dtor
+while(!visiteEff.empty()){
+    delete visiteEff.top();
+}
 }

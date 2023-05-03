@@ -17,6 +17,9 @@ class Agent : public Personne , public Travailleur
     vector <VisiteTech*> listVisites;
     public:
         Agent();
+        Agent& operator=(const Agent& ag);
+        Agent(const Agent &);
+        virtual ~Agent();
         void validerEtatVisite(VisiteTech,Vehicule*);
         void menuAgent(CentreVT*);
         void authentifier(CentreVT&);
@@ -29,8 +32,7 @@ class Agent : public Personne , public Travailleur
         Equipement& rechEq(string,CentreVT&);
         friend istream& operator>>(istream& ,Agent&);
         friend ostream& operator<<(ostream&,Agent&);
-        Agent(const Agent &);
-        virtual ~Agent();
+
 };
 
 #endif // AGENT_H

@@ -5,6 +5,47 @@ CentreVT::CentreVT()
 {
     //ctor
 }
+
+CentreVT::CentreVT(const CentreVT& c){
+for (unsigned int i = 0; i <c.visites.size(); ++i){
+    this->visites.push_back(new VisiteTech(*c.visites[i]));
+        }
+for (unsigned int i = 0; i <c.personnes.size(); ++i){
+    this->personnes.push_back(c.personnes[i]);
+        }
+for (unsigned int i = 0; i <c.equipements.size(); ++i){
+    this->equipements.push_back(new Equipement(*c.equipements[i]));
+        }
+}
+
+CentreVT& CentreVT::operator=(const CentreVT& c){
+if (this != &c) {
+for (unsigned i = 0; i <visites.size(); ++i){
+    delete visites[i];
+}
+for (unsigned i = 0; i <equipements.size(); ++i){
+    delete equipements[i];
+}
+for (unsigned i = 0; i <personnes.size(); ++i){
+    delete personnes[i];
+}
+this->visites.clear();
+this->equipements.clear();
+this->personnes.clear();
+
+for (unsigned int i = 0; i <c.visites.size(); ++i){
+    this->visites.push_back(new VisiteTech(*c.visites[i]));
+        }
+for (unsigned int i = 0; i <c.personnes.size(); ++i){
+    this->personnes.push_back(c.personnes[i]);
+        }
+for (unsigned int i = 0; i <c.equipements.size(); ++i){
+    this->equipements.push_back(new Equipement(*c.equipements[i]));
+        }
+}
+        return *this;
+}
+
 void CentreVT::creer(fstream &f)
 {    f.open( "C:\CentreVT.txt", ios ::out| ios ::in |ios ::trunc) ;
      if( !(f.is_open()))
@@ -71,6 +112,47 @@ void CentreVT::creerFichierPersonne(fstream &f)
  if (!f) cout<<"Erreur Fichier";
 }
 
+void CentreVT::creerFichierEquipement(fstream &f)
+{
+ f.open("Equipement.txt",ios::in | ios::out | ios::trunc);
+ if (!f) cout<<"Erreur Fichier";
+}
+
+void CentreVT::enregistrerEquipement(Equipement* eq)
+{
+ ofstream Fichier("Equipement.txt",ios::app);
+ if (!Fichier) cout<<"Erreur Fichier";
+ Fichier<<eq;
+Fichier.close();
+}
+void CentreVT::recupererEq()
+{
+ ifstream Fichier("Equipement.txt",ios::app);
+ if (!Fichier) cout<<"Le fichier n'existe pas ";
+string ch;
+equipements.clear();
+ while(1)
+ {
+Equipement* eq=new Equipement();
+   Fichier>>eq;
+   equipements.push_back(eq);
+
+   if(Fichier.eof()) break;
+}
+
+Fichier.close() ;
+}
+
+void CentreVT::reloadEquipement(){
+fstream f;
+ creerFichierEquipement(f);
+ f.clear();
+for(unsigned int i=0;i<equipements.size();i++)
+ {
+
+   f<<equipements[i];
+}
+}
 
 void CentreVT::enregistrerPers(Personne* p)
 {
@@ -131,6 +213,7 @@ for(unsigned int i=0;i<personnes.size();i++)
    f<<personnes[i];
 }
 }
+
 void CentreVT::afficherListPersonne(){
 for(int i=0;i<personnes.size();i++)
     if(typeid(*personnes[i])==typeid(Agent)){
@@ -148,6 +231,17 @@ for(int i=0;i<personnes.size();i++)
 
 CentreVT::~CentreVT()
 {
-    //dtor
+for (unsigned i = 0; i <visites.size(); ++i){
+    delete visites[i];
+}
+for (unsigned i = 0; i <equipements.size(); ++i){
+    delete equipements[i];
+}
+for (unsigned i = 0; i <personnes.size(); ++i){
+    delete personnes[i];
+}
+this->visites.clear();
+this->equipements.clear();
+this->personnes.clear();
 }
 

@@ -17,5 +17,7 @@ class ElementsMap {
     void supprimerElement(K& cle);
     V getElement(K& cle);
     vector<V> getElements();
+    int taille();
+    void effacer();
 };
 #endif // ELEMENTSMAP_H

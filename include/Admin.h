@@ -12,6 +12,8 @@ class Admin: public Personne , public Travailleur
     public:
         Admin();
         virtual ~Admin();
+        Admin(const Admin&);
+        Admin& operator=(const Admin&);
         void consulterVisite(CentreVT&);
         void affecterAgentsVisites(CentreVT&);
         void ajouterAgent(CentreVT&);

@@ -5,6 +5,31 @@ Moto::Moto()
     tarif=10.0;
     nbRoues=2;
 }
+
+Moto::Moto(const Moto& mt) : Vehicule(mt){
+stack<int*> tempStack = mt.visiteEff2;
+while(!tempStack.empty()){
+    this->visiteEff2.push(tempStack.top());
+    tempStack.pop();
+        }
+}
+
+Moto& Moto::operator=(const Moto& mt){
+stack<int*> tempStack = mt.visiteEff2;
+if (this != &mt) {
+Vehicule::operator=(mt);
+while(!visiteEff2.empty()){
+    delete visiteEff2.top();
+}
+//this->visiteEff1.clean();
+while(!tempStack.empty()){
+    this->visiteEff2.push(tempStack.top());
+    tempStack.pop();
+}
+}
+        return *this;
+}
+
 void Moto::affiche(){
     Vehicule::affiche();
     if(!this->visiteEff2.empty())
@@ -36,5 +61,7 @@ void Moto::saisie(){
 }
 Moto::~Moto()
 {
-    //dtor
+while(!visiteEff2.empty()){
+    delete visiteEff2.top();
+}
 }

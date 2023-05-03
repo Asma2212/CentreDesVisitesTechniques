@@ -4,18 +4,30 @@ Admin::Admin()
 {
     //ctor
 }
+Admin::Admin(const Admin& ad) : Personne(ad), Travailleur() {
+for (unsigned i = 0; i <ad.roles.size(); ++i){
+    this->roles.push_back(new string(*ad.roles[i]));
+        }
+}
+
+Admin& Admin::operator=(const Admin& ad){
+if (this != &ad) {
+Personne::operator=(ad);
+Travailleur::operator=(ad);
+for (unsigned i = 0; i <roles.size(); ++i){
+    delete roles[i];
+}
+this->roles.clear();
+for (unsigned i = 0; i <ad.roles.size(); ++i){
+    this->roles.push_back(new string(*ad.roles[i]));
+        }
+}
+        return *this;
+}
 
 ostream& operator<<(ostream& out,Admin& ad){
     Personne *p=&ad;
     out<<*p;
-   /* cout<<"Poste : "<<ag.poste<<endl;
-    cout<<"Liste des visites"<<endl;
-        if(ag.listVisites.size()==0)
-            cout<<"aucune visite affectee"<<endl;
-        else
-        for(unsigned int i=0;i<ag.listVisites.size();i++)
-            out<<*ag.listVisites[i];*/
-
 }
 istream& operator>>(istream& in,Admin& A)
 {
@@ -170,5 +182,8 @@ char rep;
 
 Admin::~Admin()
 {
-    //dtor
+for (unsigned i = 0; i <roles.size(); ++i){
+    delete roles[i];
+}
+this->roles.clear();
 }

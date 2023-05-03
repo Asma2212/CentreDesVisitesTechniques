@@ -25,4 +25,13 @@ vector<V> ElementsMap<K,V>::getElements(){
         }
         return result;
     }
+template<class K, class V>
+int ElementsMap<K,V>::taille(){
+        return elements.size();
+    }
+template<class K, class V>
+void ElementsMap<K,V>::effacer(){
+        return elements.clear();
+    }
+
 
