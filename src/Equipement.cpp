@@ -133,5 +133,7 @@ void Equipement::afficherEq(CentreVT& C)
 
 Equipement::~Equipement()
 {
-    //dtor
+while(!modeff.empty()){
+    delete modeff.top();
+}
 }

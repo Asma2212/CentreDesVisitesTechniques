@@ -43,7 +43,7 @@ class Reservation
         Reservation(const Reservation &);
         Reservation & operator=(const Reservation &);
         friend class Agent;
-        //virtual ~Reservation(){ delete []v;}
+        virtual ~Reservation();
 
 
     protected:

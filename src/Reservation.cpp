@@ -276,3 +276,8 @@ void Reservation::setVehicule(Vehicule& v1){
             v=new Voiture(static_cast<const Voiture&>(v1));
 
 }
+Reservation::~Reservation(){
+while(!modifcationEff.empty()){
+    delete modifcationEff.top();
+}
+}
