@@ -46,7 +46,8 @@ void Reservation::modifierRes()
             {
         Camion cm;
         cm.saisie();
-      //  v=cm;
+
+        //v=cm;
         setVehicule(cm);
         break;
             }
@@ -267,8 +268,10 @@ istream& operator>>(istream& in, Reservation& r)
 
 void Reservation::setVehicule(Vehicule& v1){
 
-    if(typeid(v1) == typeid(Camion))
+    if(typeid(v1) == typeid(Camion)){
         v=new Camion(static_cast<const Camion&>(v1));
+    }
+
     else
         if(typeid(v1) == typeid(Moto))
             v=new Moto(static_cast<const Moto&>(v1));

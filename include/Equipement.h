@@ -17,6 +17,8 @@ class Equipement
     public:
         Equipement();
         Equipement(string,string,int);
+        Equipement(const Equipement &);
+        Equipement & operator=(const Equipement &);
         friend istream& operator>>(istream& in,Equipement* E);
         friend istream& operator>>(istream& in,Equipement& E);
         friend ostream& operator<<(ostream& out,const Equipement& E);

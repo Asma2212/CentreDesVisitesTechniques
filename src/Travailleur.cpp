@@ -5,6 +5,27 @@ Travailleur::Travailleur()
     //ctor
 }
 
+
+Travailleur::Travailleur(const Travailleur& tr) {
+
+        for (auto& spe : tr.specialites) {
+            specialites.push_back(new string(*spe));
+        }
+    }
+
+Travailleur& Travailleur::operator=(const Travailleur& tr) {
+        if (this != &tr) {
+        while (!specialites.empty()) {
+            delete specialites.front();
+            specialites.pop_front();
+        }
+        specialites.clear();
+        for (auto& spe : tr.specialites) {
+            specialites.push_back(new string(*spe));
+        }
+    }
+}
+
 void Travailleur::ajouter(string* sp){
 specialites.push_back(sp);
 }
@@ -22,5 +43,10 @@ void Travailleur::supprimer(string* sp){
 
 Travailleur::~Travailleur()
 {
-    //dtor
+ {
+        while (!specialites.empty()) {
+            delete specialites.front();
+            specialites.pop_front();
+        }
+    }
 }

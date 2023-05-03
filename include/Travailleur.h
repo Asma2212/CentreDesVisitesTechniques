@@ -11,6 +11,8 @@ protected:
     list<string*> specialites;
     public:
         Travailleur();
+        Travailleur(const Travailleur&);
+        Travailleur& operator=(const Travailleur&);
         virtual ~Travailleur();
         void ajouter(string* sp);
         void modifier(string* sp);

@@ -10,10 +10,35 @@ Equipement::Equipement(string a,string b,int c)
     libelle=b;
     quantite=c;
 }
+
+Equipement::Equipement(const Equipement& eq){
+stack<TimeDate*> tempStack = eq.modeff;
+while(!tempStack.empty()){
+    this->modeff.push(tempStack.top());
+    tempStack.pop();
+    }
+}
+
+Equipement& Equipement::operator=(const Equipement& q){
+stack<TimeDate*> tempStack = q.modeff;
+if (this != &q) {
+while(!modeff.empty()){
+    delete modeff.top();
+}
+//this->visiteEff1.clean();
+while(!tempStack.empty()){
+    this->modeff.push(tempStack.top());
+    tempStack.pop();
+}
+}
+        return *this;
+}
+
 /*string Equipement::getref()
 {
    return this->rf;
 }*/
+
 ostream& operator<<(ostream& out,const Equipement* E)
 {
     out<<E->quantite<<endl;

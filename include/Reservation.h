@@ -27,6 +27,9 @@ class Reservation
     bool payee = false ;
     public:
         Reservation();
+        Reservation(const Reservation &);
+        Reservation & operator=(const Reservation &);
+        virtual ~Reservation();
         friend ostream& operator<<(ostream&, Reservation&);
         friend istream& operator>>(istream&, Reservation&);
         friend istream& operator>>(istream&, Reservation*);
@@ -40,10 +43,7 @@ class Reservation
         int getHeure(){return heure;}
         int getCodeR(){return codeR;}
         Vehicule getVeh(){return *v;}
-        Reservation(const Reservation &);
-        Reservation & operator=(const Reservation &);
         friend class Agent;
-        virtual ~Reservation();
 
 
     protected:
